@@ -15,15 +15,24 @@ class m130524_201442_init extends Migration
         $this->createTable('{{%user}}', [
             'id' => $this->primaryKey(),
             'username' => $this->string()->notNull()->unique(),
+            'first_name' => $this->string(),
+            'last_name' => $this->string(),
             'auth_key' => $this->string(32)->notNull(),
+            'role_id' => $this->integer()->notNull()->defaultValue(2),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
-
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+
+        $this->createTable('{{%roles}}', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string()->notNull(),
+        ], $tableOptions);
+
+        $this->addForeignKey('role', '{{%user}}', 'role_id', '{{%roles}}', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
