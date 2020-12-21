@@ -31,7 +31,7 @@ AppAsset::register($this);
         <div class="container pt-3 pb-3 bg-white">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px">
+                   <a href="/"><img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px"></a>
                 </div>
                <!--  <div class="col-md-6">
                     <form class="form-inline my-2 my-md-0">
@@ -56,12 +56,12 @@ AppAsset::register($this);
                 <a class="nav-link" href="#">Categorias</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Propiedades</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown07">
+              <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a>
+             <!--  <div class="dropdown-menu" aria-labelledby="dropdown07">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+              </div> -->
             </li>
             <li class="nav-item active pl-4 pr-4">
                 <a class="nav-link" href="#">Artículos más vistos</a>
@@ -91,7 +91,7 @@ AppAsset::register($this);
         <p class="pull-right"><?//= Yii::powered() ?></p>
     </div>
 </footer>
-
+-->
 <?php $this->endBody() ?>
 </body>
 </html>

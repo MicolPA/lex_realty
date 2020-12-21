@@ -13,8 +13,40 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="container">
 
     <div class="row mt-5">
-        <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center mb-3">
             <h1 class="text-white h4"><?= Html::encode($this->title) ?></h1>
+        </div>
+    </div>
+
+    <div class="row p-2 mb-3" style="background: #808285">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <a class="text-white" href="#">UBICACIÓN <i class="fas fa-caret-down"></i></a>
+                </div>
+
+                 <div class="col-md-6 text-center">
+                    <a class="text-white" href="#">CALIFICACIÓN <i class="fas fa-caret-down"></i></a>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+
+            <a class="text-white text-center">PRECIO <i class="fas fa-caret-down"></i></a>
+            
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <a class="text-white" href="#">TIPO <i class="fas fa-caret-down"></i></a>
+                </div>
+
+                 <div class="col-md-6 text-center">
+                    <a class="text-white" href="#">ORDENAR <i class="fas fa-caret-down"></i></a>
+                </div>
+
+            </div>    
         </div>
     </div>
 
