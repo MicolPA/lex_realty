@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
                 <div class="bg-blue pl-4 pr-4 pt-2 pb-2 mb-4">
                     <h2 class="text-white h5 m-0">PUBLICAR PROPIEDADES</h2>
                 </div>
-                <?php $form = ActiveForm::begin(); ?>
+                <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
                 <div class="form-group">
                      <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROPIEDAD', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
@@ -53,21 +53,32 @@ use yii\helpers\ArrayHelper;
                 <?= $form->field($model, 'detalles')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea', 'rows' => '4', 'placeholder' => 'DETALLES DE LA PROPIEDAD']) ?>
 
 
-                <?= $form->field($model, 'foto_1')->textInput(['maxlength' => true]) ?>
+                <div class="row">
+                    <div class="col-md-3">
+                        <?= $form->field($model, 'foto_1')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile']) ?>
+                    </div>
+                    <div class="col-md-3">
+                        <?= $form->field($model, 'foto_2')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile2']) ?>
+                    </div>
+                    <div class="col-md-3">
+                        <?= $form->field($model, 'foto_3')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile3']) ?>
+                    </div>
+                    <div class="col-md-3">
+                        <?= $form->field($model, 'foto_4')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile4']) ?>
+                    </div>
+                </div>
 
-                <?= $form->field($model, 'foto_2')->textInput(['maxlength' => true]) ?>
-
-                <?= $form->field($model, 'foto_3')->textInput(['maxlength' => true]) ?>
-
-                <?= $form->field($model, 'foto_4')->textInput(['maxlength' => true]) ?>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+                <div class="row">
+                    <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">
+                        <?= Html::submitButton('ENVIAR FORMULARIO', ['class' => 'btn btn-warning text-white rounded-3 pr-4 pl-4', 'style' => 'border-radius:50px']) ?>
+                    </div>
                 </div>
 
                 <?php ActiveForm::end(); ?>
             </div>
         </div>
+
     </div>
 
 </div>
+
