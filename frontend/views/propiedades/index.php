@@ -67,13 +67,13 @@ $this->params['breadcrumbs'][] = $this->title;
     					<p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> CERTIFICADO DE TITULO</p>
 
     					<?php $check = $m->impuestos == 1 ? 'check.png' : 'uncheck.png' ?>
-    					<p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> IMPUESTOS AL DÍA</p>
+    					<p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> IMPUESTOS AL DÍA</p>
 
     					<?php $check = $m->cargas_gramabes == 1 ? 'check.png' : 'uncheck.png' ?>
-    					<p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> LIBRES DE CARGAS GRABAMES</p>
+    					<p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> LIBRES DE CARGAS GRABAMES</p>
 
     					<?php $check = $m->deslinde == 1 ? 'check.png' : 'uncheck.png' ?>
-    					<p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> DESLINDE</p>
+    					<p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> DESLINDE</p>
 
 
     					<a href="#" class="btn-block text-success text-center pt-2 pb-2 btn btn-outline-success mt-3">ENVIAR PROPUESTA</a>
