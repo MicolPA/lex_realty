@@ -42,7 +42,7 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'deslinde', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                     </div>
                     <div class="col-md-6">
-                         <?php echo $form->field($model, 'riezgo_id')->dropDownList(array("1" => "1"),['prompt'=>'CALIFICACIÓN DE RIEZGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
+                         <?php echo $form->field($model, 'riezgo_id')->dropDownList(array("1" => "1"),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
                         
                         <div class="pl-2">
                             <?= $form->field($model, 'certificado_titulo', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
