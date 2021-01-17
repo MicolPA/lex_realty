@@ -46,7 +46,7 @@ class PropiedadesSearch extends Propiedades
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['fecha_publicacion' => SORT_DESC]],
+            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
 
         $this->load($params);
