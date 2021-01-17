@@ -56,7 +56,8 @@ AppAsset::register($this);
                 <a class="nav-link" href="#">Categorias</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
-              <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a>
+              <!-- <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a> -->
+              <a class="nav-link" href="/frontend/web/propiedades">Propiedades</a>
              <!--  <div class="dropdown-menu" aria-labelledby="dropdown07">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -80,9 +81,9 @@ AppAsset::register($this);
     </div>
 </div>
 
-<div class="bg-blue" style="height: 100px">
+<!-- <div class="bg-blue" style="height: 100px">
     
-</div>
+</div> -->
 
 <!-- <footer class="footer">
     <div class="container">

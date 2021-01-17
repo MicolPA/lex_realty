@@ -6,7 +6,7 @@ $this->title = 'Lex';
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12" style="background-image: url('/frontend/web/images/banner-1.jpg');min-height: 800px; background-repeat: no-repeat;background-size: cover;">
+        <div class="col-md-12" style="background-image: url('/frontend/web/images/banner-2.jpg');min-height: 800px; background-repeat: no-repeat;background-size: cover;">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 mt-5 pt-5">

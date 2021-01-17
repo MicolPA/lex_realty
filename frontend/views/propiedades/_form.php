@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 
 ?>
 
-<div class="">
+<div class="mb-5">
 
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">
@@ -29,7 +29,7 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'habitaciones')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD DE HABITACIONES'])->label(false) ?>
                     </div>
                     <div class="col-md-6">
-                        <?= $form->field($model, 'habitaciones')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD DE BAÑOS'])->label(false) ?>
+                        <?= $form->field($model, 'baños')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD DE BAÑOS'])->label(false) ?>
                     </div>
 
                     <div class="col-md-12">
@@ -40,17 +40,41 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'impuestos', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
                         <?= $form->field($model, 'cargas_gramabes', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                         <?= $form->field($model, 'deslinde', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
+                            <?= $form->field($model, 'certificado_titulo', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                     </div>
                     <div class="col-md-6">
-                         <?php echo $form->field($model, 'riezgo_id')->dropDownList(array("1" => "1"),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
+                        <?php echo $form->field($model, 'riezgo_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesRiesgo::find()->all(), 'id', 'nombre'),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
                         
+                        <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO', 'required' => 'required'])->label(false) ?>
                         <div class="pl-2">
-                            <?= $form->field($model, 'certificado_titulo', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                         </div>
                     </div>
                </div>
 
-                <?= $form->field($model, 'detalles')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea', 'rows' => '4', 'placeholder' => 'DETALLES DE LA PROPIEDAD']) ?>
+               <div class="row check-box-container">
+                    <div class="col-md-12">
+                        <h5 class="font-weight-bold">Características adicionales</h5>
+                    </div>
+                   <div class="col-md-6">
+                        <?= $form->field($extras, 'aire_acondicionado', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'balcon', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'cocina', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'lavadora', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'nevera', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'piscina', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'vista_campo_golf', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                   </div>
+                   <div class="col-md-6">
+                        <?= $form->field($extras, 'amueblado', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'centro_comercial', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'estufa', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'marmol', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'parqueo', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                        <?= $form->field($extras, 'seguridad_24_hrs', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                   </div>
+               </div>
+
+                <?= $form->field($model, 'detalles')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea mt-3', 'rows' => '4', 'placeholder' => 'DETALLES DE LA PROPIEDAD'])->label(false) ?>
 
 
                 <div class="row">
@@ -67,6 +91,8 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'foto_4')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile4']) ?>
                     </div>
                 </div>
+
+
 
                 <div class="row">
                     <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">

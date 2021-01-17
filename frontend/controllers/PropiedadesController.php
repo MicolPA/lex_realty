@@ -4,11 +4,13 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Propiedades;
+use frontend\models\PropiedadesExtras;
 use frontend\models\PropiedadesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use frontend\models\ContactForm;
 
 /**
  * PropiedadesController implements the CRUD actions for Propiedades model.
@@ -51,7 +53,7 @@ class PropiedadesController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionVer($id)
     {
         return $this->render('view', [
             'model' => $this->findModel($id),
@@ -60,29 +62,38 @@ class PropiedadesController extends Controller
 
     /**
      * Creates a new Propiedades model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * If creation is successful, the browser will be redirected to the 'ver' page.
      * @return mixed
      */
     public function actionCreate()
     {
         $model = new Propiedades();
+        $extras = new PropiedadesExtras();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) and $extras->load(Yii::$app->request->post())) {
 
             $model = $this->get_photos_url($model);
+
             // $model->foto_1 = $this->get_photo_url(UploadedFile::getInstance($model, 'foto_1'), $path, 1);
             // $model->foto_2 = $this->get_photo_url(UploadedFile::getInstance($model, 'foto_2'), $path, 2);
             // $model->foto_3 = $this->get_photo_url(UploadedFile::getInstance($model, 'foto_3'), $path, 3);
             // $model->foto_4 = $this->get_photo_url(UploadedFile::getInstance($model, 'foto_4'), $path, 4);
 
-            
-            $model->fecha_publicacion = date("d/m/Y H:i:s");
+            $model->fecha_publicacion = date("Y-m-d H:i:s");
             $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+
+            
+
+            $extras->propiedad_id = $model->id;
+            $extras->date = date("Y-m-d H:i:s");
+            $extras->save();
+
+            return $this->redirect(['ver', 'id' => $model->id]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'extras' => $extras,
         ]);
     }
 
@@ -125,9 +136,37 @@ class PropiedadesController extends Controller
 
     }
 
+    function actionEnviarPropuesta($id){
+
+        $propiedad = $this->findModel($id);
+        $model = new ContactForm();
+
+        if ($model->load(Yii::$app->request->post())) {
+
+            $this->layout = false;
+            Yii::$app->mailer->compose()
+                ->setFrom('linettekill1@gmail.com')
+                ->setTo('micolpa08@gmail.com')
+                ->setSubject('Nueva propuesta')
+                ->setHtmlBody($this->render('email', ['nombre' =>  $model->name, 'correo' => $model->email, 'cuerpo' => $model->body]))
+                ->send();
+
+                Yii::$app->session->setFlash('success', 'Mensaje enviado correctamente. Le estaremos respondiendo lo más rápido posible.');
+
+            return $this->refresh();
+        }else{
+
+        }
+
+        return $this->render('propuesta', [
+            'model' => $model,
+            'propiedad' => $propiedad,
+        ]);
+    }
+
     /**
      * Updates an existing Propiedades model.
-     * If update is successful, the browser will be redirected to the 'view' page.
+     * If update is successful, the browser will be redirected to the 'ver' page.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -137,7 +176,7 @@ class PropiedadesController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['ver', 'id' => $model->id]);
         }
 
         return $this->render('update', [
