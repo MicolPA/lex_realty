@@ -46,7 +46,7 @@ class Propiedades extends \yii\db\ActiveRecord
     {
         return [
             [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'riezgo_id', 'impuestos', 'cargas_gramabes', 'deslinde', 'certificado_titulo', 'user_id'], 'integer'],
-            [['fecha_publicacion'], 'safe'],
+            [['fecha_publicacion', 'precio'], 'safe'],
             [['titulo_publicacion', 'detalles', 'foto_1', 'foto_2', 'foto_3', 'foto_4'], 'string', 'max' => 255],
             [['tipo_propiedad'], 'exist', 'skipOnError' => true, 'targetClass' => PropiedadesTipo::className(), 'targetAttribute' => ['tipo_propiedad' => 'id']],
             [['ubicacion_id'], 'exist', 'skipOnError' => true, 'targetClass' => Ubicaciones::className(), 'targetAttribute' => ['ubicacion_id' => 'id']],
@@ -77,6 +77,7 @@ class Propiedades extends \yii\db\ActiveRecord
             'foto_2' => 'Foto 2',
             'foto_3' => 'Foto 3',
             'foto_4' => 'Foto 4',
+            'precio' => 'Precio',
         ];
     }
 
