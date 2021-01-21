@@ -76,6 +76,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <p class="m-0 mt-1 text-blue font-weight-normal"><?= $m->tipoPropiedad->nombre ?></p>
 
                             <hr>
+
+                            <p class="font-weight-bold h3 mb-2">$<?= number_format($m->precio) ?></p>
                             <?php $check = $m->certificado_titulo == 1 ? 'check.png' : 'uncheck.png' ?>
                             <p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> CERTIFICADO DE TITULO</p>
 
