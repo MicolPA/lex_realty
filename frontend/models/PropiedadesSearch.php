@@ -40,7 +40,7 @@ class PropiedadesSearch extends Propiedades
      */
     public function search($params)
     {
-        $query = Propiedades::find();
+        $query = Propiedades::find()->where(['<>', 'id', 1]);
 
         // add conditions that should always apply here
 
