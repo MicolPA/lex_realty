@@ -34,12 +34,12 @@ if ($telefono) {
 	$mail->msgHTML(" Hola $telefono");
 	if (!$mail->send()) {
 		echo "Mailer Error: " . $mail->ErrorInfo;
-		$path = Yii::getAlias("@web") . "/site/index/?status=1";
-		header("Location: $path");
+		// $path = Yii::getAlias("@web") . "/site/index/?status=1";
+		// header("Location: $path");
 		exit();
 	} else {
-		$path = Yii::getAlias("@web") . "/site/index/?status=1";
-		header("Location: $path");
+		// $path = Yii::getAlias("@web") . "/site/index/?status=1";
+		// header("Location: $path");
 		exit();
 	}
 
