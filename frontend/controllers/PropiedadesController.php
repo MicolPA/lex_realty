@@ -156,9 +156,7 @@ class PropiedadesController extends Controller
                 ->setHtmlBody($this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
                 ->send();
 
-                exit;
-
-                Yii::$app->session->setFlash('success', 'Mensaje enviado correctamente. Le estaremos respondiendo lo más rápido posible.');
+                Yii::$app->session->setFlash('success', 'Propuesta enviada correctamente');
 
             return $this->refresh();
         }else{
