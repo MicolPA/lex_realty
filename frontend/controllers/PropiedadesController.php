@@ -55,7 +55,9 @@ class PropiedadesController extends Controller
      */
     public function actionVer($id)
     {
+        $extra = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
         return $this->render('view', [
+            'extra' => $extra,
             'model' => $this->findModel($id),
         ]);
     }
@@ -143,13 +145,18 @@ class PropiedadesController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
 
+            // return $this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
+            // exit;
+
             $this->layout = false;
             Yii::$app->mailer->compose()
-                ->setFrom('linettekill1@gmail.com')
-                ->setTo('micolpa08@gmail.com')
+                ->setFrom('micolpa08@gmail.com')
+                ->setTo($model->email)
                 ->setSubject('Nueva propuesta')
-                ->setHtmlBody($this->render('email', ['nombre' =>  $model->name, 'correo' => $model->email, 'cuerpo' => $model->body]))
+                ->setHtmlBody($this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
                 ->send();
+
+                exit;
 
                 Yii::$app->session->setFlash('success', 'Mensaje enviado correctamente. Le estaremos respondiendo lo más rápido posible.');
 

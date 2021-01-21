@@ -159,6 +159,10 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 	background: #f7f8f9
 }
 
+.h55 {
+    font-size: 1.1rem;
+}
+
 @media (max-width: 991px){
 	.carousel-item img{
 		height: 250px;
@@ -178,4 +182,25 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 		display: block !important;
 		margin-top: 8rem !important;
 	}
+
+	.pl-sm-none{
+		padding-left: 0px !important;
+	}
+}
+@media (min-width: 990px){
+
+   .pl-sm-0{
+		padding-left: 1rem !important;
+	}
+}
+
+.font-weight-bold-2{
+	font-weight: 500;
+}
+.rounded-left-2{
+	border-radius: 0px 0px 0px 100px;
+}
+
+.w-95{
+	width: 95%;
 }

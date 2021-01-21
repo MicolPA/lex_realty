@@ -22,28 +22,36 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <a class="text-white" href="#">UBICACIÓN <i class="fas fa-caret-down"></i></a>
+                    <a class="text-white font-weight-bold-2" href="#">UBICACIÓN <i class="fas fa-caret-down"></i></a>
                 </div>
 
                  <div class="col-md-6 text-center">
-                    <a class="text-white" href="#">CALIFICACIÓN <i class="fas fa-caret-down"></i></a>
+                    <a class="text-white font-weight-bold-2" href="#">CALIFICACIÓN <i class="fas fa-caret-down"></i></a>
                 </div>
 
             </div>
         </div>
         <div class="col-md-4 text-center">
 
-            <a class="text-white text-center">PRECIO <i class="fas fa-caret-down"></i></a>
+            <div class="dropdown">
+              <a class="text-white font-weight-bold-2 text-center dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRECIO</a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="/frontend/web/propiedades/index?sort=precio">Precio de mayor a menor</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades/index?sort=-precio">Precio de menor a mayor</a>
+              </div>
+            </div>
+
             
         </div>
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6 text-center">
-                    <a class="text-white" href="#">TIPO <i class="fas fa-caret-down"></i></a>
+                    <a class="text-white font-weight-bold-2" href="#">TIPO <i class="fas fa-caret-down"></i></a>
                 </div>
 
                  <div class="col-md-6 text-center">
-                    <a class="text-white" href="#">ORDENAR <i class="fas fa-caret-down"></i></a>
+                    <a class="text-white font-weight-bold-2" href="#">ORDENAR <i class="fas fa-caret-down"></i></a>
                 </div>
 
             </div>    

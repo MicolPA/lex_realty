@@ -41,6 +41,7 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +68,7 @@ AppAsset::register($this);
             <li class="nav-item active pl-4 pr-4">
                 <a class="nav-link" href="#">Artículos más vistos</a>
             </li>
-            <li class="nav-item active pl-4 pr-4">
+            <li class="nav-item active pl-4 pr-4 ">
                 <a class="nav-link" href="#">Contactos</a>
             </li>
           </ul>

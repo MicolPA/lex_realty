@@ -12,15 +12,17 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css?v=1',
+        'css/site.css?v=2',
         'css/bootstrap.css',
         'css/all.min.css',
     ];
     public $js = [
         'js/jquery-2.2.4.min.js',
+        'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
         'js/bootstrap.min.js',
         'js/main.js',
         'js/all.min.js',
+
     ];
     public $depends = [
         // 'yii\web\YiiAsset',

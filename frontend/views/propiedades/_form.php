@@ -43,11 +43,23 @@ use yii\helpers\ArrayHelper;
                             <?= $form->field($model, 'certificado_titulo', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                     </div>
                     <div class="col-md-6">
+
                         <?php echo $form->field($model, 'riezgo_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesRiesgo::find()->all(), 'id', 'nombre'),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
-                        
                         <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO', 'required' => 'required'])->label(false) ?>
                         <div class="pl-2">
                         </div>
+                    </div>
+               </div>
+
+               <div class="row">
+                    <div class="col-md-12">
+                        <h6 class="font-weight-bold">Área</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <?= $form->field($model, 'metros')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'METROS'])->label(false) ?>
+                    </div>
+                    <div class="col-md-6">
+                        <?= $form->field($model, 'pies')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PIES'])->label(false) ?>
                     </div>
                </div>
 
