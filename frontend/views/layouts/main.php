@@ -30,14 +30,15 @@ AppAsset::register($this);
     <div class="bg-white">
         <div class="container pt-3 pb-3 bg-white">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                    <a href="/"><img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px"></a>
                 </div>
-               <!--  <div class="col-md-6">
-                    <form class="form-inline my-2 my-md-0">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                <div class="col-md-8 pt-4">
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
+                        <button class="btn bg-gray my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
