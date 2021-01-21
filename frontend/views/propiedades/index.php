@@ -90,7 +90,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                             <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $m->id ?>" class="btn-block text-success text-center p-0 btn btn-outline-success mt-3" style="font-size: 20px">ENVIAR PROPUESTA</a>
-                            <a href="#" class="btn-block bg-blue text-white text-center p-0" style="font-size: 22px">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
+                            <a href="/frontend/web/propiedades/agente" class="btn-block bg-blue text-white text-center p-0" style="font-size: 22px">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
 
                         </div>
 

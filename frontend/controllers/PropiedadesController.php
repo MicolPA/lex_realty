@@ -47,6 +47,11 @@ class PropiedadesController extends Controller
         ]);
     }
 
+    function actionAgente(){
+        return $this->render('agente-form', [
+        ]);
+    }
+
     /**
      * Displays a single Propiedades model.
      * @param integer $id
