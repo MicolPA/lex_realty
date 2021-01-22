@@ -18,6 +18,11 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
+    <div class="row">
+        <div class="text-center bg-white" style="border-radius:12px 12px 0px  0px;width: 125px">
+            <p class="h6 font-weight-bold mt-1 text-blue mb-1">FILTROS</p>
+        </div>
+    </div>
     <div class="row p-2 mb-3" style="background: #808285">
         <div class="col-md-4">
             <div class="row">
