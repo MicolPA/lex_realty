@@ -153,33 +153,33 @@ class PropiedadesController extends Controller
             // return $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
             // exit;
 
-            $message = $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
+            //$message = $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
 
-            ini_set( 'display_errors', 1 );
-            error_reporting( E_ALL );
-            $from = "administrador@propiedades.lexrealtymagazine.com";
-            $to = "micolpa08@gmail.com";
-            $subject = "Nueva Propuesta 2";
-            $headers  = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= 'To: Micol <micolpa08@gmail.com>' . "\r\n";
-            $headers .= 'From: Contacto <administrador@propiedades.lexrealtymagazine.com>' . "\r\n";
-            $headers = "From: " . $from;
-            $headers.= "Content-Type: text/html;";
-            mail($to,$subject,$message, $headers);
-            exit;
+            // ini_set( 'display_errors', 1 );
+            // error_reporting( E_ALL );
+            // $from = "administrador@propiedades.lexrealtymagazine.com";
+            // $to = "micolpa08@gmail.com";
+            // $subject = "Nueva Propuesta 2";
+            // $headers  = 'MIME-Version: 1.0' . "\r\n";
+            // $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            // $headers .= 'To: Micol <micolpa08@gmail.com>' . "\r\n";
+            // $headers .= 'From: Contacto <administrador@propiedades.lexrealtymagazine.com>' . "\r\n";
+            // $headers = "From: " . $from;
+            // $headers.= "Content-Type: text/html;";
+            // mail($to,$subject,$message, $headers);
+            // exit;
 
             $this->layout = false;
             Yii::$app->mailer->compose()
                 ->setFrom('administrador@propiedades.lexrealtymagazine.com')
                 ->setTo($model->email)
                 ->setSubject('Nueva propuesta')
-                ->setHtmlBody($this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
+                ->setHtmlBody($this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
                 ->send();
 
                 Yii::$app->session->setFlash('success', 'Propuesta enviada correctamente');
 
-                // exit;
+                exit;
 
             return $this->refresh();
         }else{
