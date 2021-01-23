@@ -153,7 +153,7 @@ class PropiedadesController extends Controller
             // return $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
             // exit;
 
-            // $message = $this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
+            $message = $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
 
             ini_set( 'display_errors', 1 );
             error_reporting( E_ALL );
