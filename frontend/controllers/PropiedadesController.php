@@ -149,35 +149,37 @@ class PropiedadesController extends Controller
         $model = new ContactForm();
 
         if ($model->load(Yii::$app->request->post())) {
+            
+            // return $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
+            // exit;
 
-            return $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
-            exit;
+            // $message = $this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
 
-            $message = $this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
-
-            ini_set( 'display_errors', 1 );
-            error_reporting( E_ALL );
-            $from = "test@hostinger-tutorials.com";
-            $to = "rygservicio@gmail.com";
-            $subject = "R&G Servicios Técnicos";
-            $headers  = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= 'To: Micol <rygservicio@gmail.com>' . "\r\n";
-            $headers .= 'From: Contacto <test@hostinger-tutorials.com>' . "\r\n";
-            // $headers = "From: " . $from;
-            // $headers.= "Content-Type: text/html;";
-            mail($to,$subject,$message, $headers);
-            exit;
+            // ini_set( 'display_errors', 1 );
+            // error_reporting( E_ALL );
+            // $from = "test@hostinger-tutorials.com";
+            // $to = "rygservicio@gmail.com";
+            // $subject = "R&G Servicios Técnicos";
+            // $headers  = 'MIME-Version: 1.0' . "\r\n";
+            // $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+            // $headers .= 'To: Micol <rygservicio@gmail.com>' . "\r\n";
+            // $headers .= 'From: Contacto <test@hostinger-tutorials.com>' . "\r\n";
+            // // $headers = "From: " . $from;
+            // // $headers.= "Content-Type: text/html;";
+            // mail($to,$subject,$message, $headers);
+            // exit;
 
             $this->layout = false;
             Yii::$app->mailer->compose()
-                ->setFrom('micolpa08@gmail.com')
+                ->setFrom('administrador@propiedades.lexrealtymagazine.com')
                 ->setTo($model->email)
                 ->setSubject('Nueva propuesta')
-                ->setHtmlBody($this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
+                ->setHtmlBody($this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
                 ->send();
 
                 Yii::$app->session->setFlash('success', 'Propuesta enviada correctamente');
+
+                // exit;
 
             return $this->refresh();
         }else{
