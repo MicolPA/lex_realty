@@ -20,6 +20,7 @@ if ($telefono) {
 	        'allow_self_signed' => true
 	    )
 	);
+	$content = $this->render('email-admin', ['nombre' =>  $nombre, 'correo' => $correo, 'telefono' => $telefono, 'cantidad' => $cantidad, 'propiedad' => $propiedad, 'type' => $type]);
 	$mail->SMTPSecure = 'ssl';
 	$mail->Port = 465;
 	$mail->SMTPAuth = true;
@@ -28,20 +29,26 @@ if ($telefono) {
 
 
 	$mail->setFrom('administrador@propiedades.lexrealtymagazine.com', 'Lex Realty');
-	//$mail->addReplyTo('laserficher.cne@gmail.com', 'CNE notificaciones');
-	$mail->addAddress("$correo", $nombre);
-	$mail->Subject = 'Nueva propuesta';
-	$mail->msgHTML(" Hola $telefono");
-	if (!$mail->send()) {
-		echo "Mailer Error: " . $mail->ErrorInfo;
-		// $path = Yii::getAlias("@web") . "/site/index/?status=1";
-		// header("Location: $path");
-		exit();
-	} else {
-		$path = Yii::getAlias("@web") . "/site/index/?status=1";
-		header("Location: $path");
-		exit();
+	if ($type == 1) {
+		$mail->addAddress("$correo", $nombre);
+		$mail->Subject = 'Nueva propuesta';
+	}else{
+		$mail->Subject = 'Nuevo mensaje';
 	}
+	$mail->addAddress("administrador@propiedades.lexrealtymagazine.com", 'Lex Realty');
+	$mail->msgHTML("$content");
+	$mail->send();
+	// if (!$mail->send()) {
+	// 	echo "Mailer Error: " . $mail->ErrorInfo;
+	// 	$path = Yii::getAlias("@web") . "/site/index/?status=1";
+	// 	header("Location: $path");
+	// 	exit();
+	// } else {
+	// 	echo "Enviado";
+	// 	$path = Yii::getAlias("@web") . "/site/index/?status=1";
+	// 	header("Location: $path");
+	// 	exit();
+	// }
 
 }
 

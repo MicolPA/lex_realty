@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/main.js',
         'js/all.min.js',
+        'js/sweetalert.min.js',
 
     ];
     public $depends = [

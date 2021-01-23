@@ -47,8 +47,9 @@ class PropiedadesController extends Controller
         ]);
     }
 
-    function actionAgente(){
+    function actionAgente($id){
         return $this->render('agente-form', [
+            'id' => $id
         ]);
     }
 
@@ -95,6 +96,7 @@ class PropiedadesController extends Controller
             $extras->date = date("Y-m-d H:i:s");
             $extras->save();
 
+            Yii::$app->session->setFlash('success1','Propiedad registrada correctamente');
             return $this->redirect(['ver', 'id' => $model->id]);
         }
 
@@ -143,7 +145,7 @@ class PropiedadesController extends Controller
 
     }
 
-    function actionEnviarPropuesta($id){
+    function actionEnviarPropuesta($id, $type=1){
 
         $propiedad = $this->findModel($id);
         $model = new ContactForm();
@@ -170,23 +172,29 @@ class PropiedadesController extends Controller
             // exit;
 
             $this->layout = false;
-            Yii::$app->mailer->compose()
-                ->setFrom('administrador@propiedades.lexrealtymagazine.com')
-                ->setTo($model->email)
-                ->setSubject('Nueva propuesta')
-                ->setHtmlBody($this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
-                ->send();
+            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad, 'type' => $type]);
 
-                Yii::$app->session->setFlash('success', 'Propuesta enviada correctamente');
+            // Yii::$app->mailer->compose()
+            //     ->setFrom('administrador@propiedades.lexrealtymagazine.com')
+            //     ->setTo($model->email)
+            //     ->setSubject('Nueva propuesta')
+            //     ->setHtmlBody($this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
+            //     ->send();
 
-                exit;
+            if ($type == 1) {
+                Yii::$app->session->setFlash('success1', 'Propuesta enviada correctamente');
+            }else{
+                Yii::$app->session->setFlash('success1', 'Mensaje enviado correctamente');
+            }
+            // exit;
+            return $this->redirect(['ver', 'id' => $id]);
 
-            return $this->refresh();
         }else{
 
         }
 
         return $this->render('propuesta', [
+            'type' => $type,
             'model' => $model,
             'propiedad' => $propiedad,
         ]);

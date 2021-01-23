@@ -16,9 +16,15 @@ $this->title = 'PROPUESTA';
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">
             <div class="p-5">
+                <?php if ($type == 1): ?>
                 <div class="bg-warning-2 text-center pl-4 pr-4 pt-2 pb-2 mb-5">
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar su propuesta</h2>
                 </div>
+                <?php else: ?>
+                <div class="bg-blue text-center pl-4 pr-4 pt-2 pb-2 mb-5">
+                    <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar formulario de contacto</h2>
+                </div>
+                <?php endif ?>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
                 <div class="form-group">
@@ -49,9 +55,15 @@ $this->title = 'PROPUESTA';
                     </div>
                 </div>
 
-                <div class="col-md-6 mt-4 mb-5 pb-2">
-                    <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
-                </div>
+                <?php if ($type == 1): ?>
+                    <div class="col-md-6 mt-4 mb-5 pb-2">
+                        <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
+                    </div>
+                <?php else: ?>
+                    <div class="col-md-12 mt-4 mb-5 pb-2">
+                        <?= $form->field($model, 'body')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea mt-3', 'rows' => '5', 'placeholder' => 'COMENTARIOS'])->label(false) ?>
+                    </div>
+                <?php endif ?>
 
 
                 <div class="row">
