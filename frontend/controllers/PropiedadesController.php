@@ -174,7 +174,7 @@ class PropiedadesController extends Controller
                 ->setFrom('administrador@propiedades.lexrealtymagazine.com')
                 ->setTo($model->email)
                 ->setSubject('Nueva propuesta')
-                ->setHtmlBody($this->render('email-admin', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
+                ->setHtmlBody($this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]))
                 ->send();
 
                 Yii::$app->session->setFlash('success', 'Propuesta enviada correctamente');
