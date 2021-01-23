@@ -157,7 +157,7 @@ class PropiedadesController extends Controller
 
             ini_set( 'display_errors', 1 );
             error_reporting( E_ALL );
-            $from = "dministrador@propiedades.lexrealtymagazine.com";
+            $from = "administrador@propiedades.lexrealtymagazine.com";
             $to = "micolpa08@gmail.com";
             $subject = "Nueva Propuesta 2";
             $headers  = 'MIME-Version: 1.0' . "\r\n";
