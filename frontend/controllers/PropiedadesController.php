@@ -164,10 +164,10 @@ class PropiedadesController extends Controller
             $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
             $headers .= 'To: Micol <micolpa08@gmail.com>' . "\r\n";
             $headers .= 'From: Contacto <administrador@propiedades.lexrealtymagazine.com>' . "\r\n";
-            // $headers = "From: " . $from;
-            // $headers.= "Content-Type: text/html;";
+            $headers = "From: " . $from;
+            $headers.= "Content-Type: text/html;";
             mail($to,$subject,$message, $headers);
-            // exit;
+            exit;
 
             $this->layout = false;
             Yii::$app->mailer->compose()
