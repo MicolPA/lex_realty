@@ -210,6 +210,7 @@ class PropiedadesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $extras = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['ver', 'id' => $model->id]);
@@ -217,6 +218,7 @@ class PropiedadesController extends Controller
 
         return $this->render('update', [
             'model' => $model,
+            'extras' => $extras,
         ]);
     }
 
