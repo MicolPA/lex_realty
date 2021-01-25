@@ -26,7 +26,7 @@ class PropiedadesController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    // 'delete' => ['POST'],
                 ],
             ],
         ];
@@ -121,25 +121,35 @@ class PropiedadesController extends Controller
             mkdir($path, 0777, true);
         }
 
-        $model->foto_1 = UploadedFile::getInstance($model, 'foto_1');
-        $imagen = $path . 'foto-1-' . date('Y-m-d H-i-s') . ".". $model->foto_1->extension;
-        $model->foto_1->saveAs($imagen);
-        $model->foto_1 = $imagen;
+        if (UploadedFile::getInstance($model, 'foto_1')) {
+            $model->foto_1 = UploadedFile::getInstance($model, 'foto_1');
+            $imagen = $path . 'foto-1-' . date('Y-m-d H-i-s') . ".". $model->foto_1->extension;
+            $model->foto_1->saveAs($imagen);
+            $model->foto_1 = $imagen;
+        }
 
-        $model->foto_2 = UploadedFile::getInstance($model, 'foto_2');
-        $imagen = $path . 'foto-2-' . date('Y-m-d H-i-s') . ".". $model->foto_2->extension;
-        $model->foto_2->saveAs($imagen);
-        $model->foto_2 = $imagen;
+        if (UploadedFile::getInstance($model, 'foto_2')) {
+            $model->foto_2 = UploadedFile::getInstance($model, 'foto_2');
+            $imagen = $path . 'foto-2-' . date('Y-m-d H-i-s') . ".". $model->foto_2->extension;
+            $model->foto_2->saveAs($imagen);
+            $model->foto_2 = $imagen;
+        }
 
-        $model->foto_3 = UploadedFile::getInstance($model, 'foto_3');
-        $imagen = $path . 'foto-3-' . date('Y-m-d H-i-s') . ".". $model->foto_3->extension;
-        $model->foto_3->saveAs($imagen);
-        $model->foto_3 = $imagen;
+        if (UploadedFile::getInstance($model, 'foto_3')) {
+            $model->foto_3 = UploadedFile::getInstance($model, 'foto_3');
+            $imagen = $path . 'foto-3-' . date('Y-m-d H-i-s') . ".". $model->foto_3->extension;
+            $model->foto_3->saveAs($imagen);
+            $model->foto_3 = $imagen;
+        }
 
-        $model->foto_4 = UploadedFile::getInstance($model, 'foto_4');
-        $imagen = $path . 'foto-4-' . date('Y-m-d H-i-s') . ".". $model->foto_4->extension;
-        $model->foto_4->saveAs($imagen);
-        $model->foto_4 = $imagen;
+        if (UploadedFile::getInstance($model, 'foto_4')) {
+            $model->foto_4 = UploadedFile::getInstance($model, 'foto_4');
+            $imagen = $path . 'foto-4-' . date('Y-m-d H-i-s') . ".". $model->foto_4->extension;
+            $model->foto_4->saveAs($imagen);
+            $model->foto_4 = $imagen;
+        }
+
+        
 
         return $model;
 
@@ -212,7 +222,28 @@ class PropiedadesController extends Controller
         $model = $this->findModel($id);
         $extras = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        $old_foto_1 = $model['foto_1'];
+        $old_foto_2 = $model['foto_2'];
+        $old_foto_3 = $model['foto_3'];
+        $old_foto_4 = $model['foto_4'];
+
+        if ($model->load(Yii::$app->request->post()) and $extras->load(Yii::$app->request->post())) {
+
+            $model = $this->get_photos_url($model);
+            if (!UploadedFile::getInstance($model, 'foto_1')) {
+                $model->foto_1 = $old_foto_1;
+            }
+            if (!UploadedFile::getInstance($model, 'foto_2')) {
+                $model->foto_1 = $old_foto_2;
+            }
+            if (!UploadedFile::getInstance($model, 'foto_3')) {
+                $model->foto_1 = $old_foto_3;
+            }
+            if (!UploadedFile::getInstance($model, 'foto_4')) {
+                $model->foto_1 = $old_foto_4;
+            }
+            $model->save();
+            $extras->save();
             return $this->redirect(['ver', 'id' => $model->id]);
         }
 

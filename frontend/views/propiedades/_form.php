@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
         <div class="col-md-8 m-auto bg-white rounded-2">
             <div class="p-5">
                 <div class="bg-blue pl-4 pr-4 pt-2 pb-2 mb-4">
-                    <h2 class="text-white h5 m-0">PUBLICAR PROPIEDADES</h2>
+                    <h2 class="text-white h5 m-0"><?= $title ?></h2>
                 </div>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
@@ -91,16 +91,16 @@ use yii\helpers\ArrayHelper;
 
                 <div class="row">
                     <div class="col-md-3">
-                        <?= $form->field($model, 'foto_1')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile']) ?>
+                        <?= $form->field($model, 'foto_1')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile']) ?>
                     </div>
                     <div class="col-md-3">
-                        <?= $form->field($model, 'foto_2')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile2']) ?>
+                        <?= $form->field($model, 'foto_2')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2']) ?>
                     </div>
                     <div class="col-md-3">
-                        <?= $form->field($model, 'foto_3')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile3']) ?>
+                        <?= $form->field($model, 'foto_3')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3']) ?>
                     </div>
                     <div class="col-md-3">
-                        <?= $form->field($model, 'foto_4')->fileInput(['maxlength' => true, 'required' => 'required', 'id' => 'inputfile4']) ?>
+                        <?= $form->field($model, 'foto_4')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4']) ?>
                     </div>
                 </div>
 
