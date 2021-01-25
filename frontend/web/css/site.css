@@ -97,7 +97,7 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
     top: 10px;
     right: -5px;
     float: right;
-    box-shadow: 7px 6px 4px #444;
+    /*box-shadow: 7px 6px 4px #444;*/
 }
 .centrado{
     position: absolute;

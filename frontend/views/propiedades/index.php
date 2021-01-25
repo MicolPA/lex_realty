@@ -71,9 +71,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class=" bg-white">
                         <div class="contenedor">
                             <img src="<?= $m->foto_1 ?>" width='100%' style="height:250px">
-                            <div class="bg-<?= $riesgo['color'] ?> div_riesgo p-2 pr-4 pl-4 text-white">
-                                <?= mb_strtoupper($riesgo['nombre']) ?>
-                            </div>
+                            <?php if ($riesgo): ?>
+                                <div class="bg-<?= $riesgo['color'] ?> div_riesgo p-2 pr-4 pl-4 text-white">
+                                    <?= mb_strtoupper($riesgo['nombre']) ?>
+                                </div>
+                            <?php endif ?>
                         </div>
 
                         <div class="pl-3 pb-3">
