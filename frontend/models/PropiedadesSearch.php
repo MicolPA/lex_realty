@@ -2,6 +2,7 @@
 
 namespace frontend\models;
 
+use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use frontend\models\Propiedades;
@@ -40,6 +41,7 @@ class PropiedadesSearch extends Propiedades
      */
     public function search($params)
     {
+        $get = Yii::$app->request->get();
         $query = Propiedades::find()->where(['<>', 'id', 1]);
 
         // add conditions that should always apply here
@@ -48,7 +50,6 @@ class PropiedadesSearch extends Propiedades
             'query' => $query,
             'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
         ]);
-
         $this->load($params);
 
         if (!$this->validate()) {

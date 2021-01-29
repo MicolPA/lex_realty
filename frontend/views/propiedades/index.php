@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <p class="h6 font-weight-bold mt-1 text-blue mb-1">FILTROS</p>
         </div>
     </div>
-    <div class="row p-2 mb-5" style="background: #808285">
+    <div class="row p-2 mb-2" style="background: #808285">
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6 text-center">
@@ -60,6 +60,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
             </div>    
+        </div>
+    </div>
+
+    <div class="row mb-1">
+        <div class="col-md-12">
+            <p class="text-right text-white">RESULTADOS <?= $dataProvider->query->count() ?></p>
         </div>
     </div>
 

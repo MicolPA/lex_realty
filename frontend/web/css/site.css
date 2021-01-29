@@ -186,12 +186,20 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 	.pl-sm-none{
 		padding-left: 0px !important;
 	}
+
+	.d-xs-none{
+		display: none;
+	}
+	.d-xs-show{
+		display: block !important;
+	}
 }
 @media (min-width: 990px){
 
    .pl-sm-0{
 		padding-left: 1rem !important;
 	}
+
 }
 
 .font-weight-bold-2{
@@ -203,4 +211,22 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 
 .w-95{
 	width: 95%;
+}
+
+.div-buscador{
+	border-radius: 19px;
+}
+
+.form-control{
+	height: fit-content !important;
+}
+
+.btn_warning{
+	padding-left: 1.8rem !important;
+	padding-right: 1.8rem !important;
+	border-radius:50px;
+}
+
+.w-fit{
+	width: fit-content;
 }
