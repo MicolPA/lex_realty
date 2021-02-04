@@ -39,16 +39,40 @@ class PropiedadesSearch extends Propiedades
      *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search($params, $ubicaciones=array(), $tipos=array())
     {
         $get = Yii::$app->request->get();
-        $query = Propiedades::find()->where(['<>', 'id', 1]);
+        if (isset($get['precio'])) {
+            $sort = "precio";
+            $sort_type = $get['precio'] == 1 ? SORT_ASC : SORT_DESC;
+        }else{
+            $sort = "id";
+            $sort_type = SORT_DESC;
+        }
+
+        $query = Propiedades::find()->orderBy([$sort => $sort_type]);
+        $ub_all = array();
+        foreach ($ubicaciones as $ub) {
+            if (isset($get["ubicacion_$ub->id"])) {
+                array_push($ub_all, $ub->id);
+            }
+        }
+
+        $tipos_all = array();
+        foreach ($tipos as $tipo) {
+            if (isset($get["tipo_$tipo->id"])) {
+                array_push($tipos_all, $tipo->id);
+            }
+        }
+
+        // echo $sort;
+        // exit;
 
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort'=> ['defaultOrder' => ['id' => SORT_DESC]],
+            // 'sort'=> ['defaultOrder' => ['precio' => $sort_type]],
         ]);
         $this->load($params);
 
@@ -59,10 +83,12 @@ class PropiedadesSearch extends Propiedades
         }
 
         // grid filtering conditions
+        $query->andFilterWhere(['in', 'ubicacion_id', $ub_all]);
+        $query->andFilterWhere(['in', 'tipo_propiedad', $tipos_all]);
         $query->andFilterWhere([
             'id' => $this->id,
-            'tipo_propiedad' => $this->tipo_propiedad,
             'ubicacion_id' => $this->ubicacion_id,
+            'tipo_propiedad' => $this->tipo_propiedad,
             'habitaciones' => $this->habitaciones,
             'baños' => $this->baños,
             'riezgo_id' => $this->riezgo_id,

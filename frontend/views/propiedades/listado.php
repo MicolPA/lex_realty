@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\UbicacionesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Tipos de propiedades';
+$this->title = 'Propiedades';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">
@@ -32,7 +32,43 @@ $this->params['breadcrumbs'][] = $this->title;
                             ['class' => 'yii\grid\SerialColumn'],
 
                             // 'id',
-                            'nombre',
+                            'titulo_publicacion',
+                            [
+                                'label' => 'Tipo de propiedad',
+                                'attribute' => 'tipo_propiedad',
+                                'value' => function($data){
+                                    return $data->tipoPropiedad->nombre;
+                                }
+                            ],
+                            [
+                                'label' => 'Ubicación',
+                                'attribute' => 'ubicacion_id',
+                                'value' => function($data){
+                                    return $data->ubicacion->nombre;
+                                }
+                            ],
+                            [
+                                'label' => 'Riesgo',
+                                'attribute' => 'riezgo_id',
+                                'value' => function($data){
+                                    $riesgo = \frontend\models\PropiedadesRiesgo::findOne($data->riezgo_id);
+                                    return $riesgo['nombre'];
+                                }
+                            ],
+                            // 'habitaciones',
+                            //'baños',
+                            //'riezgo_id',
+                            //'impuestos',
+                            //'cargas_gramabes',
+                            //'deslinde',
+                            //'certificado_titulo',
+                            //'detalles',
+                            //'user_id',
+                            //'fecha_publicacion',
+                            //'foto_1',
+                            //'foto_2',
+                            //'foto_3',
+                            //'foto_4',
                             [
                                 'label' => '',
                                 'format' => 'raw',
@@ -59,3 +95,5 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 </div>
+
+

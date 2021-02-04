@@ -16,7 +16,11 @@
 }
 
 .rounded-3{
-	border-radius: 50px;
+	border-radius: 50px !important;
+}
+
+.rounded-50{
+	border-radius: 50% !important;
 }
 
 .input-r{

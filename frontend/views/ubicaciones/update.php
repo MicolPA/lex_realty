@@ -5,17 +5,17 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\Ubicaciones */
 
-$this->title = 'Update Ubicaciones: ' . $model->id;
+$this->title = 'Editar Registro';
 $this->params['breadcrumbs'][] = ['label' => 'Ubicaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="ubicaciones-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
         'model' => $model,
+        'title' => Html::encode($this->title),
     ]) ?>
 
 </div>

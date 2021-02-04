@@ -10,28 +10,52 @@ use yii\grid\GridView;
 $this->title = 'Ubicaciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="ubicaciones-index">
+<div class="container">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="row">
+        <div class="col-md-12">
+            <p class="mt-3">
+                <span class="text-white h1"><?= Html::encode($this->title) ?></span>
+                <?= Html::a('Crear', ['create'], ['class' => 'btn btn-success float-right mt-3']) ?>
+            </p>
+        </div>
 
-    <p>
-        <?= Html::a('Create Ubicaciones', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+        <div class="col-md-12">
+            <div class="card p-4">
+                <div class="table-responsive">
+                    <?= GridView::widget([
+                        'dataProvider' => $dataProvider,
+                        // 'filterModel' => $searchModel,
+                        'columns' => [
+                            ['class' => 'yii\grid\SerialColumn'],
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+                            // 'id',
+                            'nombre',
+                            [
+                                'label' => '',
+                                'format' => 'raw',
+                                'value' => function ($data) {
+                                    $view =  Html::a('<i class="fas fa-eye text-primary mr-2"></i>', ['view', 'id' => $data->id], []);
+                                    $update =  Html::a('<i class="fas fa-pencil-alt text-primary mr-2"></i>', ['update', 'id' => $data->id], []);
+                                    $delete = Html::a('<i class="fas fa-trash text-danger mt-2"></i>', ['delete', 'id' => $data->id], [
+                                        'data' => [
+                                            'confirm' => '¿Está seguro/a que desea eliminar este registro?',
+                                            'method' => 'post',
+                                        ],
+                                    ]);
+                                         return "$update $delete";
+                                },
+                            ],
 
-            'id',
-            'nombre',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                            ['class' => 'yii\grid\ActionColumn'],
+                        ],
+                    ]); ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>

@@ -4,6 +4,8 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Propiedades;
+use frontend\models\Ubicaciones;
+use frontend\models\PropiedadesTipo;
 use frontend\models\PropiedadesExtras;
 use frontend\models\PropiedadesSearch;
 use yii\web\Controller;
@@ -39,9 +41,25 @@ class PropiedadesController extends Controller
     public function actionIndex()
     {
         $searchModel = new PropiedadesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $ubicaciones = Ubicaciones::find()->all();
+        $tipos = PropiedadesTipo::find()->all();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $ubicaciones, $tipos);
 
         return $this->render('index', [
+            'tipos' => $tipos,
+            'ubicaciones' => $ubicaciones,
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    public function actionListado()
+    {
+        $this->layout = '@app/views/layouts/main-admin';
+        $searchModel = new PropiedadesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('listado', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -75,6 +93,7 @@ class PropiedadesController extends Controller
      */
     public function actionCreate()
     {
+        $this->layout = '@app/views/layouts/main-admin';
         $model = new Propiedades();
         $extras = new PropiedadesExtras();
 
@@ -230,6 +249,7 @@ class PropiedadesController extends Controller
         if ($model->load(Yii::$app->request->post()) and $extras->load(Yii::$app->request->post())) {
 
             $model = $this->get_photos_url($model);
+
             if (!UploadedFile::getInstance($model, 'foto_1')) {
                 $model->foto_1 = $old_foto_1;
             }
@@ -244,7 +264,8 @@ class PropiedadesController extends Controller
             }
             $model->save();
             $extras->save();
-            return $this->redirect(['ver', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success1','Propiedad modificada correctamente');
+            return $this->redirect(['listado']);
         }
 
         return $this->render('update', [
@@ -264,7 +285,7 @@ class PropiedadesController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['listado']);
     }
 
     /**

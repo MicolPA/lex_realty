@@ -5,34 +5,28 @@
 /* @var $model \common\models\LoginForm */
 
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\widgets\ActiveForm;
 
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="container">
 
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
+    <div class="row mt-5 pt-5">
+        <div class="col-lg-8 m-auto card mt-5 p-5">
+            <img class="m-auto" src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <div class="pl-5 pr-5 pt-5">
+                    <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Nombre de usuario') ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                    <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                    <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                    <br>
-                    Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
-                </div>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <div class="form-group">
+                        <?= Html::submitButton('Iniciar sesión', ['class' => 'btn btn-warning btn-block input-r text-white', 'name' => 'login-button', 'style' => 'font-size:20px !important']) ?>
+                    </div>
                 </div>
 
             <?php ActiveForm::end(); ?>

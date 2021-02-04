@@ -35,6 +35,7 @@ class UbicacionesController extends Controller
      */
     public function actionIndex()
     {
+        $this->layout = '@app/views/layouts/main-admin';
         $searchModel = new UbicacionesSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -52,6 +53,7 @@ class UbicacionesController extends Controller
      */
     public function actionView($id)
     {
+        $this->layout = '@app/views/layouts/main-admin';
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -66,8 +68,10 @@ class UbicacionesController extends Controller
     {
         $model = new Ubicaciones();
 
+        $this->layout = '@app/views/layouts/main-admin';
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success1','Registro creado correctamente');
+            return $this->redirect(['create']);
         }
 
         return $this->render('create', [
@@ -86,8 +90,10 @@ class UbicacionesController extends Controller
     {
         $model = $this->findModel($id);
 
+        $this->layout = '@app/views/layouts/main-admin';
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            Yii::$app->session->setFlash('success1','Registro actualizado correctamente');
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

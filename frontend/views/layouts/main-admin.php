@@ -12,6 +12,11 @@ use common\widgets\Alert;
 
 AppAsset::register($this);
 
+if (Yii::$app->user->isGuest) {
+    return Yii::$app->response->redirect(['/site/login']);
+}else{
+}
+
 
 ?>
 
@@ -36,11 +41,8 @@ AppAsset::register($this);
                 <div class="col-md-3">
                    <a href="/"><img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px"></a>
                 </div>
-                <div class="col-md-8 pt-4">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
-                        <button class="btn bg-gray my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                <div class="col-md-8 pt-4 text-right">
+                    <span class="h2 font-weight-normal bg-warning pl-3 pr-3 btn_warning">PANEL DE ADMINISTRACIÓN</span>
                 </div>
             </div>
         </div>
@@ -55,31 +57,35 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item active pl-4 pr-4">
-                <a class="nav-link" href="#">Categorias</a>
+                <a class="nav-link" href="/frontend/web/admin">Inicio</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
-              <!-- <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a> -->
-              <a class="nav-link" href="/frontend/web/propiedades">Propiedades</a>
-             <!--  <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div> -->
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Ubicaciones</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
+                <a class="dropdown-item" href="/frontend/web/ubicaciones/create">Crear</a>
+                <a class="dropdown-item" href="/frontend/web/ubicaciones">Listado</a>
+              </div>
             </li>
-            <li class="nav-item active pl-4 pr-4">
+            <li class="nav-item dropdown active pl-4 pr-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Tipos de propiedades</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
+                <a class="dropdown-item" href="/frontend/web/propiedades-tipo/create">Crear</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades-tipo">Listado</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown active pl-4 pr-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Propiedades</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
+                <a class="dropdown-item" href="/frontend/web/propiedades/create">Crear</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades/listado">Listado</a>
+              </div>
+            </li>
+            <!-- <li class="nav-item active pl-4 pr-4">
                 <a class="nav-link" href="#">Artículos más vistos</a>
             </li>
             <li class="nav-item active pl-4 pr-4 ">
                 <a class="nav-link" href="#">Contactos</a>
-            </li>
-            <?php if (!Yii::$app->user->isGuest): ?>
-                <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link">Panel de administración</a>
-                </li>
-            <?php endif ?>
+            </li> -->
           </ul>
           
         </div>

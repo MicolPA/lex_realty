@@ -12,10 +12,9 @@ $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="propiedades-tipo-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <?= $this->render('_form', [
         'model' => $model,
+        'title' => Html::encode($this->title),
     ]) ?>
 
 </div>
