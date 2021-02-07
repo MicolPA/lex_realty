@@ -9,7 +9,7 @@ $this->title = 'Propiedades';
 ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-12" style="background-image: url('/frontend/web/images/banner-2.jpg');min-height: 800px; background-repeat: no-repeat;background-size: cover;">
+        <div class="col-md-12" style="background-image: url('/frontend/web/images/banner-2.jpg') !important;min-height: 800px; background-repeat: no-repeat;background-size: cover;">
             <div class="container">
                 <div class="row">
                     <!-- <div class="col-md-7 mt-4 d-xs-show" style="display: none">
