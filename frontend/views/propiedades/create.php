@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'galeria' => $galeria,
         'extras' => $extras,
         'title' => 'PUBLICAR PROPIEDADES',
     ]) ?>

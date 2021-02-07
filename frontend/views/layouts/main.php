@@ -34,11 +34,11 @@ AppAsset::register($this);
         <div class="container pt-3 pb-3 bg-white">
             <div class="row">
                 <div class="col-md-3">
-                   <a href="/"><img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px"></a>
+                   <a href="/"><img src="/frontend/web/images/Lex_logo.png" width="180px"></a>
                 </div>
                 <div class="col-md-8 pt-4">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
+                    <form class="form-inline" action="/frontend/web/propiedades" method="get">
+                        <input class="form-control mr-sm-2" name="PropiedadesSearch[titulo_publicacion]" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
                         <button class="btn bg-gray my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
@@ -46,7 +46,7 @@ AppAsset::register($this);
         </div>
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@ AppAsset::register($this);
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link">Panel de administración</a>
+                    <a href="/frontend/web/admin" class="nav-link btn btn-warning">Panel de administración</a>
                 </li>
             <?php endif ?>
           </ul>

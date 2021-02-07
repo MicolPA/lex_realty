@@ -100,4 +100,10 @@ class Propiedades extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Ubicaciones::className(), ['id' => 'ubicacion_id']);
     }
+
+
+    public function getGaleria()
+    {
+        return $this->hasOne(PropiedadesGaleria::className(), ['id' => 'galeria_id']);
+    }
 }

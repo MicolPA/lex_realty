@@ -43,9 +43,9 @@ $this->title = 'PROPUESTA';
                     <div class="row">
                         <div class="col-md-6">
                             <div class="pt-5 pl-4">
-                                <p class="text-white m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
-                                <p class="text-white m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
-                                <p class="text-white"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
+                                <p class="text-blue m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
+                                <p class="text-blue m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
+                                <p class="text-blue"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@ $this->title = 'PROPUESTA';
 
                 <?php if ($type == 1): ?>
                     <div class="col-md-6 mt-4 mb-5 pb-2">
-                        <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
+                        <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'MONTO OFERTADO:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
                     </div>
                 <?php else: ?>
                     <div class="col-md-12 mt-4 mb-5 pb-2">

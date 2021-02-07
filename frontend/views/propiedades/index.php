@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <p class="h6 font-weight-bold mt-1 text-blue mb-1">FILTROS</p>
         </div>
     </div>
-    <div class="row p-2 mb-2" id="accordion" style="background: #808285">
+    <div class="row p-2 mb-2 bg-darkblue" id="accordion">
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6 text-lg-center">
@@ -116,7 +116,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="col-md-4 mt-4">
                         <div class=" bg-white">
                             <div class="contenedor">
-                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:250px">
+                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:200px">
                                 <?php if ($riesgo): ?>
                                     <div class="bg-<?= $riesgo['color'] ?> div_riesgo p-2 pr-4 pl-4 text-white">
                                         <?= mb_strtoupper($riesgo['nombre']) ?>
@@ -130,22 +130,26 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 <hr>
 
-                                <p class="font-weight-bold h3 mb-2">US$<?= number_format($m->precio) ?></p>
-                                <?php $check = $m->certificado_titulo == 1 ? 'check.png' : 'uncheck.png' ?>
-                                <p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> CERTIFICADO DE TITULO</p>
+                                <p class="font-weight-bold h3 mb-2">US$<?= number_format($m->precio, 2) ?></p>
+                                
+                                <div class="detalles" style="height: 50px">
+                                    <?php if ($m->certificado_titulo): ?>
+                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> CERTIFICADO DE TITULO</p>
+                                    <?php endif ?>
+                                    <?php if ($m->impuestos): ?>
+                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> IMPUESTOS AL DÍA</p>
+                                    <?php endif ?>
+                                    <?php if ($m->cargas_gramabes): ?>
+                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> LIBRES DE CARGAS GRABAMES</p>
+                                    <?php endif ?>
+                                    <?php if ($m->deslinde): ?>
+                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> DESLINDE</p>
+                                    <?php endif ?>
+                                </div>
+                                
 
-                                <?php $check = $m->impuestos == 1 ? 'check.png' : 'uncheck.png' ?>
-                                <p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> IMPUESTOS AL DÍA</p>
-
-                                <?php $check = $m->cargas_gramabes == 1 ? 'check.png' : 'uncheck.png' ?>
-                                <p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> LIBRES DE CARGAS GRABAMES</p>
-
-                                <?php $check = $m->deslinde == 1 ? 'check.png' : 'uncheck.png' ?>
-                                <p class="m-0 small"><img src="/frontend/web/images/stock/<?= $check ?>" width="20px"> DESLINDE</p>
-
-
-                                <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $m->id ?>" class="btn-block text-success text-center p-0 btn btn-outline-success mt-3" style="font-size: 20px">ENVIAR PROPUESTA</a>
-                                <a href="/frontend/web/propiedades/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0" style="font-size: 22px">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
+                                
+                                <a href="/frontend/web/propiedades/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0 h5 pt-1 pb-1" style="visibility: hidden;">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
 
                             </div>
 

@@ -20,7 +20,7 @@ $this->title = 'Propiedades';
                             <h2 class="h1 p-2 text-white">RECOMENDADAS</h2>
                         </div>
                     </div> -->
-                    <div class="col-md-5 mt-lg-5 pt-5">
+                    <div class="col-md-6 mt-lg-5 pt-5">
                         <div class="bg-white p-4 div-buscador">
                             <?php $form = ActiveForm::begin(['action' => 'propiedades', 'method' => 'GET', 'options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
                             <div class="p-lg-5">
@@ -38,13 +38,13 @@ $this->title = 'Propiedades';
                             <?php ActiveForm::end(); ?>
                         </div>
                     </div>
-                    <div class="col-md-7 mt-5 pt-5 pl-5 d-xs-none">
+                    <div class="col-md-6 mt-5 pt-5 pl-5 d-xs-none">
                         <div class="mt-5 pt-5 pl-5">
                             <br>
                             <div class="bg-warning-2 m-auto pl-5 pr-5 text-center w-fit">
                                 <h2 class="display-4 font-weight-bold m-0 text-white">PROPIEDADES</h2>
                             </div>
-                            <div class="bg-blue m-auto pl-2 text-center w-fit">
+                            <div class="bg-darkblue m-auto pl-2 text-center w-fit">
                                 <h2 class="h1 p-2 text-white">RECOMENDADAS</h2>
                             </div>
                         </div>

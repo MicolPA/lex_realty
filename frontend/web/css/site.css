@@ -3,8 +3,17 @@
     padding: 0px;
 }
 
+.bg-darkblue{
+	background: #0c1528;
+}
+
 .wrap, .bg-blue, html{
-	background: #0e1227;
+	background: #d5d9de;
+}
+@media (min-width: 1200px){
+	.container, .container-sm, .container-md, .container-lg, .container-xl {
+	    max-width: 1000px !important;
+	}
 }
 
 .text-blue{
@@ -64,7 +73,7 @@ input[type='checkbox']{
 	 box-shadow: 0px 0px 0px 1px #14182c; 
 }
 
-input[type="file"]#inputfile, input[type="file"]#inputfile2, input[type="file"]#inputfile3, input[type="file"]#inputfile4 {
+input[type="file"] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -72,7 +81,7 @@ input[type="file"]#inputfile, input[type="file"]#inputfile2, input[type="file"]#
 	position: absolute;
 	z-index: -1;
 }
-label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[for="inputfile4"] {
+.div-lab label{
  font-size: 14px;
  font-weight: 600;
  color: #000;
@@ -152,12 +161,17 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 }
 
 .carousel-item img{
-	height: 450px;
+	width: 100%;
 }
 
-.carousel-control-prev, .carousel-control-next{
-	display: none !important;
+#carousel-thumbs img{
+	height: 100px;
 }
+
+
+/*.carousel-control-prev, .carousel-control-next{
+	display: none !important;
+}*/
 
 .bg-lightgray{
 	background: #f7f8f9
@@ -168,6 +182,15 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 }
 
 @media (max-width: 991px){
+
+	#carousel-thumbs{
+		height: 120px;
+		width: 100% !important;
+	}
+	.first-part img{
+		height: 300px;
+	}
+
 	.carousel-item img{
 		height: 250px;
 	}
@@ -184,7 +207,7 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 
 	.carousel-control-prev, .carousel-control-next{
 		display: block !important;
-		margin-top: 8rem !important;
+		margin-top: 4rem !important;
 	}
 
 	.pl-sm-none{
@@ -199,9 +222,18 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 	}
 }
 @media (min-width: 990px){
+	.carousel-item .active{
+		height: 120px !important;
+	}
+	.first-part img{
+		height: 450px;
+	}
 
    .pl-sm-0{
 		padding-left: 1rem !important;
+	}
+	.bg-lg-dark{
+		background-color: #343a40 !important;
 	}
 
 }
@@ -233,4 +265,54 @@ label[for="inputfile"],label[for="inputfile2"], label[for="inputfile3"], label[f
 
 .w-fit{
 	width: fit-content;
+}
+
+
+.carousel {
+  position: relative;
+}
+.carousel-item img {
+  object-fit: cover;
+}
+#carousel-thumbs {
+  background: rgba(255,255,255,.3);
+  bottom: 0;
+  left: 0;
+  padding: 0 50px;
+  right: 0;
+}
+#carousel-thumbs img {
+  border: 5px solid transparent;
+  cursor: pointer;
+}
+#carousel-thumbs img:hover {
+  border-color: rgba(255,255,255,.3);
+}
+#carousel-thumbs .selected img {
+  border-color: #fff;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+}
+@media all and (max-width: 767px) {
+  .carousel-container #carousel-thumbs img {
+    border-width: 3px;
+  }
+}
+@media all and (min-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    /*position: absolute;*/
+  }
+}
+@media all and (max-width: 576px) {
+  .carousel-container #carousel-thumbs {
+    background: #ccccce;
+  }
+}
+
+
+
+.carousel-control-prev, .carousel-control-next{
+	opacity: 0.7 !important;
 }

@@ -5,7 +5,12 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 
 ?>
-
+<style>
+    .div-lab label{
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+</style>
 <div class="mb-5">
 
     <div class="row">
@@ -44,7 +49,7 @@ use yii\helpers\ArrayHelper;
                     </div>
                     <div class="col-md-6">
 
-                        <?php echo $form->field($model, 'riezgo_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesRiesgo::find()->all(), 'id', 'nombre'),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
+                       <!--  <?php //echo $form->field($model, 'riezgo_id')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesRiesgo::find()->all(), 'id', 'nombre'),['prompt'=>'CALIFICACIÓN DE RIESGO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?> -->
                         <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO', 'required' => 'required'])->label(false) ?>
                         <div class="pl-2">
                         </div>
@@ -56,10 +61,10 @@ use yii\helpers\ArrayHelper;
                         <h6 class="font-weight-bold">Área</h6>
                     </div>
                     <div class="col-md-6">
-                        <?= $form->field($model, 'metros')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'METROS'])->label(false) ?>
+                        <?= $form->field($model, 'metros')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'id' => 'metros', 'placeholder' =>'METROS'])->label(false) ?>
                     </div>
                     <div class="col-md-6">
-                        <?= $form->field($model, 'pies')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PIES'])->label(false) ?>
+                        <?= $form->field($model, 'pies')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'id' => 'pies', 'placeholder' =>'PIES'])->label(false) ?>
                     </div>
                </div>
 
@@ -88,19 +93,46 @@ use yii\helpers\ArrayHelper;
 
                 <?= $form->field($model, 'detalles')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea mt-3', 'rows' => '4', 'placeholder' => 'DETALLES DE LA PROPIEDAD'])->label(false) ?>
 
+                <div class="row">
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($model, 'foto_1')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile', 'value' => $model->foto_1])->label("PORTADA") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($model, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2'])->label("IMG 2") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($model, 'foto_3')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3'])->label("IMG 3") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($model, 'foto_4')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4'])->label("IMG 4") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_5')->fileInput([])->label($galeria->foto_5 ? "CARGADA" : "IMG 5") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_6')->fileInput([])->label($galeria->foto_6 ? "CARGADA" : "IMG 6") ?>
+                    </div>
+                    
+                </div>
 
                 <div class="row">
-                    <div class="col-md-3">
-                        <?= $form->field($model, 'foto_1')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile']) ?>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_7')->fileInput([])->label($galeria->foto_7 ? "CARGADA" : "IMG 7") ?>
                     </div>
-                    <div class="col-md-3">
-                        <?= $form->field($model, 'foto_2')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2']) ?>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_8')->fileInput([])->label($galeria->foto_8 ? "CARGADA" : "IMG 8") ?>
                     </div>
-                    <div class="col-md-3">
-                        <?= $form->field($model, 'foto_3')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3']) ?>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_9')->fileInput([])->label($galeria->foto_9 ? "CARGADA" : "IMG 9") ?>
                     </div>
-                    <div class="col-md-3">
-                        <?= $form->field($model, 'foto_4')->fileInput(['maxlength' => true, !$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4']) ?>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_10')->fileInput([])->label($galeria->foto_10 ? "CARGADA" : "IMG 10") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_11')->fileInput([])->label($galeria->foto_11 ? "CARGADA" : "IMG 11") ?>
+                    </div>
+                    <div class="col-md-2 div-lab">
+                        <?= $form->field($galeria, 'foto_12')->fileInput([])->label($galeria->foto_12 ? "CARGADA" : "IMG 12") ?>
                     </div>
                 </div>
 
