@@ -28,7 +28,7 @@ $this->title = 'Propiedades';
                                 <p class="h5 font-weight-normal text-muted">Recomendamos nuestro listado de propiedades</p>
 
                                 <div class="pt-3">
-                                    <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicacición', 'class' => 'form-control h5 p-3 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control h5 p-3 font-weight-bold text-secondary'])->label(false); ?>
 
                                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Tipo de propiedad', 'class' => 'form-control h5 p-3 font-weight-bold text-secondary'])->label(false); ?>
 
