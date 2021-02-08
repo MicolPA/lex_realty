@@ -57,7 +57,7 @@ if (Yii::$app->user->isGuest) {
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="/frontend/web/admin">INICIO</a>
+                <a class="nav-link" href="/">INICIO</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">UBICACIONES</a>
