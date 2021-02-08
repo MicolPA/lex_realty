@@ -15,7 +15,11 @@
 	    max-width: 1000px !important;
 	}
 }
-
+.title-light{
+	color: #0c1528 !important;
+    font-weight: 200 !important;
+    letter-spacing: 10px;
+}
 .bg-gray2{
 	background: #a6adb5 !important;
 }
