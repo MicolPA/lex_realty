@@ -118,7 +118,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="contenedor">
                                 <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:200px">
                                 <div class="bg-darkblue pt-1 pb-1">
-                                    <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= $m->ubicacion->nombre ?></p>
+                                    <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                 </div>
                                 <?php if ($m->riezgo_id == 1): ?>
                                     <div class="bg-<?= $riesgo['color'] ?> div_riesgo p-2 pr-4 pl-4 text-white">
