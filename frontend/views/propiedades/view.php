@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
 
                 <!-- Carousel Navigation -->
-                <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                <div id="carousel-thumbs" class="carousel slide bg-white" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="row mx-0">
@@ -109,13 +109,14 @@ $this->params['breadcrumbs'][] = $this->title;
                       </div>
                     </div>
                   </div>
-                  <a class="carousel-control-prev bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+                  <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
 
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
+                    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a class="carousel-control-next bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
-                    <i class="fas fa-chevron-right text-blue font-weight-bold"></i>
+                  <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
+                    <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
                     <span class="sr-only">Next</span>
                   </a>
                 </div>

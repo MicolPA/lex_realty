@@ -358,3 +358,7 @@ input[type="file"] {
 .carousel-control-prev, .carousel-control-next{
 	opacity: 0.7 !important;
 }
+
+.carousel-control-prev, .carousel-control-next{
+	width: 10% !important;
+}
