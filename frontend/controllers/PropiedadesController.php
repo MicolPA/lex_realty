@@ -216,7 +216,7 @@ class PropiedadesController extends Controller
                 Yii::$app->session->setFlash('success1', 'Mensaje enviado correctamente');
             }
             // exit;
-            return $this->redirect(['ver', 'id' => $id]);
+            return $this->redirect(['index']);
 
         }else{
 

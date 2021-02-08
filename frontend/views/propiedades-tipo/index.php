@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-12">
             <p class="mt-3">
                 <span class="text-white h1"><?= Html::encode($this->title) ?></span>
-                <?= Html::a('Crear', ['create'], ['class' => 'btn btn-success float-right mt-3']) ?>
+                <?= Html::a('Registrar', ['create'], ['class' => 'btn btn-warning pr-5 pl-5 float-right mt-3']) ?>
             </p>
         </div>
 

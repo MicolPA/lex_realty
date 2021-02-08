@@ -42,17 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
     .swal-icon img{
         width: 100%;
     }
-    <?php if (!Yii::$app->session->hasFlash('success1')): ?>
-        .swal-modal{
-            background: transparent;;
-        }
-        .swal-overlay--show-modal{
-            background: #0c1528;
-        }
-    <?php endif ?>
-
+    .swal-modal{
+        background: transparent;;
+    }
+    .swal-overlay--show-modal{
+        background: #0c1528;
+    }
 </style>
-
 <div class="container mb-5">
 
     

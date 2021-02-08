@@ -48,7 +48,7 @@ if (Yii::$app->user->isGuest) {
         </div>
     </div>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-darkblue">
       <div class="container">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -57,27 +57,28 @@ if (Yii::$app->user->isGuest) {
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="/frontend/web/admin">Inicio</a>
+                <a class="nav-link" href="/frontend/web/admin">INICIO</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Ubicaciones</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">UBICACIONES</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
-                <a class="dropdown-item" href="/frontend/web/ubicaciones/create">Crear</a>
-                <a class="dropdown-item" href="/frontend/web/ubicaciones">Listado</a>
+                <a class="dropdown-item" href="/frontend/web/ubicaciones/create">CREAR</a>
+                <a class="dropdown-item" href="/frontend/web/ubicaciones">LISTADO</a>
+              </div>
+            </li>
+            
+            <li class="nav-item dropdown active pl-4 pr-4">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">PROPIEDADES</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
+                <a class="dropdown-item" href="/frontend/web/propiedades/create">CREAR</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades/listado">LISTADO</a>
               </div>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Tipos de propiedades</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">TIPOS DE PROPIEDADES</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
-                <a class="dropdown-item" href="/frontend/web/propiedades-tipo/create">Crear</a>
-                <a class="dropdown-item" href="/frontend/web/propiedades-tipo">Listado</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown active pl-4 pr-4">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">Propiedades</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
-                <a class="dropdown-item" href="/frontend/web/propiedades/create">Crear</a>
-                <a class="dropdown-item" href="/frontend/web/propiedades/listado">Listado</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades-tipo/create">CREAR</a>
+                <a class="dropdown-item" href="/frontend/web/propiedades-tipo">LISTADO</a>
               </div>
             </li>
             <!-- <li class="nav-item active pl-4 pr-4">

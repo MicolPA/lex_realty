@@ -77,7 +77,7 @@ AppAsset::register($this);
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link btn btn-warning">PANEL DE ADMINISTRACIÓN</a>
+                    <a href="/frontend/web/propiedades/listado" class="nav-link btn btn-warning">PANEL DE ADMINISTRACIÓN</a>
                 </li>
             <?php endif ?>
           </ul>
