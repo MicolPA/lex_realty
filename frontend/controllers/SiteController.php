@@ -94,7 +94,7 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->redirect(['admin']);
+            return $this->redirect(['propiedades/listado']);
         } else {
             $model->password = '';
 
