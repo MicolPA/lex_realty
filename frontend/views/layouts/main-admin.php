@@ -81,6 +81,9 @@ if (Yii::$app->user->isGuest) {
                 <a class="dropdown-item" href="/frontend/web/propiedades-tipo">LISTADO</a>
               </div>
             </li>
+            <li class="nav-item active pr-4">
+                <a class="nav-link" href="/frontend/web/site/logout">Cerrar sesión</a>
+            </li>
             <!-- <li class="nav-item active pl-4 pr-4">
                 <a class="nav-link" href="#">Artículos más vistos</a>
             </li>
