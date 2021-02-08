@@ -17,7 +17,7 @@
 }
 .title-light{
 	color: #0c1528 !important;
-    font-weight: 200 !important;
+    font-weight: 300 !important;
     letter-spacing: 10px;
 }
 .bg-gray2{
@@ -25,6 +25,9 @@
 }
 .text-gray{
 	color:#757575;
+}
+.text-gray2{
+	color:#585c61;
 }
 .icon_sm{
 	font-size: 6px;margin-bottom:0.1rem;
@@ -40,10 +43,15 @@
     color: #666666!important;
 }
 
+.h33 {
+    font-size: 1.4rem;
+}
 .nav-link{
 	font-size: 13px !important;
 }
-
+.font-10{
+	font-size: 10px
+}
 .font-12{
 	font-size: 12px
 }

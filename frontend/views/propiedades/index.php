@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row">
-        <div class="text-center bg-white" style="border-radius:12px 12px 0px  0px;width: 125px">
+        <div class="text-center bg-white" style="width: 125px">
             <p class="h6 font-weight-bold mt-1 text-blue mb-1">FILTROS</p>
         </div>
     </div>
@@ -68,7 +68,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php foreach ($ubicaciones as $u): ?>
                         <div class="custom-control custom-checkbox mb-3" style="width: fit-content;display: inline-block;">
                           <input type="checkbox" class="custom-control-input" id="ub_<?= $u->id ?>" name="ubicacion[<?= $u->id ?>" <?= isset($get["ubicacion_$u->id"]) ? "checked" : "" ?>>
-                          <label class="custom-control-label text-white mr-2" for="ub_<?= $u->id ?>"><?= $u->nombre ?></label>
+                          <label class="custom-control-label text-white mr-2" for="ub_<?= $u->id ?>"><p class="font-10 mt-1 mb-0"><?= mb_strtoupper($u->nombre) ?></p></label>
                         </div>
                     <?php endforeach ?>
                   </div>
@@ -78,7 +78,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php foreach ($tipos as $u): ?>
                         <div class="custom-control custom-checkbox mb-3" style="width: fit-content;display: inline-block;">
                           <input type="checkbox" class="custom-control-input" id="tipo_<?= $u->id ?>" name="tipo[<?= $u->id ?>" <?= isset($get["tipo_$u->id"]) ? "checked" : "" ?>>
-                          <label class="custom-control-label text-white mr-2" for="tipo_<?= $u->id ?>"><?= $u->nombre ?></label>
+                          <label class="custom-control-label text-white mr-2" for="tipo_<?= $u->id ?>"><p class="mt-1 mb-0 font-weight-bold-2 font-10"><?= mb_strtoupper($u->nombre) ?></p></label>
                         </div>
                     <?php endforeach ?>
                   </div>
@@ -87,11 +87,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="collapse" id="collapsePrecio" data-parent="#accordion">
                     <div class="custom-control custom-radio" style="width: fit-content;display: inline-block;">
                         <input type="radio" class="custom-control-input" id="precio_bajo" name="precio" value="1" <?= $precio == "1" ? "checked" : "" ?>>
-                        <label class="custom-control-label text-white mr-2" for="precio_bajo">Menor a mayor</label>
+                        <label class="custom-control-label text-white mr-2" for="precio_bajo"><p class="font-10 mb-0 mt-1">Menor a mayor</p></label>
                     </div>
                     <div class="custom-control custom-radio" style="width: fit-content;display: inline-block;">
                         <input type="radio" class="custom-control-input" id="precio_alto" name="precio" value="2" <?= $precio == "2" ? "checked" : "" ?>>
-                        <label class="custom-control-label text-white mr-2" for="precio_alto">Mayor a menor</label>
+                        <label class="custom-control-label text-white mr-2" for="precio_alto"><p class="font-10 mb-0 mt-1">Mayor a menor</p></label>
                     </div>
                 </div>
             <?php ActiveForm::end(); ?>

@@ -110,11 +110,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                   </div>
                   <a class="carousel-control-prev bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
                   <a class="carousel-control-next bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <i class="fas fa-chevron-right text-blue font-weight-bold"></i>
                     <span class="sr-only">Next</span>
                   </a>
                 </div>
@@ -154,7 +155,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>" class="btn-block bg-blue text-white text-center p-0 pt-2 pb-2 h6">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-2"></i></a>
+                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>" class="btn-block bg-darkblue text-white text-center p-0 pt-2 pb-2 font-14">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-2"></i></a>
             </div>
         </div>
     </div>
@@ -162,10 +163,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row mt-5">
         <div class="col-md-12 pr-0 pl-sm-none">
             <div class="bg-lightgray rounded p-3">
-                <h2 class="h3">Descripción</h2>
+                <h2 class="h33 text-gray2">Descripción</h2>
 
                 <div class="mt-4">
-                    <p class="h55 font-weight-normal"><?= $model->detalles ?></p>
+                    <p class="font-weight-normal text-gray2 font-14"><?= $model->detalles ?></p>
                 </div>
             </div>
         </div>
@@ -176,95 +177,95 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row mt-3">
             <div class="col-md-12 pr-0 pl-sm-none">
                 <div class="bg-lightgray rounded p-3">
-                    <h2 class="h3 mb-3">Características adicionales</h2>
+                    <h2 class="h33 mb-3 text-gray2">Características adicionales</h2>
                     <div class="row">
                         <?php if ($extra->aire_acondicionado): ?>
                             <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Aire acondicionado
                                 </p>
                             </div>
                         <?php endif ?>
                         <?php if ($extra->balcon): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Balcón
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->cocina): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Cocina
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->lavadora): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Lavadora
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->nevera): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Nevera
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->piscina): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Piscina
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->vista_campo_golf): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Vista al campo de Golf
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->amueblado): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Amueblado
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->centro_comercial): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Cerca de Centro Comercial
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->estufa): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Estufa
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->marmol): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Mármol
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->parqueo): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Parqueo
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->seguridad_24_hrs): ?>
                            <div class="col-md-4">
-                                <p class="h55 mb-1 font-weight-normal">
+                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
                                     <i class="fas fa-circle text-success icon_md"></i> Seguridad las 24hrs
                                 </p>
                             </div> 
