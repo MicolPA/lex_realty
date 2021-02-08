@@ -248,6 +248,7 @@ class PropiedadesController extends Controller
         $extras = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
 
 
+
         if ($model->load(Yii::$app->request->post()) and $extras->load(Yii::$app->request->post())) {
 
             $model->foto_1 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 1);
@@ -262,6 +263,12 @@ class PropiedadesController extends Controller
             $galeria->foto_10 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 10);
             $galeria->foto_11 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 11);
             $galeria->foto_12 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 12);
+
+            if ($model->impuestos and $model->cargas_gramabes and $model->deslinde and $model->certificado_titulo) {
+                $model->riezgo_id = 1;
+            }else{
+                $model->riezgo_id = 0;
+            }
             
             $galeria->save();
             $model->save();

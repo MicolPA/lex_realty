@@ -16,6 +16,12 @@
 	}
 }
 
+.bg-gray2{
+	background: #a6adb5 !important;
+}
+.text-gray{
+	color:#757575;
+}
 .icon_sm{
 	font-size: 6px;margin-bottom:0.1rem;
 }
