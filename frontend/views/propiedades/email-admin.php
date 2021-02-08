@@ -12,6 +12,9 @@
 			<p><label style="font-weight: bold;color:black;margin-bottom:0px">Tel&eacute;fono:</label> <?= $telefono ?> </p>
 			<?php if ($type == 1): ?>
 				<p><label style="font-weight: bold;color:black;margin-bottom:0px">Cantidad:</label> <?= number_format($cantidad) ?> </p>
+				<p><label style="font-weight: bold;color:black;margin-bottom:0px">Forma de pago:</label> <?= $forma_pago ?> </p>
+				<p><label style="font-weight: bold;color:black;margin-bottom:0px">Monto de reserva:</label> <?= number_format($monto_reserva) ?> </p>
+				<p><label style="font-weight: bold;color:black;margin-bottom:0px">Fecha de cierre:</label> <?= $fecha_cierre ?> </p>
 				<?php else: ?>
 					<p><label style="font-weight: bold;color:black;margin-bottom:0px">Mensaje:</label> <br>
 					 <?= $cantidad ?> </p>

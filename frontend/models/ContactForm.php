@@ -14,6 +14,9 @@ class ContactForm extends Model
     public $email;
     public $subject;
     public $body;
+    public $forma_pago;
+    public $monto_reserva;
+    public $fecha_cierre;
     public $verifyCode;
 
 
@@ -29,6 +32,7 @@ class ContactForm extends Model
             ['email', 'email'],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
+            [['forma_pago', 'monto_reserva', 'fecha_cierre'], 'safe']
         ];
     }
 

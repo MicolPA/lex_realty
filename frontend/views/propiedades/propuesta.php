@@ -10,6 +10,10 @@ $this->title = 'PROPUESTA';
     .mb-0 .form-group{
         margin-bottom: 0px;
     }
+    label{
+        font-size: 14px;
+        font-weight: 400;
+    }
 </style>
 <div class="container mt-5">
 
@@ -43,9 +47,9 @@ $this->title = 'PROPUESTA';
                     <div class="row">
                         <div class="col-md-6">
                             <div class="pt-5 pl-4">
-                                <p class="text-blue m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
-                                <p class="text-blue m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
-                                <p class="text-blue"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
+                                <p class="text-blue font-14 m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
+                                <p class="text-blue font-14 m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
+                                <p class="text-blue font-14"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
                             </div>
                         </div>
 
@@ -56,8 +60,19 @@ $this->title = 'PROPUESTA';
                 </div>
 
                 <?php if ($type == 1): ?>
-                    <div class="col-md-6 mt-4 mb-5 pb-2">
-                        <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'MONTO OFERTADO:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
+                    <div class="row">
+                        <div class="col-md-6 mt-4 pb-2">
+                            <?= $form->field($model, 'body')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'MONTO OFERTADO', 'required' => 'required', 'type' => 'number'])->label(false) ?>
+                        </div>
+                        <div class="col-md-6">
+                            <?= $form->field($model, 'forma_pago')->label('')->radioList(['CASH' => 'CASH', 'FINANCIAMIENTO' => 'FINANCIAMIENTO'], ['class' => 'mt-3', 'required' => 'required']); ?>
+                        </div>
+                        <div class="col-md-6 mb-5 pb-2">
+                            <?= $form->field($model, 'monto_reserva')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'MONTO RESERVA:', 'required' => 'required', 'type' => 'number'])->label(false) ?>
+                        </div>
+                        <div class="col-md-6 mb-5 pb-2">
+                            <?= $form->field($model, 'fecha_cierre')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'FECHA DE CIERRE:', 'required' => 'required', 'type' => 'date', 'id' => 'fecha'])->label(false) ?>
+                        </div>
                     </div>
                 <?php else: ?>
                     <div class="col-md-12 mt-4 mb-5 pb-2">

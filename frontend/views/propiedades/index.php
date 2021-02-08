@@ -117,7 +117,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class=" bg-white">
                             <div class="contenedor">
                                 <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:200px">
-                                <?php if ($riesgo): ?>
+                                <div class="bg-darkblue pt-1 pb-1">
+                                    <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= $m->ubicacion->nombre ?></p>
+                                </div>
+                                <?php if ($m->riezgo_id == 1): ?>
                                     <div class="bg-<?= $riesgo['color'] ?> div_riesgo p-2 pr-4 pl-4 text-white">
                                         <?= mb_strtoupper($riesgo['nombre']) ?>
                                     </div>
@@ -125,25 +128,27 @@ $this->params['breadcrumbs'][] = $this->title;
                             </div>
 
                             <div class="pl-3 pb-3">
-                                <p class="m-0 mt-2 text-blue font-weight-bold"><?= $m->titulo_publicacion ?></p>
-                                <p class="m-0 mt-1 text-blue font-weight-normal"><?= $m->tipoPropiedad->nombre ?></p>
+                                <p class="m-0 mt-3 text-blue font-weight-normal h5 font-mercury"><?= $m->titulo_publicacion ?></p>
 
-                                <hr>
-
-                                <p class="font-weight-bold h3 mb-2">US$<?= number_format($m->precio, 2) ?></p>
+                                <p class="font-weight-bold font-14 mt-2 mb-2">US$<?= number_format($m->precio, 2) ?></p>
+                                <p class="text-muted m-0 font-12 mb-2">
+                                    <?= $m->baños ?> Habitaciones <i class="fas fa-circle mr-2 ml-2 text-warning icon_sm"></i>
+                                    <?= $m->baños ?> Baños <i class="fas fa-circle mr-2 ml-2 text-warning icon_sm"></i> 
+                                    <?= number_format($m->pies, 2) ?> Ft 
+                                </p>
                                 
-                                <div class="detalles" style="height: 50px">
+                                <div class="detalles" style="height: 50px;font-family: 'Benton-book', Arial, sans-serif">
                                     <?php if ($m->certificado_titulo): ?>
-                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> CERTIFICADO DE TITULO</p>
+                                        <p class="m-0 small"><i class="fas fa-circle text-success icon_sm"></i> CERTIFICADO DE TITULO</p>
                                     <?php endif ?>
                                     <?php if ($m->impuestos): ?>
-                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> IMPUESTOS AL DÍA</p>
+                                        <p class="m-0 small"><i class="fas fa-circle text-success icon_sm"></i> IMPUESTOS AL DÍA</p>
                                     <?php endif ?>
                                     <?php if ($m->cargas_gramabes): ?>
-                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> LIBRES DE CARGAS GRABAMES</p>
+                                        <p class="m-0 small"><i class="fas fa-circle text-success icon_sm"></i> LIBRES DE CARGAS GRABAMES</p>
                                     <?php endif ?>
                                     <?php if ($m->deslinde): ?>
-                                        <p class="m-0 small"><img src="/frontend/web/images/stock/check.png" width="20px"> DESLINDE</p>
+                                        <p class="m-0 small"><i class="fas fa-circle text-success icon_sm"></i> DESLINDE</p>
                                     <?php endif ?>
                                 </div>
                                 

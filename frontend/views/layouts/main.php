@@ -55,14 +55,14 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="#">Inicio</a>
+                <a class="nav-link" href="#">INICIO</a>
             </li>
             <li class="nav-item active pl-4 pr-4">
-                <a class="nav-link" href="#">Categorias</a>
+                <a class="nav-link" href="#">CATEGORIAS</a>
             </li>
             <li class="nav-item dropdown active pl-4 pr-4">
               <!-- <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a> -->
-              <a class="nav-link" href="/frontend/web/propiedades">Propiedades</a>
+              <a class="nav-link" href="/frontend/web/propiedades">PROPIEDADES</a>
              <!--  <div class="dropdown-menu" aria-labelledby="dropdown07">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -70,14 +70,14 @@ AppAsset::register($this);
               </div> -->
             </li>
             <li class="nav-item active pl-4 pr-4">
-                <a class="nav-link" href="#">Artículos más vistos</a>
+                <a class="nav-link" href="#">ARTÍCULOS MÁS VISTOS</a>
             </li>
             <li class="nav-item active pl-4 pr-4 ">
-                <a class="nav-link" href="#">Contactos</a>
+                <a class="nav-link" href="#">CONTACTOS</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link btn btn-warning">Panel de administración</a>
+                    <a href="/frontend/web/admin" class="nav-link btn btn-warning">PANEL DE ADMINISTRACIÓN</a>
                 </li>
             <?php endif ?>
           </ul>

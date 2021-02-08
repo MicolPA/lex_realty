@@ -20,7 +20,7 @@ if ($telefono) {
 	        'allow_self_signed' => true
 	    )
 	);
-	$content = $this->render('email-admin', ['nombre' =>  $nombre, 'correo' => $correo, 'telefono' => $telefono, 'cantidad' => $cantidad, 'propiedad' => $propiedad, 'type' => $type]);
+	$content = $this->render('email-admin', ['nombre' =>  $nombre, 'correo' => $correo, 'telefono' => $telefono, 'cantidad' => $cantidad, 'propiedad' => $propiedad, 'type' => $type, 'forma_pago' => $forma_pago, 'monto_reserva' => $monto_reserva, 'fecha_cierre' => $fecha_cierre]);
 	$mail->SMTPSecure = 'ssl';
 	$mail->Port = 465;
 	$mail->SMTPAuth = true;

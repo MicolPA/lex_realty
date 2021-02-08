@@ -16,6 +16,30 @@
 	}
 }
 
+.icon_sm{
+	font-size: 6px;margin-bottom:0.1rem;
+}
+.icon_md{
+	font-size:10px;
+	margin-bottom: 0.2rem;
+}
+.font-mercury{
+	font-family: mercury;
+}
+.text-muted {
+    color: #666666!important;
+}
+
+.nav-link{
+	font-size: 13px !important;
+}
+
+.font-12{
+	font-size: 12px
+}
+.font-14{
+	font-size: 14px
+}
 .text-blue{
 	color:#0e1227;
 }

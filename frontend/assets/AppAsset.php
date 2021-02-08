@@ -12,7 +12,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css?v=5',
+        'css/site.css?v=6',
         'css/bootstrap.css',
         'css/all.min.css',
     ];
@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
         'js/jquery-2.2.4.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
         'js/bootstrap.min.js',
-        'js/main.js?v=2',
+        'js/main.js?v=3',
         'js/all.min.js',
         'js/sweetalert.min.js',
 

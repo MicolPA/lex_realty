@@ -9,6 +9,7 @@ use yii\helpers\ArrayHelper;
     .div-lab label{
         padding-left: 1rem !important;
         padding-right: 1rem !important;
+        font-size: 10px;
     }
 </style>
 <div class="mb-5">
@@ -16,7 +17,7 @@ use yii\helpers\ArrayHelper;
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">
             <div class="p-5">
-                <div class="bg-blue pl-4 pr-4 pt-2 pb-2 mb-4">
+                <div class="bg-darkblue pl-4 pr-4 pt-2 pb-2 mb-4">
                     <h2 class="text-white h5 m-0"><?= $title ?></h2>
                 </div>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
@@ -94,45 +95,45 @@ use yii\helpers\ArrayHelper;
                 <?= $form->field($model, 'detalles')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea mt-3', 'rows' => '4', 'placeholder' => 'DETALLES DE LA PROPIEDAD'])->label(false) ?>
 
                 <div class="row">
-                    <div class="col-md-2 div-lab">
+                    <div class="col-md-2 p-0 div-lab">
                         <?= $form->field($model, 'foto_1')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile', 'value' => $model->foto_1])->label("PORTADA") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($model, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2'])->label("IMG 2") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($model, 'foto_2')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile2'])->label("SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($model, 'foto_3')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3'])->label("IMG 3") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($model, 'foto_3')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile3'])->label("SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($model, 'foto_4')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4'])->label("IMG 4") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($model, 'foto_4')->fileInput([!$model ? "required" : "" => !$model ? "required" : "", 'id' => 'inputfile4'])->label("SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_5')->fileInput([])->label($galeria->foto_5 ? "CARGADA" : "IMG 5") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_5')->fileInput([])->label($galeria->foto_5 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_6')->fileInput([])->label($galeria->foto_6 ? "CARGADA" : "IMG 6") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_6')->fileInput([])->label($galeria->foto_6 ? "CARGADA" : "SUBIR") ?>
                     </div>
                     
                 </div>
 
                 <div class="row">
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_7')->fileInput([])->label($galeria->foto_7 ? "CARGADA" : "IMG 7") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_7')->fileInput([])->label($galeria->foto_7 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_8')->fileInput([])->label($galeria->foto_8 ? "CARGADA" : "IMG 8") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_8')->fileInput([])->label($galeria->foto_8 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_9')->fileInput([])->label($galeria->foto_9 ? "CARGADA" : "IMG 9") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_9')->fileInput([])->label($galeria->foto_9 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_10')->fileInput([])->label($galeria->foto_10 ? "CARGADA" : "IMG 10") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_10')->fileInput([])->label($galeria->foto_10 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_11')->fileInput([])->label($galeria->foto_11 ? "CARGADA" : "IMG 11") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_11')->fileInput([])->label($galeria->foto_11 ? "CARGADA" : "SUBIR") ?>
                     </div>
-                    <div class="col-md-2 div-lab">
-                        <?= $form->field($galeria, 'foto_12')->fileInput([])->label($galeria->foto_12 ? "CARGADA" : "IMG 12") ?>
+                    <div class="col-md-2 p-0 div-lab">
+                        <?= $form->field($galeria, 'foto_12')->fileInput([])->label($galeria->foto_12 ? "CARGADA" : "SUBIR") ?>
                     </div>
                 </div>
 

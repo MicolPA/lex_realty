@@ -166,6 +166,8 @@ class PropiedadesController extends Controller
             $imagen = $path . "foto-$i-" . date('Y-m-d H-i-s') . ".". $model[$field]->extension;
             $model[$field]->saveAs($imagen);
             $model[$field] = $imagen;
+        }else{
+            $imagen = $model[$field];
         }
 
         return $imagen;
@@ -199,7 +201,7 @@ class PropiedadesController extends Controller
             // exit;
 
             $this->layout = false;
-            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad, 'type' => $type]);
+            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad, 'type' => $type, 'forma_pago' => $model->forma_pago, 'monto_reserva' => $model->monto_reserva, 'fecha_cierre' => $model->fecha_cierre]);
 
             // Yii::$app->mailer->compose()
             //     ->setFrom('administrador@propiedades.lexrealtymagazine.com')

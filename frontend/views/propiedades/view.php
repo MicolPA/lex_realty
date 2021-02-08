@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 $fotos = array();
-for ($i = 1; $i < 13; $i++) {
+for ($i = 2; $i < 13; $i++) {
     
     if ($i > 4) {
         if ($model->galeria["foto_$i"]) {
@@ -38,7 +38,21 @@ $this->params['breadcrumbs'][] = $this->title;
     .swal-footer button{
         background: black;
     }
+    
+    .swal-icon img{
+        width: 100%;
+    }
+    <?php if (!Yii::$app->session->hasFlash('success1')): ?>
+        .swal-modal{
+            background: transparent;;
+        }
+        .swal-overlay--show-modal{
+            background: #0c1528;
+        }
+    <?php endif ?>
+
 </style>
+
 <div class="container mb-5">
 
     
@@ -99,11 +113,11 @@ $this->params['breadcrumbs'][] = $this->title;
                       </div>
                     </div>
                   </div>
-                  <a class="carousel-control-prev bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="prev">
+                  <a class="carousel-control-prev bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Previous</span>
                   </a>
-                  <a class="carousel-control-next bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="next">
+                  <a class="carousel-control-next bg-lg-dark" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                   </a>
@@ -166,96 +180,96 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row mt-3">
             <div class="col-md-12 pr-0 pl-sm-none">
                 <div class="bg-lightgray rounded p-3">
-                    <h2 class="h3">Características adicionales</h2>
+                    <h2 class="h3 mb-3">Características adicionales</h2>
                     <div class="row">
                         <?php if ($extra->aire_acondicionado): ?>
                             <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Aire acondicionado
+                                    <i class="fas fa-circle text-success icon_md"></i> Aire acondicionado
                                 </p>
                             </div>
                         <?php endif ?>
                         <?php if ($extra->balcon): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Balcón
+                                    <i class="fas fa-circle text-success icon_md"></i> Balcón
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->cocina): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Cocina
+                                    <i class="fas fa-circle text-success icon_md"></i> Cocina
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->lavadora): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Lavadora
+                                    <i class="fas fa-circle text-success icon_md"></i> Lavadora
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->nevera): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Nevera
+                                    <i class="fas fa-circle text-success icon_md"></i> Nevera
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->piscina): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Piscina
+                                    <i class="fas fa-circle text-success icon_md"></i> Piscina
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->vista_campo_golf): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Vista al campo de Golf
+                                    <i class="fas fa-circle text-success icon_md"></i> Vista al campo de Golf
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->amueblado): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Amueblado
+                                    <i class="fas fa-circle text-success icon_md"></i> Amueblado
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->centro_comercial): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Cerca de Centro Comercial
+                                    <i class="fas fa-circle text-success icon_md"></i> Cerca de Centro Comercial
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->estufa): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Estufa
+                                    <i class="fas fa-circle text-success icon_md"></i> Estufa
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->marmol): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Mármol
+                                    <i class="fas fa-circle text-success icon_md"></i> Mármol
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->parqueo): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Parqueo
+                                    <i class="fas fa-circle text-success icon_md"></i> Parqueo
                                 </p>
                             </div> 
                         <?php endif ?>
                         <?php if ($extra->seguridad_24_hrs): ?>
                            <div class="col-md-4">
                                 <p class="h55 mb-1 font-weight-normal">
-                                    <i class="fas fa-check-circle text-success mr-2"></i>Seguridad las 24hrs
+                                    <i class="fas fa-circle text-success icon_md"></i> Seguridad las 24hrs
                                 </p>
                             </div> 
                         <?php endif ?>
