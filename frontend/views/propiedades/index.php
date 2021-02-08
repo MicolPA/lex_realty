@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <p class="h6 font-weight-bold mt-1 text-blue mb-1">FILTROS</p>
         </div>
     </div>
-    <div class="row p-2 mb-2 bg-darkblue" id="accordion">
+    <div class="row p-2 bg-darkblue mb-0" id="accordion">
         <div class="col-md-4">
             <div class="row">
                 <div class="col-md-6 text-lg-center">
@@ -99,12 +99,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="row mb-1">
-        <div class="col-md-4 p-lg-0">
-            <a href="javascript:buscar('form-search')" class="btn btn-warning pl-4 pr-4 text-white btn-sm">Aplicar filtros</a>
-            <a href="/frontend/web/propiedades" class="btn btn-secondary pl-4 pr-4 text-white btn-sm">Limpiar búsqueda</a>
+        <div class="col-md-10 p-lg-0 text-right">
+            <a href="javascript:buscar('form-search')" class="btn btn-warning pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Aplicar filtros</a>
+            <a href="/frontend/web/propiedades" class="btn btn-secondary pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Limpiar búsqueda</a>
         </div>
-        <div class="col-md-8">
-            <p class="text-right text-white font-weight-bold">RESULTADOS <?= $count ?></p>
+        <div class="col-md-2">
+            <p class="text-right text-white font-weight-bold pt-1">RESULTADOS <?= $count ?></p>
         </div>
     </div>
 
