@@ -109,16 +109,18 @@ $this->params['breadcrumbs'][] = $this->title;
                       </div>
                     </div>
                   </div>
-                  <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+                  <?php if (count($fotos) > 5): ?>
+                      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
 
-                    <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
-                    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
-                    <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
-                    <span class="sr-only">Next</span>
-                  </a>
+                        <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
+                        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
+                        <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
+                        <span class="sr-only">Next</span>
+                      </a>
+                  <?php endif ?>
                 </div>
 
                 </div> <!-- /row -->
