@@ -20,6 +20,11 @@
     font-weight: 300 !important;
     letter-spacing: 10px;
 }
+.title-cards-f{
+	line-height: 1;
+    font-size: 22px;
+    font-variant-caps: all-small-caps;
+}
 .bg-gray2{
 	background: #a6adb5 !important;
 }

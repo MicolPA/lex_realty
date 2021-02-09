@@ -98,25 +98,23 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-    <div class="row mb-1">
-        <div class="col-md-10 p-lg-0 text-right">
-            <a href="javascript:buscar('form-search')" class="btn btn-warning pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Aplicar filtros</a>
+    <div class="row mb-2">
+        <div class="col-md-12 p-lg-0 text-right">
+            <a href="javascript:buscar('form-search')" class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #44546b">Aplicar filtros</a>
             <a href="/frontend/web/propiedades" class="btn btn-secondary pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Limpiar búsqueda</a>
-        </div>
-        <div class="col-md-2">
-            <p class="text-right text-white font-weight-bold pt-1">RESULTADOS <?= $count ?></p>
+            <a class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #628eaf">RESULTADOS <?= $count ?></a>
         </div>
     </div>
 
-    <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?>">
+    <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
     	<?php if ($count > 0): ?>
             <?php foreach ($dataProvider->query->all() as $m): ?>
                 <?php $riesgo = \frontend\models\PropiedadesRiesgo::findOne($m->riezgo_id); ?>
                 <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
-                    <div class="col-md-4 mt-4">
-                        <div class=" bg-white">
+                    <div class="col-md-4 mt-4 mb-2">
+                        <div class="bg-white">
                             <div class="contenedor">
-                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:200px">
+                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:180px">
                                 <div class="bg-darkblue pt-1 pb-1">
                                     <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                 </div>
@@ -126,8 +124,8 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="pl-3 pb-3">
                                 <div class="row mb-2">
                                     
-                                    <div class="col-md-7 col-sm-7 col-lg-7 col-xs-7 pr-0" style="height: 60px">
-                                        <p class="m-0 mt-3 text-blue font-weight-normal h5 font-mercury"><?= $m->titulo_publicacion ?></p>
+                                    <div class="col-md-7 col-sm-7 col-lg-7 col-xs-7 pr-0" style="height: 80px">
+                                        <p class="m-0 mt-3 text-blue font-weight-light title-cards-f"><?= $m->titulo_publicacion ?></p>
                                     </div>
                                     <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
                                         <?php if ($m->riezgo_id == 1): ?>
