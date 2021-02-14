@@ -370,6 +370,6 @@ input[type="file"] {
 
 @media (min-width: 992px){
 	.modal-lg, .modal-xl {
-	    max-width: 1000px !important;;
+	    max-width: 70% !important;;
 	}
 }

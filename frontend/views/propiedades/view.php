@@ -308,11 +308,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" style='height: 600px;'>
+                  <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" style='height: 500px;'>
                 </div>
                 <?php foreach ($fotos as $foto): ?>
                     <div class="carousel-item">
-                      <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" style='height: 600px;'>
+                      <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" style='height: 500px;'>
                     </div>
                 <?php endforeach ?>
               </div>
