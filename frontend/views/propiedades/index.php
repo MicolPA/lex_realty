@@ -109,7 +109,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
     	<?php if ($count > 0): ?>
             <?php foreach ($dataProvider->query->all() as $m): ?>
-                <?php $riesgo = \frontend\models\PropiedadesRiesgo::findOne($m->riezgo_id); ?>
                 <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
                     <div class="col-md-4 mt-4 mb-2">
                         <div class="bg-white">
@@ -130,7 +129,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
                                         <?php if ($m->riezgo_id == 1): ?>
                                             <div class="bg-gray2 text-center pt-2 pb-2">
-                                                <p class="mb-0 text-white"><?= mb_strtoupper($riesgo['nombre']) ?></p>
+                                                <p class="mb-0 text-white h5 font-weight-light">A+</p>
                                             </div>
                                         <?php endif ?>
                                     </div>

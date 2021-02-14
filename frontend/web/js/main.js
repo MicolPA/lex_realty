@@ -14,10 +14,10 @@ jQuery('input[type=file]').change(function(){
 function buscar(id){
 	$("#"+id).submit();
 }
-$("#myCarousel img").on('click', function(){
-  console.log($(this).attr('src'));
-  imgBigger($(this).attr('src'));
-})
+// $("#myCarousel img").on('click', function(){
+//   console.log($(this).attr('src'));
+//   imgBigger($(this).attr('src'));
+// })
 
 function imgBigger(url){
 

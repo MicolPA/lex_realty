@@ -367,3 +367,9 @@ input[type="file"] {
 .carousel-control-prev, .carousel-control-next{
 	width: 10% !important;
 }
+
+@media (min-width: 992px){
+	.modal-lg, .modal-xl {
+	    max-width: 1000px !important;;
+	}
+}

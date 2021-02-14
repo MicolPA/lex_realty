@@ -59,18 +59,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="carousel-container position-relative row">
                   
                 <div id="myCarousel" class="carousel slide first-part" data-ride="carousel">
+
                   <div class="carousel-inner">
+                     
                     <div class="carousel-item active" data-slide-number="0">
                       <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                     </div>
-                    <?= $count = 0; ?>
+                    <?php $count = 0; ?>
                     <?php foreach ($fotos as $foto): ?>
                         <?php $count++ ?>
                         <div class="carousel-item" data-slide-number="<?= $count ?>">
                           <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
                     <?php endforeach ?>
+                    <!-- Button trigger modal -->
+                    
                   </div>
+                  
+                </div>
+                <div class="text-right" style="position: inherit;width: 100%">
+                    <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
+                      <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
+                    </button>
                 </div>
 
                 <!-- Carousel Navigation -->
@@ -128,7 +138,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-md-3 rounded bg-lightgray pb-5">
             <div>
-                <h1 class="text-black mt-4 mb-4 h6 bg-warning text-center pt-2 pb-2 rounded"><?= Html::encode($this->title) ?></h1>
+                <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light" style="background: #44546b"><?= Html::encode($this->title) ?></h1>
 
                 <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
                 <p><i class="fas fa-circle-notch"></i> <?= $model->tipoPropiedad->nombre ?></p>
@@ -158,29 +168,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>" class="btn-block bg-darkblue text-white text-center p-0 pt-2 pb-2 font-14">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-2"></i></a>
+                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
             </div>
         </div>
     </div>
-
-    <div class="row mt-5">
-        <div class="col-md-12 pr-0 pl-sm-none">
-            <div class="bg-lightgray rounded p-3">
-                <h2 class="h33 text-gray2">Descripción</h2>
-
-                <div class="mt-4">
-                    <p class="font-weight-normal text-gray2 font-14"><?= $model->detalles ?></p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
     <?php if ($extra): ?>
-        <div class="row mt-3">
+        <div class="row mt-4">
             <div class="col-md-12 pr-0 pl-sm-none">
                 <div class="bg-lightgray rounded p-3">
-                    <h2 class="h33 mb-3 text-gray2">Características adicionales</h2>
+                    <h2 class="h33 mb-3 text-gray2 font-weight-light">Características principales</h2>
                     <div class="row">
                         <?php if ($extra->aire_acondicionado): ?>
                             <div class="col-md-4">
@@ -280,7 +276,62 @@ $this->params['breadcrumbs'][] = $this->title;
 
         </div>
     <?php endif ?>
+    <div class="row mt-3">
+        <div class="col-md-12 pr-0 pl-sm-none">
+            <div class="bg-lightgray rounded p-3">
+                <h2 class="h33 text-gray2 font-weight-light">Descripción</h2>
 
+                <div class="mt-4">
+                    <p class="font-weight-normal text-gray2 font-14"><?= $model->detalles ?></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal bg-darkblue fade" id="slideModal" tabindex="-1" aria-labelledby="slideModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg bg-darkblue">
+    <div class="modal-content bg-darkblue border-0">
+      <div class="modal-head bg-darkblue pb-2">
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"><i class="fas fa-times"></i></span>
+        </button>
+      </div>
+      <div class="modal-body p-0 bg-darkblue">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" style='height: 500px;'>
+                </div>
+                <?php foreach ($fotos as $foto): ?>
+                    <div class="carousel-item">
+                      <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" style='height: 500px;'>
+                    </div>
+                <?php endforeach ?>
+              </div>
+              <!-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a> -->
+            </div>
+      </div>
+      <div class="modal-footer border-0 p-0 bg-darkblue">
+        <a href="#carouselExampleControls" class="text-white" data-slide="prev"><i class="fas fa-long-arrow-alt-left fa-2x"></i></a>
+        <a href="#carouselExampleControls" class="text-white" data-slide="next"><i class="fas fa-long-arrow-alt-right fa-2x"></i></a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
