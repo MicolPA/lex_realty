@@ -138,24 +138,23 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                 <p class="font-weight-bold font-14 mt-2 mb-2">US$<?= number_format($m->precio, 2) ?></p>
                                 <p class="text-muted m-0 font-12 mb-2">
-                                    <?= $m->baños ?> Habitaciones <i class="fas fa-circle mr-2 ml-2 text-warning icon_sm"></i>
-                                    <?= $m->baños ?> Baños <i class="fas fa-circle mr-2 ml-2 text-warning icon_sm"></i> 
+                                    <?= $m->baños ?> Habitaciones <i class="fas fa-circle mr-2 ml-2 text-warning"></i>
+                                    <?= $m->baños ?> Baños <i class="fas fa-circle mr-2 ml-2 text-warning"></i> 
                                     <?= number_format($m->pies, 2) ?> Ft 
                                 </p>
                                 
                                 <div class="detalles" style="height: 60px;font-family: 'Benton-book', Arial, sans-serif">
-                                    <?php if ($m->certificado_titulo): ?>
-                                        <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success icon_sm"></i> CERTIFICADO DE TITULO</p>
-                                    <?php endif ?>
-                                    <?php if ($m->impuestos): ?>
-                                        <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success icon_sm"></i> IMPUESTOS AL DÍA</p>
-                                    <?php endif ?>
-                                    <?php if ($m->cargas_gramabes): ?>
-                                        <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success icon_sm"></i> LIBRES DE CARGAS GRABAMES</p>
-                                    <?php endif ?>
-                                    <?php if ($m->deslinde): ?>
-                                        <p class="m-0 small text-gray"><i class="fas fa-circle text-success icon_sm"></i> DESLINDE</p>
-                                    <?php endif ?>
+
+                                    <?php $check = $m->certificado_titulo ? "dot-full.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
+
+                                    <?php $check = $m->impuestos ? "dot-full.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
+
+                                    <?php $check = $m->cargas_gramabes ? "dot-full.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
+                                    <?php $check = $m->deslinde ? "dot-full.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
                                 </div>
                                 
 
