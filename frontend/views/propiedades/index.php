@@ -145,15 +145,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                 
                                 <div class="detalles" style="height: 60px;font-family: 'Benton-book', Arial, sans-serif">
 
-                                    <?php $check = $m->certificado_titulo ? "dot-full.png" : 'dot.png' ?>
+                                    <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
 
-                                    <?php $check = $m->impuestos ? "dot-full.png" : 'dot.png' ?>
+                                    <?php $check = $m->impuestos ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
 
-                                    <?php $check = $m->cargas_gramabes ? "dot-full.png" : 'dot.png' ?>
+                                    <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
-                                    <?php $check = $m->deslinde ? "dot-full.png" : 'dot.png' ?>
+                                    <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
                                 </div>
                                 
