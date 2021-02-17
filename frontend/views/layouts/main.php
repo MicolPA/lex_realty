@@ -34,7 +34,7 @@ AppAsset::register($this);
         <div class="container pt-3 pb-3 bg-white">
             <div class="row">
                 <div class="col-md-3">
-                   <a href="/"><img src="/frontend/web/images/Lex_logo.png" width="180px"></a>
+                   <a href="/"><img src="/frontend/web/images/Lex_logo_2.png" width="150px"></a>
                 </div>
                 <div class="col-md-8 pt-4">
                     <form class="form-inline" action="/frontend/web/propiedades" method="get">
