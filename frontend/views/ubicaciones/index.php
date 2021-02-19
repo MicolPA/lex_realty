@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel frontend\models\UbicacionesSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ubicaciones';
+$this->title = 'UBICACIONES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-12">
             <p class="mt-3">
-                <span class="text-white h1"><?= Html::encode($this->title) ?></span>
-                <?= Html::a('Registrar', ['create'], ['class' => 'btn btn-warning pr-5 pl-5 float-right mt-3']) ?>
+                <span class="h2 title-light"><?= Html::encode($this->title) ?></span>
+                <?= Html::a('Registrar', ['create'], ['class' => 'btn btn-warning pr-5 pl-5 float-right mt-3 mb-4']) ?>
             </p>
         </div>
 

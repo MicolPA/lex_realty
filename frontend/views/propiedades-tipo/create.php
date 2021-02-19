@@ -11,7 +11,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="propiedades-tipo-create">
 
-
     <?= $this->render('_form', [
         'model' => $model,
         'title' => Html::encode($this->title),

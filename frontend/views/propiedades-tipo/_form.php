@@ -3,16 +3,13 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Ubicaciones */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="container">
 
     <div class="row">
     	<div class="col-md-8 m-auto">
-    		<h1 class="text-white mt-4 mb-3"><?= $title ?></h1>
+    		<h3 class="h4 mt-4 mb-4 title-light text-darkblue text-uppercase"><?= $title ?></h3>
     	</div>
 
     	<div class="col-md-8 m-auto">

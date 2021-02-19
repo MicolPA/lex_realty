@@ -12,7 +12,7 @@ use yii\widgets\ActiveForm;
 
     <div class="row">
     	<div class="col-md-8 m-auto">
-    		<h1 class="text-white mt-4 mb-3"><?= $title ?></h1>
+    		<h2 class="mt-4 mb-3 text-darkblue text-uppercase title-light"><?= $title ?></h2>
     	</div>
 
     	<div class="col-md-8 m-auto">

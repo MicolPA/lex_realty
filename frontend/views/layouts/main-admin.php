@@ -39,7 +39,7 @@ if (Yii::$app->user->isGuest) {
         <div class="container pt-3 pb-3 bg-white">
             <div class="row">
                 <div class="col-md-3">
-                   <a href="/"><img src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px"></a>
+                   <a href="/"><img src="/frontend/web/images/Lex_logo_2.png" width="150px"></a>
                 </div>
                 <div class="col-md-8 pt-4 text-right">
                     <span class="h2 font-weight-normal bg-warning pl-3 pr-3 btn_warning">PANEL DE ADMINISTRACIÓN</span>
@@ -82,7 +82,7 @@ if (Yii::$app->user->isGuest) {
               </div>
             </li>
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="/frontend/web/site/logout">Cerrar sesión</a>
+                <a class="nav-link" href="/frontend/web/site/logout">CERRAR SESIÓN</a>
             </li>
             <!-- <li class="nav-item active pl-4 pr-4">
                 <a class="nav-link" href="#">Artículos más vistos</a>
