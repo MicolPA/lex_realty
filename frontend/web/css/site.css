@@ -63,6 +63,9 @@
 .font-14{
 	font-size: 14px
 }
+.font-18{
+	font-size: 18px
+}
 .text-blue{
 	color:#0e1227;
 }
@@ -372,4 +375,41 @@ input[type="file"] {
 	.modal-lg, .modal-xl {
 	    max-width: 70% !important;;
 	}
+}
+
+.my-checkbox input[type='checkbox']:after {
+    width: 22px;
+    height: 22px;
+    border-radius: 45px;
+    top: -4px;
+    left: -4px;
+    position: relative;
+    background-color: #d1d3d1 !important;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+    background-image: url(/frontend/web/images/dot.png);
+    background-size: cover;
+    margin-right: 4px !important;
+}
+
+.my-checkbox input[type='checkbox']:checked:after {
+     width: 22px;
+    height: 22px;
+    border-radius: 45px;
+    top: -4px;
+    left: -4px;
+    position: relative;
+    background-color: #8bc73f !important;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    background-image: url(/frontend/web/images/dot-full-2.png);
+	background-size: cover;
+	margin-right: 4px !important;
+}
+
+.my-checkbox label input{
+	margin-right: 3px !important;
 }

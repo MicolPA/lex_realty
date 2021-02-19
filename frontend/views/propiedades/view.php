@@ -148,23 +148,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row mt-2">
                     <div class="col-md-6">
                         <div style="position: absolute;"><a class="btn btn-outline-primary pt-2 pb-2"><i class="fas fa-bed"></i></a> </div>
-                        <p class="ml-5 pl-2 small m-0 mt-2 col-xs-6">Habs.</p>
-                        <span class="ml-5 pl-2 font-weight-bold"><?= $model->baños ?></span>
+                        <p class="ml-5 pl-2 small m-0 col-xs-6">Habs.</p>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->habitaciones ?></span>
                     </div>
-                    <div class="col-md-6 mt-2 col-xs-6">
+                    <div class="col-md-6 col-xs-6">
                         <div style="position: absolute;"><a class="btn btn-outline-primary pt-2 pb-2"><i class="fas fa-shower"></i></a> </div>
                         <p class="ml-5 pl-2 small m-0">Baños</p>
-                        <span class="ml-5 pl-2 font-weight-bold"><?= $model->baños ?></span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->baños ?></span>
                     </div>
                     <div class="col-md-6 mt-3 col-xs-6">
                         <div style="position: absolute;"><a class="btn btn-outline-primary pt-2 pb-2"><i class="fas fa-layer-group"></i></a> </div>
                         <p class="ml-5 pl-2 small m-0">Metros</p>
-                        <span class="ml-5 pl-2 font-weight-bold"><?= number_format($model->metros) ?>m</span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->metros) ?>m</span>
                     </div>
                     <div class="col-md-6 mt-3 col-xs-6">
                         <div style="position: absolute;"><a class="btn btn-outline-primary pt-2 pb-2"><i class="fas fa-layer-group"></i></a> </div>
                         <p class="ml-5 pl-2 small m-0">Pies</p>
-                        <span class="ml-5 pl-2 font-weight-bold"><?= number_format($model->pies, 2) ?></span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->pies, 2) ?></span>
                     </div>
                 </div>
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>

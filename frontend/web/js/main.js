@@ -36,7 +36,7 @@ $("#metros").bind('keyup', function(){
 
 
 $('#myCarousel').carousel({
-  interval: false
+  interval: 5500
 });
 $('#carousel-thumbs').carousel({
   interval: false
@@ -84,12 +84,12 @@ $('#myCarousel').on('slide.bs.carousel', function(e) {
 //   preventDefaultEvents: false,
 //   threshold: 75
 // });
-/*
-$(document).on('click', '[data-toggle="lightbox"]', function(event) {
-  event.preventDefault();
-  $(this).ekkoLightbox();
-});
-*/
+
+// $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+//   event.preventDefault();
+//   $(this).ekkoLightbox();
+// });
+
 
 // $('#myCarousel .carousel-item img').on('click', function(e) {
 //   var src = $(e.target).attr('data-remote');

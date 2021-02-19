@@ -42,8 +42,8 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'titulo_publicacion')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'TITULO DE PUBLICACIÓN'])->label(false) ?>
                     </div>
 
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'impuestos', ['inputOptions'=>['class'=>'custom-radio-checkbox']])->checkbox([]); ?>
+                    <div class="col-md-6 my-checkbox">
+                        <?= $form->field($model, 'impuestos', ['inputOptions'=>['class'=>'custom-control-input']])->checkbox([]); ?>
                         <?= $form->field($model, 'cargas_gramabes', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                         <?= $form->field($model, 'deslinde', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
                             <?= $form->field($model, 'certificado_titulo', ['inputOptions'=>['class'=>'form-control input-lg']])->checkbox([]); ?>
@@ -69,7 +69,7 @@ use yii\helpers\ArrayHelper;
                     </div>
                </div>
 
-               <div class="row check-box-container">
+               <div class="row check-box-container my-checkbox">
                     <div class="col-md-12">
                         <h5 class="font-weight-bold">Características adicionales</h5>
                     </div>
