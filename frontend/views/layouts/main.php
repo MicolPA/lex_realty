@@ -80,7 +80,7 @@ AppAsset::register($this);
       </div>
     </nav>
     
-    <div class="">
+    <div class="pb-4">
         <?= $content ?>
     </div>
 </div>
