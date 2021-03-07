@@ -72,6 +72,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                 'label' => '',
                                 'format' => 'raw',
+                                'visible' => false,
                                 'value' => function ($data) {
                                     $view =  Html::a('<i class="fas fa-eye text-primary mr-2"></i>', ['view', 'id' => $data->id], []);
                                     $update =  Html::a('<i class="fas fa-pencil-alt text-primary mr-2"></i>', ['update', 'id' => $data->id], []);
