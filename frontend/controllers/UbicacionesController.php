@@ -8,6 +8,7 @@ use frontend\models\UbicacionesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * UbicacionesController implements the CRUD actions for Ubicaciones model.
@@ -68,8 +69,19 @@ class UbicacionesController extends Controller
     {
         $model = new Ubicaciones();
 
+       
         $this->layout = '@app/views/layouts/main-admin';
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $path = "images/ubicaciones/";
+            if (!file_exists($path)) {
+                mkdir($path, 0777, true);
+            }
+
+            $model->portada = UploadedFile::getInstance($model, 'portada');
+            $imagen = $path . trim($model->nombre) . ' ' . date('Y-m-d H-i-s') . ".". $model->portada->extension;
+            $model->portada->saveAs($imagen);
+            $model->portada = $imagen;
+            $model->save();
             Yii::$app->session->setFlash('success1','Registro creado correctamente');
             return $this->redirect(['create']);
         }
@@ -90,8 +102,23 @@ class UbicacionesController extends Controller
     {
         $model = $this->findModel($id);
 
+        $old_url = $model->portada;
         $this->layout = '@app/views/layouts/main-admin';
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        
+        if ($model->load(Yii::$app->request->post())) {
+            if (UploadedFile::getInstance($model, 'portada')) {
+                $model->portada = UploadedFile::getInstance($model, 'portada');
+                $path = "images/ubicaciones/";
+                if (!file_exists($path)) {
+                    mkdir($path, 0777, true);
+                }
+                $imagen = $path . trim($model->nombre) .'-'. date('Y-m-d H-i-s') . ".". $model->portada->extension;
+                $model->portada->saveAs($imagen);
+                $model->portada = $imagen;
+            }else{
+                $model->portada = $old_url;
+            }
+            $model->save();
             Yii::$app->session->setFlash('success1','Registro actualizado correctamente');
             return $this->redirect(['index']);
         }

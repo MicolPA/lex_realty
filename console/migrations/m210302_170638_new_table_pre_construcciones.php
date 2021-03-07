@@ -3,23 +3,22 @@
 use yii\db\Migration;
 
 /**
- * Class m201217_225744_create_tables
+ * Class m210302_170638_new_table_pre_construcciones
  */
-class m201217_225744_create_tables extends Migration
+class m210302_170638_new_table_pre_construcciones extends Migration
 {
     /**
      * {@inheritdoc}
      */
     public function safeUp()
     {
-
         $tableOptions = null;
         if ($this->db->driverName === 'mysql') {
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
 
-        $this->createTable('{{%propiedades}}', [
+        $this->createTable('{{%pre_construcciones}}', [
             'id' => $this->primaryKey(),
             'titulo_publicacion' => $this->string(),
             'tipo_propiedad' => $this->integer(),
@@ -31,8 +30,18 @@ class m201217_225744_create_tables extends Migration
             'cargas_gramabes' => $this->integer(),
             'deslinde' => $this->integer(),
             'certificado_titulo' => $this->integer(),
+            'permisos_municipales' => $this->integer(),
+            'permiso_ambiental' => $this->integer(),
+            'objeccion_ministerio_turismo' => $this->integer(),
+            'permiso_obras_publicas' => $this->integer(),
+            'confortur' => $this->integer(),
+            'celular_contacto' => $this->string(),
             'detalles' => $this->string(),
+            'precio' => $this->integer(),
+            'galeria_id' => $this->integer(),
             'user_id' => $this->integer(),
+            'pies' => $this->float(),
+            'metros' => $this->float(),
             'fecha_publicacion' => $this->dateTime(),
             'foto_1' => $this->string(),
             'foto_2' => $this->string(),
@@ -40,18 +49,12 @@ class m201217_225744_create_tables extends Migration
             'foto_4' => $this->string(),
         ], $tableOptions);
 
-        $this->createTable('{{%propiedades_tipo}}', [
-            'id' => $this->primaryKey(),
-            'nombre' => $this->string(),
-        ], $tableOptions);
-
-        $this->createTable('{{%ubicaciones}}', [
-            'id' => $this->primaryKey(),
-            'nombre' => $this->string(),
-        ], $tableOptions);
-
-        $this->addForeignKey('tipo', '{{%propiedades}}', 'tipo_propiedad', '{{%propiedades_tipo}}', 'id', 'CASCADE', 'CASCADE');
-        $this->addForeignKey('ubicacion', '{{%propiedades}}', 'ubicacion_id', '{{%ubicaciones}}', 'id', 'CASCADE', 'CASCADE');
+        $this->addColumn('{{%propiedades_galeria}}', 'propiedades', $this->string()->defaultValue(1));
+        $this->addColumn('{{%user}}', 'photo_url', $this->string()->defaultValue(null));
+        $this->addColumn('{{%user}}', 'celular', $this->string()->defaultValue(null));
+        $this->addColumn('{{%user}}', 'email', $this->string()->defaultValue(null));
+        $this->addColumn('{{%user}}', 'inmobiliaria', $this->string()->defaultValue(null));
+        $this->addColumn('{{%ubicaciones}}', 'portada', $this->string()->defaultValue(null));
 
     }
 
@@ -60,7 +63,7 @@ class m201217_225744_create_tables extends Migration
      */
     public function safeDown()
     {
-        echo "m201217_225744_create_tables cannot be reverted.\n";
+        echo "m210302_170638_new_table_pre_construcciones cannot be reverted.\n";
 
         return false;
     }
@@ -74,7 +77,7 @@ class m201217_225744_create_tables extends Migration
 
     public function down()
     {
-        echo "m201217_225744_create_tables cannot be reverted.\n";
+        echo "m210302_170638_new_table_pre_construcciones cannot be reverted.\n";
 
         return false;
     }

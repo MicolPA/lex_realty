@@ -3,6 +3,10 @@ namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
+use frontend\models\Propiedades;
+use frontend\models\PreConstrucciones;
+use frontend\models\Ubicaciones;
+use frontend\models\PreConstruccionesSearch;
 use Yii;
 use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
@@ -33,7 +37,7 @@ class SiteController extends Controller
                     [
                         'actions' => ['signup'],
                         'allow' => true,
-                        'roles' => ['?'],
+                        'roles' => ['@'],
                     ],
                     [
                         'actions' => ['logout'],
@@ -74,9 +78,17 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        $ubicaciones = Ubicaciones::find()->limit(4)->all();
         $model = new \frontend\models\PropiedadesSearch();
+        $model2 = new \frontend\models\PreConstruccionesSearch();
+        $propiedades = Propiedades::find()->limit(6)->all();
+        $pre_construcciones = PreConstrucciones::find()->limit(6)->all();
         return $this->render('index',[
-            'model' => $model
+            'model' => $model,
+            'model2' => $model2,
+            'propiedades' => $propiedades,
+            'ubicaciones' => $ubicaciones,
+            'pre_construcciones' => $pre_construcciones,
         ]);
     }
 
@@ -157,9 +169,14 @@ class SiteController extends Controller
     public function actionSignup()
     {
         $model = new SignupForm();
+        $post = Yii::$app->request->post();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
-            Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
-            return $this->goHome();
+            $user = \frontend\models\User::find()->where(['email' => $post['SignupForm']['email']])->one();
+            if ($user) {
+                return $this->redirect(['user/update', 'id' => $user->id]);
+            }
+            // Yii::$app->session->setFlash('success', 'Thank you for registration. Please check your inbox for verification email.');
+            // return $this->goHome();
         }
 
         return $this->render('signup', [

@@ -167,115 +167,51 @@ $this->params['breadcrumbs'][] = $this->title;
                         <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->pies, 2) ?></span>
                     </div>
                 </div>
-                <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=1" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/user/view?id=<?= $model->user_id ?>&propiedad_id=<?= $model->id ?>&propiedad=1" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
+                <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=0" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
+                <a href="/frontend/web/user/view?id=<?= $model->user_id ?>&propiedad_id=<?= $model->id ?>&propiedad=0" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
             </div>
         </div>
     </div>
-    <?php if ($extra): ?>
-        <div class="row mt-4">
-            <div class="col-md-12 pr-0 pl-sm-none">
-                <div class="bg-lightgray rounded p-3">
-                    <h2 class="h33 mb-3 text-gray2 font-weight-light">Características principales</h2>
-                    <div class="row">
-                        <?php if ($extra->aire_acondicionado): ?>
-                            <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Aire acondicionado
-                                </p>
-                            </div>
-                        <?php endif ?>
-                        <?php if ($extra->balcon): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Balcón
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->cocina): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Cocina
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->lavadora): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Lavadora
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->nevera): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Nevera
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->piscina): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Piscina
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->vista_campo_golf): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Vista al campo de Golf
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->amueblado): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Amueblado
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->centro_comercial): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Cerca de Centro Comercial
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->estufa): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Estufa
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->marmol): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Mármol
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->parqueo): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Parqueo
-                                </p>
-                            </div> 
-                        <?php endif ?>
-                        <?php if ($extra->seguridad_24_hrs): ?>
-                           <div class="col-md-4">
-                                <p class="font-14 text-gray2 mb-1 font-weight-normal">
-                                    <i class="fas fa-circle text-success icon_md"></i> Seguridad las 24hrs
-                                </p>
-                            </div> 
-                        <?php endif ?>
+    <div class="row mt-4">
+        <div class="col-md-12 pr-0 pl-sm-none">
+            <div class="bg-lightgray rounded p-3">
+                <h2 class="h33 mb-3 text-gray2 font-weight-light">Características</h2>
 
+                <div class="row">
+                    <div class="col-md-4">
+                        <?php $check = $model->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
+
+                        <?php $check = $model->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                        <?php $check = $model->deslinde ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+
+                        <?php $check = $model->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
+
+                       
+                    </div>
+
+                    <div class="col-md-6">
+                         <?php $check = $model->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO AMBIENTAL</p>
+
+                        <?php $check = $model->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+
+                        <?php $check = $model->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO DE OBRAS PUBLICAS</p>
+
+                        <?php $check = $model->confortur ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CONFORTUR</p>
                     </div>
                 </div>
+                
             </div>
-
         </div>
-    <?php endif ?>
+
+    </div>
     <div class="row mt-3">
         <div class="col-md-12 pr-0 pl-sm-none">
             <div class="bg-lightgray rounded p-3">

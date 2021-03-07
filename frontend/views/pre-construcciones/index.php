@@ -9,11 +9,8 @@ $get = Yii::$app->request->get();
 $precio = isset($get['precio']) ? $get['precio'] : '';
 $calificacion = isset($get['calificacion']) ? $get['calificacion'] : '';
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\PropiedadesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'PROPIEDADES';
+$this->title = 'PRE CONSTRUCCIONES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="container">
@@ -70,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>    
         </div>
         <div class="col-md-12 bg-gray">
-            <?php $form = ActiveForm::begin(['method' => 'GET', 'id' => 'form-search', 'action' => '/frontend/web/propiedades'], ['enctype' => 'multipart/form-data']); ?>
+            <?php $form = ActiveForm::begin(['method' => 'GET', 'id' => 'form-search', 'action' => '/frontend/web/pre-construcciones'], ['enctype' => 'multipart/form-data']); ?>
 
                 <div id="collapseUbicacion" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                   <div class="mt-3">
@@ -120,15 +117,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row mb-2">
         <div class="col-md-12 p-lg-0 text-right">
             <a href="javascript:buscar('form-search')" class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #44546b">Aplicar filtros</a>
-            <a href="/frontend/web/propiedades" class="btn btn-secondary pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Limpiar búsqueda</a>
+            <a href="/frontend/web/pre-construcciones" class="btn btn-secondary pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Limpiar búsqueda</a>
             <a class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #628eaf">RESULTADOS <?= $count ?></a>
         </div>
     </div>
 
     <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
-    	<?php if ($count > 0): ?>
+        <?php if ($count > 0): ?>
             <?php foreach ($dataProvider->query->all() as $m): ?>
-                <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
+                <a href="/frontend/web/pre-construcciones/ver?id=<?= $m->id ?>" class="no-link text-blue">
                     <div class="col-md-4 mt-4 mb-2">
                         <div class="bg-white">
                             <div class="contenedor">
@@ -179,7 +176,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 
 
                                 
-                                <a href="/frontend/web/propiedades/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0 h5 pt-1 pb-1" style="visibility: hidden;">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
+                                <a href="/frontend/web/pre-construcciones/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0 h5 pt-1 pb-1" style="visibility: hidden;">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
 
                             </div>
 

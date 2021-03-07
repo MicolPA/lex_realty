@@ -25,7 +25,7 @@ $this->title = 'PROPUESTA';
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar su propuesta</h2>
                 </div>
                 <?php else: ?>
-                <div class="bg-blue text-center pl-4 pr-4 pt-2 pb-2 mb-5">
+                <div class="bg-warning-2 text-center pl-4 pr-4 pt-2 pb-2 mb-5">
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar formulario de contacto</h2>
                 </div>
                 <?php endif ?>
@@ -92,6 +92,8 @@ $this->title = 'PROPUESTA';
         </div>
 
     </div>
+
+    <div style="height: 100px;background: #d5d9de"></div>
 
 </div>
 

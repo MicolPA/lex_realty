@@ -30,16 +30,16 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <div class="bg-white">
-        <div class="container pt-3 pb-3 bg-white">
+    <div class="container-fluid bg-light-blue">
+        <div class="p-0">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4 lg-text-right pr-5 pl-5 pt-3 pb-3 container bg-white m-0">
                    <a href="/"><img src="/frontend/web/images/Lex_logo_2.png" width="150px"></a>
                 </div>
-                <div class="col-md-8 pt-4">
+                <div class="col-md-8 container pt-4 bg-light-blue">
                     <form class="form-inline" action="/frontend/web/propiedades" method="get">
-                        <input class="form-control mr-sm-2" name="PropiedadesSearch[titulo_publicacion]" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
-                        <button class="btn bg-gray my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+                        <input class="form-control mr-sm-2 bg-light-blue" name="PropiedadesSearch[titulo_publicacion]" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
+                        <button class="btn my-2 my-sm-0" type="submit" style="background: #e9eaec"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
             </div>
@@ -57,23 +57,17 @@ AppAsset::register($this);
             <li class="nav-item active pr-4">
                 <a class="nav-link" href="#">INICIO</a>
             </li>
-            <li class="nav-item active pl-4 pr-4">
-                <a class="nav-link" href="#">CATEGORIAS</a>
-            </li>
-            <li class="nav-item dropdown active pl-4 pr-4">
-              <!-- <a class="nav-link dropdown-toggle" href="/frontend/web/propiedades">Propiedades</a> -->
+            <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link" href="/frontend/web/propiedades">PROPIEDADES</a>
-             <!--  <div class="dropdown-menu" aria-labelledby="dropdown07">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div> -->
             </li>
-            <li class="nav-item active pl-4 pr-4">
-                <a class="nav-link" href="#">ARTÍCULOS MÁS VISTOS</a>
+            <li class="nav-item active pl-3 pr-3">
+                <a class="nav-link" href="/frontend/web/pre-construcciones">PRE CONSTRUCCIONES</a>
             </li>
-            <li class="nav-item active pl-4 pr-4 ">
-                <a class="nav-link" href="#">CONTACTOS</a>
+            <li class="nav-item active pl-3 pr-3 ">
+                <a class="nav-link" href="#">DESARROLLADORES</a>
+            </li>
+            <li class="nav-item active pl-3 pr-3 ">
+                <a class="nav-link" href="#">PUBLICACIONES</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
@@ -90,6 +84,12 @@ AppAsset::register($this);
         <?= $content ?>
     </div>
 </div>
+
+<footer class="bg-darkblue pt-5" style="height: 200px">
+    <div class="container">
+        <img class="mt-4" src="/frontend/web/images/LOGO-REALTY-BLANCO.png" width="150px">
+    </div>
+</footer>
 
 <?php if(Yii::$app->session->hasFlash('success1')):?>
     <?php

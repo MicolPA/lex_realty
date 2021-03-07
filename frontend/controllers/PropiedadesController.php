@@ -9,6 +9,7 @@ use frontend\models\PropiedadesTipo;
 use frontend\models\PropiedadesGaleria;
 use frontend\models\PropiedadesExtras;
 use frontend\models\PropiedadesSearch;
+use common\models\User;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -174,12 +175,17 @@ class PropiedadesController extends Controller
 
     }
 
-    function actionEnviarPropuesta($id, $type=1){
+    function actionEnviarPropuesta($id, $type=1, $user_id, $propiedad=1){
 
-        $propiedad = $this->findModel($id);
+        if ($propiedad == 1) {
+            $propiedad_m = $this->findModel($id);
+        }else{
+            $propiedad_m = \frontend\models\PreConstrucciones::findOne($id);
+        }
         $model = new ContactForm();
-
+        $agente = User::findOne($user_id);
         if ($model->load(Yii::$app->request->post())) {
+
 
             // return $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad]);
             // exit;
@@ -201,7 +207,7 @@ class PropiedadesController extends Controller
             // exit;
 
             $this->layout = false;
-            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad, 'type' => $type, 'forma_pago' => $model->forma_pago, 'monto_reserva' => $model->monto_reserva, 'fecha_cierre' => $model->fecha_cierre]);
+            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad_m, 'type' => $type, 'forma_pago' => $model->forma_pago, 'monto_reserva' => $model->monto_reserva, 'fecha_cierre' => $model->fecha_cierre, 'correo_agente' => $agente['email'], 'propiedad_check' => $propiedad]);
 
             // Yii::$app->mailer->compose()
             //     ->setFrom('administrador@propiedades.lexrealtymagazine.com')
@@ -216,7 +222,11 @@ class PropiedadesController extends Controller
                 Yii::$app->session->setFlash('success1', 'Mensaje enviado correctamente');
             }
             // exit;
-            return $this->redirect(['index']);
+            if ($propiedad) {
+                return $this->redirect(['index']);
+            }else{
+                return $this->redirect(['/pre-construcciones/index']);
+            }
 
         }else{
 
@@ -225,7 +235,7 @@ class PropiedadesController extends Controller
         return $this->render('propuesta', [
             'type' => $type,
             'model' => $model,
-            'propiedad' => $propiedad,
+            'propiedad' => $propiedad_m,
         ]);
     }
 

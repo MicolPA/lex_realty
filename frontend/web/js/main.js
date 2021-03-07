@@ -105,3 +105,7 @@ document.getElementById('fecha').addEventListener('focus',function(){
   document.getElementById('fecha').type= 'date';
 });
 
+function showSearch(){
+  $(".div_propiedades").toggle();
+  $(".div_pre_construccion").toggle();
+}

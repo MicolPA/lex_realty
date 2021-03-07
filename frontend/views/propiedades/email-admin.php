@@ -26,7 +26,11 @@
 			<p><label style="font-weight: bold;color:black;margin-bottom:0px">Ubicaci&oacute;n:</label> <?= $propiedad->ubicacion->nombre ?> </p>
 			<br>
 			<div style="background:#f9ae33;color:white;text-align: center;padding: 0.5rem">
-				<a href="http://propiedades.lexrealtymagazine.com/frontend/web/propiedades/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PROPIEDAD</a>
+				<?php if ($propiedad_check): ?>
+					<a href="http://propiedades.lexrealtymagazine.com/frontend/web/propiedades/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PROPIEDAD</a>
+					<?php else: ?>
+					<a href="http://propiedades.lexrealtymagazine.com/frontend/web/pre-construccion/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PRE-CONSTRUCCIÓN</a>
+				<?php endif ?>
 			</div>
 			
 

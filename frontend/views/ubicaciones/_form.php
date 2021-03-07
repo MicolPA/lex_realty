@@ -17,9 +17,13 @@ use yii\widgets\ActiveForm;
 
     	<div class="col-md-8 m-auto">
     		<div class="card p-4">
-    			<?php $form = ActiveForm::begin(); ?>
+                <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
     			<?= $form->field($model, 'nombre')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3 mt-3', 'placeholder' =>'NOMBRE'])->label(false) ?>
+
+                <div class="col-md-10 p-0 div-lab">
+                    <?= $form->field($model, 'portada')->fileInput([])->label($model->portada ? "CARGADA" : "SUBIR FOTO DE PORTADA") ?>
+                </div>
 
 			    <div class="form-group text-center">
 			        <?= Html::submitButton('Guardar', ['class' => 'btn btn-warning rounded-3']) ?>

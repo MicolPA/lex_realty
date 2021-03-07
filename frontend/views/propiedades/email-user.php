@@ -20,7 +20,7 @@ if ($telefono) {
 	        'allow_self_signed' => true
 	    )
 	);
-	$content = $this->render('email-admin', ['nombre' =>  $nombre, 'correo' => $correo, 'telefono' => $telefono, 'cantidad' => $cantidad, 'propiedad' => $propiedad, 'type' => $type, 'forma_pago' => $forma_pago, 'monto_reserva' => $monto_reserva, 'fecha_cierre' => $fecha_cierre]);
+	$content = $this->render('email-admin', ['nombre' =>  $nombre, 'correo' => $correo, 'telefono' => $telefono, 'cantidad' => $cantidad, 'propiedad' => $propiedad, 'type' => $type, 'forma_pago' => $forma_pago, 'monto_reserva' => $monto_reserva, 'fecha_cierre' => $fecha_cierre, 'propiedad_check' => $propiedad_check]);
 	$mail->SMTPSecure = 'ssl';
 	$mail->Port = 465;
 	$mail->SMTPAuth = true;
@@ -35,7 +35,8 @@ if ($telefono) {
 	}else{
 		$mail->Subject = 'Nuevo mensaje';
 	}
-	$mail->addAddress("administrador@propiedades.lexrealtymagazine.com", 'Lex Realty');
+
+	$mail->addAddress("$correo_agente", 'Lex Realty');
 	$mail->msgHTML("$content");
 	$mail->send();
 	// if (!$mail->send()) {

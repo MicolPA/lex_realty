@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $id
  * @property string|null $nombre
+ * @property string|null $portada
  *
  * @property Propiedades[] $propiedades
  */
@@ -28,7 +29,7 @@ class Ubicaciones extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre'], 'string', 'max' => 255],
+            [['nombre', 'portada'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,6 +41,7 @@ class Ubicaciones extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nombre' => 'Nombre',
+            'portada' => 'Portada',
         ];
     }
 
