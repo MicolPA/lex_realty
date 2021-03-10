@@ -145,28 +145,28 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <span class="font-weight-bold h3">US$<?= number_format($model->precio) ?></span>
 
-                <div class="row mt-2">
+                <!-- <div class="row mt-2">
                     <div class="col-md-6">
                         <div style="position: absolute;"><img src="/frontend/web/images/bed-icon.png" width='40px'></div>
                         <p class="ml-5 pl-2 small m-0 col-xs-6">Habs.</p>
-                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->habitaciones ?></span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?//= $model->habitaciones ?></span>
                     </div>
                     <div class="col-md-6 col-xs-6">
                         <div style="position: absolute;"><img src="/frontend/web/images/shower-icon.png" width='40px'> </div>
                         <p class="ml-5 pl-2 small m-0">Baños</p>
-                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->baños ?></span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?//= $model->baños ?></span>
                     </div>
                     <div class="col-md-6 mt-3 col-xs-6">
                         <div style="position: absolute;"><img src="/frontend/web/images/size-icon.png" width='40px'></div>
                         <p class="ml-5 pl-2 small m-0">Metros</p>
-                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->metros) ?>m</span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?//= number_format($model->metros) ?>m</span>
                     </div>
                     <div class="col-md-6 mt-3 col-xs-6">
                         <div style="position: absolute;"><img src="/frontend/web/images/size-icon.png" width='40px'></div>
                         <p class="ml-5 pl-2 small m-0">Pies</p>
-                        <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->pies, 2) ?></span>
+                        <span class="ml-5 pl-2 font-weight-bold font-12"><?//= number_format($model->pies, 2) ?></span>
                     </div>
-                </div>
+                </div> -->
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=0" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
                 <a href="/frontend/web/user/view?id=<?= $model->user_id ?>&propiedad_id=<?= $model->id ?>&propiedad=0" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
             </div>
@@ -188,7 +188,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
 
                         <?php $check = $model->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISOS MUNICIPALES</p>
 
                        
                     </div>

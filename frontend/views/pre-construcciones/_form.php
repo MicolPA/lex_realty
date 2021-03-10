@@ -23,7 +23,7 @@ use yii\helpers\ArrayHelper;
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
                 <div class="form-group">
-                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROPIEDAD', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
                 </div>
 
                 <div class="form-group">
@@ -31,12 +31,6 @@ use yii\helpers\ArrayHelper;
                 </div>
 
                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'habitaciones')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD DE HABITACIONES', 'required' => 'required'])->label(false) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'baños')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CANTIDAD DE BAÑOS', 'required' => 'required'])->label(false) ?>
-                    </div>
 
                     <div class="col-md-12">
                         <?= $form->field($model, 'titulo_publicacion')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'TITULO DE PUBLICACIÓN', 'required' => 'required'])->label(false) ?>
@@ -58,16 +52,18 @@ use yii\helpers\ArrayHelper;
 
                <div class="row">
 
-                    <div class="col-md-12">
+                <?php if (Yii::$app->user->identity->id == 1): ?>
+                    <div class="col-md-6">
+                         <?php echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(\frontend\models\User::find()->orderBy(['first_name'=>SORT_ASC])->all(), 'id', 'first_name'),['prompt'=>'AGENTE', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    </div>
+                <?php else: ?>
+                    <?= $form->field($model, 'user_id')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'type' => 'hidden', 'value' => Yii::$app->user->identity->id])->label(false) ?>
+                <?php endif ?>
+
+                    <div class="col-md-6">
                         <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO', 'required' => 'required'])->label(false) ?>
 
-                        <h6 class="font-weight-bold">Área</h6>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'metros')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'id' => 'metros', 'placeholder' =>'METROS'])->label(false) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'pies')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'id' => 'pies', 'placeholder' =>'PIES'])->label(false) ?>
+                        <!-- <h6 class="font-weight-bold">Área</h6> -->
                     </div>
                </div>
 

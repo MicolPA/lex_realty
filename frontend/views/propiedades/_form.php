@@ -23,7 +23,7 @@ use yii\helpers\ArrayHelper;
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
                 <div class="form-group">
-                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROPIEDAD', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
+                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3'])->label(false); ?>
                 </div>
 
                 <div class="form-group">
@@ -55,6 +55,16 @@ use yii\helpers\ArrayHelper;
                         <div class="pl-2">
                         </div>
                     </div>
+               </div>
+
+               <div class="row">
+                   <?php if (Yii::$app->user->identity->id == 1): ?>
+                    <div class="col-md-12">
+                         <?php echo $form->field($model, 'user_id')->dropDownList(ArrayHelper::map(\frontend\models\User::find()->orderBy(['first_name'=>SORT_ASC])->all(), 'id', 'first_name'),['prompt'=>'AGENTE', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    </div>
+                    <?php else: ?>
+                        <?= $form->field($model, 'user_id')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'type' => 'hidden', 'value' => Yii::$app->user->identity->id])->label(false) ?>
+                    <?php endif ?>
                </div>
 
                <div class="row">

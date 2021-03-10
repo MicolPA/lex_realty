@@ -82,7 +82,7 @@ if (Yii::$app->user->isGuest) {
             </li>
             <?php if (Yii::$app->user->identity->id == 1): ?>
             <li class="nav-item dropdown active pl-3 pr-3">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">TIPOS PROPIEDADES</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">TIPOS PROYECTOS</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
                 <a class="dropdown-item" href="/frontend/web/propiedades-tipo/create">CREAR</a>
                 <a class="dropdown-item" href="/frontend/web/propiedades-tipo">LISTADO</a>

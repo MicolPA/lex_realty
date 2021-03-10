@@ -108,7 +108,7 @@ class PreConstruccionesController extends Controller
             $galeria->foto_11 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 11);
             $galeria->foto_12 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 12);
 
-            if ($model->impuestos and $model->cargas_gramabes and $model->deslinde and $model->certificado_titulo and $model->certificado_titulo) {
+            if ($model->certificado_titulo and $model->cargas_gramabes and $model->deslinde and $model->permisos_municipales and $model->permiso_ambiental and $model->objeccion_ministerio_turismo and $model->permiso_obras_publicas and $model->confortur) {
                 $model->riezgo_id = 1;
             }else{
                 $model->riezgo_id = 0;
@@ -116,7 +116,6 @@ class PreConstruccionesController extends Controller
 
             $galeria->save();
             $model->galeria_id = $galeria->id;
-            $model->user_id = Yii::$app->user->identity->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
             $model->save();
 

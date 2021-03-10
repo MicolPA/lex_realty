@@ -127,7 +127,7 @@ class PropiedadesController extends Controller
 
             $galeria->save();
             $model->galeria_id = $galeria->id;
-            $model->user_id = Yii::$app->user->identity->id;
+            // $model->user_id = Yii::$app->user->identity->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
             $model->save();
 

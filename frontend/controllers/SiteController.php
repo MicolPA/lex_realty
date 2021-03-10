@@ -81,7 +81,7 @@ class SiteController extends Controller
         $ubicaciones = Ubicaciones::find()->limit(4)->all();
         $model = new \frontend\models\PropiedadesSearch();
         $model2 = new \frontend\models\PreConstruccionesSearch();
-        $propiedades = Propiedades::find()->limit(6)->all();
+        $propiedades = Propiedades::find()->where(['riezgo_id' => 1])->limit(6)->all();
         $pre_construcciones = PreConstrucciones::find()->limit(6)->all();
         return $this->render('index',[
             'model' => $model,
