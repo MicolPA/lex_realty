@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
     			<?= $form->field($model, 'nombre')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3 mt-3', 'placeholder' =>'NOMBRE'])->label(false) ?>
 
                 <div class="col-md-10 p-0 div-lab">
-                    <?= $form->field($model, 'portada')->fileInput([])->label($model->portada ? "CARGADA" : "SUBIR FOTO DE PORTADA") ?>
+                    <?= $form->field($model, 'portada')->fileInput(['required' => 'required'])->label($model->portada ? "CARGADA" : "SUBIR FOTO DE PORTADA") ?>
                 </div>
 
 			    <div class="form-group text-center">
