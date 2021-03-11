@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <div class="col-md-8 pt-5">
                     <p class="h2 font-weight-light"><?= $model->first_name . ' ' . $model->last_name ?></p>
-                    <p class="h5 text-muted"><?= $model->inmobiliaria ?></p>
+                    <p class="h6 text-muted"><?= $model->inmobiliaria ?></p>
                     <?php 
                         $number = str_replace('-', '', $model->celular);
                         $number = str_replace('(', '', $number);
