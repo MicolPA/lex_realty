@@ -42,7 +42,7 @@ if (Yii::$app->user->isGuest) {
                    <a href="/"><img src="/frontend/web/images/Lex_logo_2.png" width="150px"></a>
                 </div>
                 <div class="col-md-8 pt-4 text-right">
-                    <span class="h2 font-weight-normal bg-warning pl-3 pr-3 btn_warning">PANEL DE ADMINISTRACIÓN</span>
+                    <span class="h4 title-light pl-3 pr-3">PANEL DE ADMINISTRACIÓN</span>
                 </div>
             </div>
         </div>

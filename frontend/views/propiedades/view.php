@@ -146,7 +146,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <span class="font-weight-bold h3">US$<?= number_format($model->precio) ?></span>
 
                 <div class="row mt-2">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div style="position: absolute;"><img src="/frontend/web/images/bed-icon.png" width='40px'></div>
                         <p class="ml-5 pl-2 small m-0 col-xs-6">Habs.</p>
                         <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->habitaciones ?></span>
@@ -156,7 +156,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <p class="ml-5 pl-2 small m-0">Baños</p>
                         <span class="ml-5 pl-2 font-weight-bold font-12"><?= $model->baños ?></span>
                     </div>
-                    <div class="col-md-6 mt-3 col-xs-6">
+                    <div class="col-md-5 mt-3 col-xs-6">
                         <div style="position: absolute;"><img src="/frontend/web/images/size-icon.png" width='40px'></div>
                         <p class="ml-5 pl-2 small m-0">Metros</p>
                         <span class="ml-5 pl-2 font-weight-bold font-12"><?= number_format($model->metros) ?>m</span>

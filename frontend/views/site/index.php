@@ -213,18 +213,29 @@ $this->title = 'Propiedades';
                                     
                                 </p> -->
                                 
-                                <div class="detalles" style="height: 60px;font-family: 'Benton-book', Arial, sans-serif">
+                                <div class="detalles" style="height: 210px;font-family: 'Benton-book', Arial, sans-serif">
 
                                     <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
 
+                                    <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                                    <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+
                                     <?php $check = $m->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISOS MUNICIPALES</p>
+                                    <?php $check = $m->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO AMBIENTAL</p>
 
-                                    <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
-                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
-                                    <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
-                                    <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+                                    <?php $check = $m->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+
+                                    <?php $check = $m->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO DE OBRAS PUBLICAS</p>
+
+                                    <?php $check = $m->confortur ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CONFORTUR</p>
                                 </div>
                                 
 
@@ -253,7 +264,7 @@ $this->title = 'Propiedades';
                 <div class="col-md-3 mt-4 mb-2">
                     <a href="/frontend/web/propiedades/?ubicacion%5B<?= $m->id ?>=on" class="no-link text-blue">
                         <img src="/frontend/web/<?= $m->portada ?>" width='100%' style="height:150px">
-                        <p class="text-center text-darkblue font-weight-bold font-14 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->nombre) ?></p>
+                        <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-2" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->nombre) ?></p>
                     </a>
                 </div>      
             <?php endforeach ?>

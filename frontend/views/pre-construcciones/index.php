@@ -13,6 +13,7 @@ $calificacion = isset($get['calificacion']) ? $get['calificacion'] : '';
 $this->title = 'PRE CONSTRUCCIONES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="container">
 
     <div class="row mt-5">
@@ -153,25 +154,29 @@ $this->params['breadcrumbs'][] = $this->title;
                                 
 
                                 <p class="font-weight-bold font-18 mt-2 mb-2">US$<?= number_format($m->precio, 0) ?></p>
-                                <p class="text-muted m-0 font-12 mb-2">
-                                     <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
-                                     <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>
-                                     <img src="/frontend/web/images/size-icon.png" width='35px'> <?= number_format($m->metros, 2) ?> M<sup>2</sup>
-                                    
-                                </p>
-                                
-                                <div class="detalles" style="height: 60px;font-family: 'Benton-book', Arial, sans-serif">
+                                <div class="detalles" style="height: 175px;font-family: 'Benton-book', Arial, sans-serif">
 
                                     <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
 
-                                    <?php $check = $m->impuestos ? "dot-full-2.png" : 'dot.png' ?>
-                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
-
                                     <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
-                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
                                     <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
-                                    <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+
+                                    <?php $check = $m->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISOS MUNICIPALES</p>
+                                    <?php $check = $m->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO AMBIENTAL</p>
+
+                                    <?php $check = $m->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+
+                                    <?php $check = $m->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO DE OBRAS PUBLICAS</p>
+
+                                    <?php $check = $m->confortur ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CONFORTUR</p>
                                 </div>
                                 
 

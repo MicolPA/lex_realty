@@ -28,7 +28,13 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
+<style>
+    @media (min-width: 1200px){
+        .container, .container-sm, .container-md, .container-lg, .container-xl {
+            max-width: 1100px !important;
+        }
+    }
+</style>
 <div class="wrap">
     <div class="container-fluid bg-light-blue">
         <div class="p-0">
@@ -67,11 +73,14 @@ AppAsset::register($this);
                 <a class="nav-link" href="#">DESARROLLADORES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
+                <a class="nav-link" href="#">TASA HIPOTECARIA</a>
+            </li>
+            <li class="nav-item active pl-3 pr-3 ">
                 <a class="nav-link" href="#">PUBLICACIONES</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/propiedades/listado" class="nav-link btn btn-warning btn-sm">PANEL DE ADMINISTRACIÓN</a>
+                    <a href="/frontend/web/propiedades/listado" class="nav-link btn btn-warning btn-sm">ADM</a>
                 </li>
             <?php endif ?>
           </ul>

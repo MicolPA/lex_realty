@@ -16,6 +16,7 @@ $calificacion = isset($get['calificacion']) ? $get['calificacion'] : '';
 $this->title = 'PROPIEDADES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="container">
 
     <div class="row mt-5">
