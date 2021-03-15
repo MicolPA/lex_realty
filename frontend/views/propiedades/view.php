@@ -143,7 +143,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light" style="background: #44546b"><?= Html::encode($this->title) ?></h1>
 
                 <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
-                <p><i class="fas fa-circle-notch"></i> <?= $model->tipoPropiedad->nombre ?></p>
+                <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
 
                 <span class="font-weight-bold h3">US$<?= number_format($model->precio) ?></span>
 

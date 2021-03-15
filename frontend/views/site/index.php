@@ -150,7 +150,7 @@ $this->title = 'Propiedades';
                                         
                                     </p>
                                     
-                                    <div class="detalles" style="height: 60px;font-family: 'Benton-book', Arial, sans-serif">
+                                    <div class="detalles" style="height: 80px;font-family: 'Benton-book', Arial, sans-serif">
 
                                         <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
                                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
@@ -187,10 +187,10 @@ $this->title = 'Propiedades';
         <div class="row bg-light-2">
             <?php foreach ($pre_construcciones as $m): ?>
                 <a href="/frontend/web/pre-construcciones/ver?id=<?= $m->id ?>" class="no-link text-blue">
-                    <div class="col-md-3 mt-4 mb-2">
+                    <div class="col-md-4 mt-4 mb-2 p-4">
                         <div class="bg-white">
                             <div class="contenedor">
-                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:150px">
+                                <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:200px">
                                 <div class="bg-darkblue pt-1 pb-1">
                                     <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                 </div>
@@ -213,7 +213,8 @@ $this->title = 'Propiedades';
                                 </div>
                                 
 
-                                <p class="font-weight-bold font-18 mt-2 mb-2">US$<?= number_format($m->precio, 0) ?></p>
+                                <span class="span-price pl-2 pr-2 font-12">PRECIO DESDE</span>
+                                <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($m->precio, 0) ?></p>
                                <!--  <p class="text-muted m-0 font-12 mb-2">
                                      <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
                                      <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>

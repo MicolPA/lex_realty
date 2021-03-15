@@ -145,7 +145,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
                 <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
 
-                <span class="font-weight-bold h4"><span class="font-weight-normal">DESDE</span> US$<?= number_format($model->precio) ?></span>
+                <span class="span-price pl-2 pr-2 font-12">PRECIO DESDE</span>
+                <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($model->precio, 0) ?></p>
 
                 <!-- <div class="row mt-2">
                     <div class="col-md-6">

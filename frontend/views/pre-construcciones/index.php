@@ -154,7 +154,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     </div>
                                     
 
-                                    <p class="font-weight-bold font-18 mt-2 mb-2"><span class="font-weight-normal">DESDE</span> US$<?= number_format($m->precio, 0) ?></p>
+                                    <span class="span-price pl-2 pr-2 font-12">PRECIO DESDE</span>
+                                    <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($m->precio, 0) ?></p>
                                     <div class="detalles" style="height: 190px;font-family: 'Benton-book', Arial, sans-serif">
 
                                         <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>

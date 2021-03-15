@@ -43,6 +43,11 @@
 .bg-light-2{
 	background: #f7f8fa;
 }
+.span-price{
+	letter-spacing: 4px;
+	font-weight: bold;
+	background: #f9d378;
+}
 .text-gray{
 	color:#757575;
 }
