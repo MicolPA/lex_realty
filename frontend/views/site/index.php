@@ -302,7 +302,7 @@ $this->title = 'Propiedades';
                 </div>
             </div>
 
-            </div>
+            <!-- </div> -->
 
             <div class="col-md-1">
                 <a class="carousel-control-next" href="#carouselExampleControls22" role="button" data-slide="next">
