@@ -159,8 +159,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                                     <p class="font-weight-bold font-18 mt-2 mb-2">US$<?= number_format($m->precio, 0) ?></p>
                                     <p class="text-muted m-0 font-12 mb-2">
-                                         <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
-                                         <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>
+                                         <?php if ($m->tipo_propiedad != 2): ?>
+                                            <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
+                                            <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>
+                                         <?php endif ?>
                                          <img src="/frontend/web/images/size-icon.png" width='35px'> <?= number_format($m->metros, 2) ?> M<sup>2</sup>
                                         
                                     </p>

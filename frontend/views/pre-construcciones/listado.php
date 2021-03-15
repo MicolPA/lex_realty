@@ -37,7 +37,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'label' => 'Tipo de propiedad',
                                 'attribute' => 'tipo_propiedad',
                                 'value' => function($data){
-                                    return $data->tipoPropiedad->nombre;
+                                    if (isset($data->tipoPropiedad->nombre)) {
+                                        return $data->tipoPropiedad->nombre;
+                                    }
                                 }
                             ],
                             [
@@ -72,7 +74,6 @@ $this->params['breadcrumbs'][] = $this->title;
                             [
                                 'label' => '',
                                 'format' => 'raw',
-                                'visible' => false,
                                 'value' => function ($data) {
                                     $view =  Html::a('<i class="fas fa-eye text-primary mr-2"></i>', ['view', 'id' => $data->id], []);
                                     $update =  Html::a('<i class="fas fa-pencil-alt text-primary mr-2"></i>', ['update', 'id' => $data->id], []);

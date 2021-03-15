@@ -36,6 +36,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'inmobiliaria')->textInput(['autofocus' => true, 'class' => 'input-r pl-4 pr-4 pt-3 pb-3 mt-3', 'placeholder' => 'INMOBILIARIA'])->label(false) ?>
 
+                 <?= $form->field($model, 'descripcion')->textarea(['class' => 'form-control bg-gray pl-4 pr-4 pt-3 pb-3 textarea mt-3', 'rows' => '4', 'placeholder' => 'DESCRIPCIÓN'])->label(false) ?>
+
                 <div class="form-group">
                     <input type="password" name="password" class="input-r pl-4 pr-4 pt-3 pb-3 mt-3" placeholder="Contraseña" value="000000000">
                 </div>

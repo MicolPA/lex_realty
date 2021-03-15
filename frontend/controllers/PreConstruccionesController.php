@@ -169,12 +169,19 @@ class PreConstruccionesController extends Controller
     {
         $model = $this->findModel($id);
 
+        $galeria = PropiedadesGaleria::find()->where(['id' => $model->galeria_id, 'propiedades' => 0])->one();
+        if (!$galeria) {
+            $galeria = new PropiedadesGaleria();
+            $galeria->save();
+            $model->galeria_id = $galeria->id;
+        }
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['listado']);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'galeria' => $galeria,
         ]);
     }
 
@@ -189,7 +196,7 @@ class PreConstruccionesController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['listado']);
     }
 
     /**

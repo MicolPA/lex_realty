@@ -78,11 +78,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $ubicaciones = Ubicaciones::find()->limit(4)->all();
+        $ubicaciones = Ubicaciones::find()->all();
         $model = new \frontend\models\PropiedadesSearch();
         $model2 = new \frontend\models\PreConstruccionesSearch();
-        $propiedades = Propiedades::find()->where(['riezgo_id' => 1])->limit(6)->all();
-        $pre_construcciones = PreConstrucciones::find()->limit(6)->all();
+        $propiedades = Propiedades::find()->where(['riezgo_id' => 1])->orderBy([ 'rand()' => SORT_DESC])->limit(4)->all();
+        $pre_construcciones = PreConstrucciones::find()->orderBy([ 'rand()' => SORT_DESC])->limit(4)->all();
         return $this->render('index',[
             'model' => $model,
             'model2' => $model2,

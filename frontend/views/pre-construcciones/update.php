@@ -10,12 +10,15 @@ $this->params['breadcrumbs'][] = ['label' => 'Pre Construcciones', 'url' => ['in
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="pre-construcciones-update">
+<div class="container pt-5">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <!-- <h1 class="h4 text-white text-center"><?//= Html::encode($this->title) ?></h1> -->
 
     <?= $this->render('_form', [
         'model' => $model,
+        'galeria' => $galeria,
+        // 'extras' => $extras,
+        'title' => 'EDITAR PRE-CONSTRUCCIÓN',
     ]) ?>
 
 </div>

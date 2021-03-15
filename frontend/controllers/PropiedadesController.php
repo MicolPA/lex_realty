@@ -249,13 +249,16 @@ class PropiedadesController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $galeria = PropiedadesGaleria::findOne($model->galeria_id);
+        $galeria = PropiedadesGaleria::find()->where(['id' => $model->galeria_id, 'propiedades' => 1])->one();
         if (!$galeria) {
             $galeria = new PropiedadesGaleria();
             $galeria->save();
             $model->galeria_id = $galeria->id;
         }
-        $extras = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
+        $extras = PropiedadesExtras::find()->where(['propiedad_id' => $id, 'propiedad' => 1])->one();
+        if (!$extras) {
+            $extras = new PropiedadesExtras();
+        }
 
 
 

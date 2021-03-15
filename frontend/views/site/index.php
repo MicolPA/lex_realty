@@ -13,6 +13,14 @@ $this->title = 'Propiedades';
             max-width: 1140px !important;
         }
     }
+
+    @media (min-width: 992px){
+        .col-lg-3 {
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 24%;
+        }
+    }
 </style>
 <div class="container-fluid">
     <div class="row" style=";">
@@ -169,7 +177,7 @@ $this->title = 'Propiedades';
         </div>
     </div>
 </div>
-<div class="pt-4 pb-4 bg-white">
+<div class="pt-4 pb-4 bg-light-2">
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-3">
@@ -178,7 +186,7 @@ $this->title = 'Propiedades';
         </div>
         <div class="row bg-light-2">
             <?php foreach ($pre_construcciones as $m): ?>
-                <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
+                <a href="/frontend/web/pre-construcciones/ver?id=<?= $m->id ?>" class="no-link text-blue">
                     <div class="col-md-3 mt-4 mb-2">
                         <div class="bg-white">
                             <div class="contenedor">
@@ -213,7 +221,7 @@ $this->title = 'Propiedades';
                                     
                                 </p> -->
                                 
-                                <div class="detalles" style="height: 210px;font-family: 'Benton-book', Arial, sans-serif">
+                                <div class="detalles" style="height: 230px;font-family: 'Benton-book', Arial, sans-serif">
 
                                     <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
                                     <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
@@ -256,18 +264,54 @@ $this->title = 'Propiedades';
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-3">
-                <h1 class="h4 title-light text-darkblue">BUSCAR POR CIUDAD</h1>
+                <h1 class="h4 title-light text-darkblue mb-4">BUSCAR POR CIUDAD</h1>
             </div>
-        </div>
-        <div class="row">
-            <?php foreach ($ubicaciones as $m): ?>
-                <div class="col-md-3 mt-4 mb-2">
-                    <a href="/frontend/web/propiedades/?ubicacion%5B<?= $m->id ?>=on" class="no-link text-blue">
-                        <img src="/frontend/web/<?= $m->portada ?>" width='100%' style="height:150px">
-                        <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-2" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->nombre) ?></p>
-                    </a>
-                </div>      
-            <?php endforeach ?>
+            <div class="col-md-1">
+                <a class="carousel-control-prev" href="#carouselExampleControls22" role="button" data-slide="prev">
+                    <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
+                    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                    <span class="sr-only">Previous</span>
+                </a> 
+            </div>
+
+            <div class="col-md-10">
+                <div id="carouselExampleControls22" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php $count = 0; $count2 = 0; ?>
+                        <?php foreach ($ubicaciones as $m): ?>
+                            <?php $count++; $count2++; ?>
+                            <?php if ($count == 1 or $count2 == 1): ?>
+                                <div class="carousel-item row <?= $count==1 ? 'active' : '' ?>">
+                            <?php endif ?>
+                                    <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
+                                        <div class="col-md-3 col-lg-3" style="display: inline-block;">
+                                            <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:130px">
+                                            <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-2" style="font-family: 'Benton-book', Arial, sans-serif">
+                                                <?= mb_strtoupper($m->nombre) ?>
+                                             </p>
+                                        </div>
+                                    </a>
+                            <?php if ($count2 == 4):  ?>
+                                <?php $count2=0 ?>
+                                </div>
+                            <?php endif ?>
+                        <?php endforeach ?>
+                    </div>
+
+                      
+                </div>
+            </div>
+
+            </div>
+
+            <div class="col-md-1">
+                <a class="carousel-control-next" href="#carouselExampleControls22" role="button" data-slide="next">
+                    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                    <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold float-left"></i>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
         </div>
     </div>
 </div>

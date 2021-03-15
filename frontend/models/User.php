@@ -17,6 +17,7 @@ use Yii;
  * @property string|null $password_reset_token
  * @property string $email
  * @property int $status
+ * @property string $descripcion
  * @property int $created_at
  * @property int $updated_at
  * @property string|null $verification_token
@@ -48,6 +49,7 @@ class User extends \yii\db\ActiveRecord
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],
+            [['descripcion'], 'safe'],
             [['password_reset_token'], 'unique'],
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Roles::className(), 'targetAttribute' => ['role_id' => 'id']],
         ];
@@ -64,6 +66,7 @@ class User extends \yii\db\ActiveRecord
             'first_name' => 'NOMBRE',
             'last_name' => 'APELLIDO',
             'auth_key' => 'Auth Key',
+            'descripcion' => 'DESCRIPCIÓN',
             'role_id' => 'Role ID',
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',

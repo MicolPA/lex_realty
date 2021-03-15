@@ -58,25 +58,27 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="container">
                 <div class="carousel-container position-relative row">
                   
-                <div id="myCarousel" class="carousel slide first-part" data-ride="carousel">
+                <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal">
+                    <div id="myCarousel" class="carousel slide first-part" data-ride="carousel">
 
-                  <div class="carousel-inner">
-                     
-                    <div class="carousel-item active" data-slide-number="0">
-                      <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-                    </div>
-                    <?php $count = 0; ?>
-                    <?php foreach ($fotos as $foto): ?>
-                        <?php $count++ ?>
-                        <div class="carousel-item" data-slide-number="<?= $count ?>">
-                          <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                      <div class="carousel-inner">
+                         
+                        <div class="carousel-item active" data-slide-number="0">
+                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
-                    <?php endforeach ?>
-                    <!-- Button trigger modal -->
-                    
-                  </div>
-                  
-                </div>
+                        <?php $count = 0; ?>
+                        <?php foreach ($fotos as $foto): ?>
+                            <?php $count++ ?>
+                            <div class="carousel-item" data-slide-number="<?= $count ?>">
+                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                            </div>
+                        <?php endforeach ?>
+                        <!-- Button trigger modal -->
+                        
+                      </div>
+                      
+                    </div>
+                </a>
                 <div class="text-right" style="position: inherit;width: 100%">
                     <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
                       <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
@@ -141,9 +143,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light" style="background: #44546b"><?= Html::encode($this->title) ?></h1>
 
                 <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
-                <p><i class="fas fa-circle-notch"></i> <?= $model->tipoPropiedad->nombre ?></p>
+                <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
 
-                <span class="font-weight-bold h3">US$<?= number_format($model->precio) ?></span>
+                <span class="font-weight-bold h4"><span class="font-weight-normal">DESDE</span> US$<?= number_format($model->precio) ?></span>
 
                 <!-- <div class="row mt-2">
                     <div class="col-md-6">

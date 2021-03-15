@@ -61,7 +61,7 @@ AppAsset::register($this);
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active pr-4">
-                <a class="nav-link" href="#">INICIO</a>
+                <a class="nav-link" href="/">INICIO</a>
             </li>
             <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link" href="/frontend/web/propiedades">PROPIEDADES</a>
