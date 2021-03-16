@@ -20,11 +20,11 @@ $this->title = 'PROPUESTA';
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">
             <div class="p-5">
-                <div class="bg-warning-2 text-center pl-4 pr-4 pt-2 pb-2 mb-2">
+                <div class="bg-warning-2 text-center pl-4 pr-4 pt-2 pb-2 mb-3">
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar su propuesta</h2>
                 </div>
                 <div class="col-md-12">
-                    <img class=" mb-2" src="/frontend/web/<?= $oficial->photo_url ?>" width="300px">
+                    <img class=" mb-3" src="/frontend/web/<?= $oficial->photo_url ?>" width="300px">
                 </div>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
