@@ -56,7 +56,11 @@ if (Yii::$app->user->isGuest) {
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
+
             <?php if (Yii::$app->user->identity->id == 1): ?>
+            <li class="nav-item active pr-4">
+                <a class="nav-link" href="/frontend/web/admin">INICIO</a>
+            </li>
             <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">UBICACIONES</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
@@ -88,13 +92,13 @@ if (Yii::$app->user->isGuest) {
                 <a class="dropdown-item" href="/frontend/web/propiedades-tipo">LISTADO</a>
               </div>
             </li>
-                <li class="nav-item dropdown active pl-3 pr-3">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">USUARIOS</a>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
-                    <a class="dropdown-item" href="/frontend/web/site/signup">CREAR</a>
-                    <a class="dropdown-item" href="/frontend/web/user">LISTADO</a>
-                  </div>
-                </li>
+            <!-- <li class="nav-item dropdown active pl-3 pr-3">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">USUARIOS</a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
+                <a class="dropdown-item" href="/frontend/web/site/signup">CREAR</a>
+                <a class="dropdown-item" href="/frontend/web/user">LISTADO</a>
+              </div>
+            </li> -->
             <?php endif ?>
             <li class="nav-item active pr-4">
                 <a class="nav-link" href="/frontend/web/site/logout">CERRAR SESIÓN</a>

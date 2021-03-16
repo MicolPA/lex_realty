@@ -73,14 +73,14 @@ AppAsset::register($this);
                 <a class="nav-link" href="#">DESARROLLADORES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
-                <a class="nav-link" href="#">TASA HIPOTECARIA</a>
+                <a class="nav-link" href="/frontend/web/tasas-hipotecarias">TASA HIPOTECARIA</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
                 <a class="nav-link" href="#">PUBLICACIONES</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/propiedades/listado" class="nav-link btn btn-warning btn-sm">ADM</a>
+                    <a href="/frontend/web/admin" class="nav-link btn btn-warning btn-sm">ADM</a>
                 </li>
             <?php endif ?>
           </ul>

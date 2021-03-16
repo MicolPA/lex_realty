@@ -96,8 +96,8 @@ $this->title = 'Propiedades';
                     </div>
 
                     <div class="text-center">
-                        <a href="javascript:showSearch()" class="m-auto pt-2 pb-2 pr-4 pl-4 text-white border-0" style="background: #44546b">PROPIEDADES</a>
-                        <a href="javascript:showSearch()" class="m-auto pt-2 pb-2 pr-3 pl-3 text-white border-0" style="background: #638eb0">PRE-CONSTRUCCIONES</a>
+                        <a href="javascript:showSearch(1)" class="m-auto pt-2 pb-2 pr-4 pl-4 text-white border-0" style="background: #44546b">PROPIEDADES</a>
+                        <a href="javascript:showSearch(2)" class="m-auto pt-2 pb-2 pr-3 pl-3 text-white border-0" style="background: #638eb0">PRE-CONSTRUCCIONES</a>
                     </div>
                 </div>
             </div>

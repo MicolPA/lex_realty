@@ -40,8 +40,14 @@
 .bg-blue-2{
 	background: #638eb0;
 }
+.bg-white{
+	background: white !important;
+}
 .bg-light-2{
 	background: #f7f8fa;
+}
+.bg-light-blue-3{
+	background: #d5d9de;
 }
 .span-price{
 	letter-spacing: 4px;

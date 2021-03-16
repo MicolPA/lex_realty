@@ -168,6 +168,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
+        $this->layout = '@app/views/layouts/main-admin';
         $model = new SignupForm();
         $post = Yii::$app->request->post();
         if ($model->load(Yii::$app->request->post()) && $model->signup()) {
@@ -204,6 +205,11 @@ class SiteController extends Controller
 
         return $this->render('requestPasswordResetToken', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionTasasHipotecarias(){
+        return $this->render('tasas-hipotecarias', [
         ]);
     }
 
