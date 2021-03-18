@@ -34,8 +34,8 @@
 .bg-light-blue{
 	background: #f1f2f4 !important;
 }
-.bg-pastel-blue{
-	background: #44546b;
+.bg-pastel-blue, .btn-pastel-blue{
+	background: #44546b !important;
 }
 .bg-blue-2{
 	background: #638eb0;
@@ -97,7 +97,7 @@
 	font-size: 18px
 }
 .text-blue{
-	color:#0e1227;
+	color:#0e1227 !important;
 }
 
 .rounded-2{
@@ -110,6 +110,12 @@
 
 .rounded-50{
 	border-radius: 50% !important;
+}
+
+.pagination .active a{
+
+	background: #0e1227;
+	color:white !important;
 }
 
 .input-r{
@@ -208,7 +214,7 @@ input[type="file"] {
 }
 
 .no-link:hover{
-	text-decoration: none;
+	text-decoration: none !important;
 	color:#0e1227;
 }
 

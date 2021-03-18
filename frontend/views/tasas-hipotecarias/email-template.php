@@ -3,7 +3,7 @@
 <div class="col-md-12" style="background: #0e1227; padding:4rem;width:100%">
 
 	<div class="mt3" style="border-radius: 35px; background: #fff;padding:3rem;max-width:60%;margin:auto;min-width: 500px ">
-		<div style="background: #f9ae33;margin-bottom: 2rem;text-align: center;padding:0.2rem">
+		<div style="background: #44546b;margin-bottom: 2rem;text-align: center;padding:0.2rem">
 			<h2 style="color: #fff;font-size: 22px">Nueva propuesta financiamiento</h2>
 		</div>
 		<div style="font-size: 20px !important">

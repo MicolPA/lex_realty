@@ -9,10 +9,6 @@ $get = Yii::$app->request->get();
 $precio = isset($get['precio']) ? $get['precio'] : '';
 $calificacion = isset($get['calificacion']) ? $get['calificacion'] : '';
 
-/* @var $this yii\web\View */
-/* @var $searchModel frontend\models\PropiedadesSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
 $this->title = 'PROPIEDADES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -129,7 +125,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
             <?php if ($count > 0): ?>
-                <?php foreach ($dataProvider->query->all() as $m): ?>
+                <?php foreach ($model as $m): ?>
                     <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
                         <div class="col-md-4 mt-4 mb-2">
                             <div class="bg-white">
@@ -191,11 +187,34 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>      
                     </a>
                 <?php endforeach ?>
+
             <?php else: ?>
                 <div class="col-md-12 text-center">
                     <p class="text-darkblue mt-3">No se han encontrado resultados que coincidan con la búsqueda.</p>
                 </div>
             <?php endif ?>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 p-0">
+                <div class="text-center">
+                    <?php 
+                        // display pagination
+                        echo \yii\widgets\LinkPager::widget([
+                            'pagination' => $pagination,
+                            'options' => [
+                                'class' => 'pagination text-blue float-right',
+
+                            ],
+                            'linkOptions' => ['class' => 'page-link text-blue'],
+                            'prevPageLabel' => false,
+                            'nextPageLabel' => false,
+
+                        ]);
+                    ?>
+                </div>
+
+            </div>
         </div>
     </div>
 

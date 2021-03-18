@@ -20,7 +20,7 @@ $this->title = 'PROPUESTA';
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">
             <div class="p-5">
-                <div class="bg-warning-2 text-center pl-4 pr-4 pt-2 pb-2 mb-3">
+                <div class="bg-pastel-blue text-center pl-4 pr-4 pt-2 pb-2 mb-3">
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar su propuesta</h2>
                 </div>
                 <div class="col-md-12">
@@ -50,7 +50,7 @@ $this->title = 'PROPUESTA';
 
                 <div class="row">
                     <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">
-                        <?= Html::submitButton('ENVIAR FORMULARIO', ['class' => 'btn btn-warning text-white rounded-3 pr-4 pl-4', 'style' => 'border-radius:50px']) ?>
+                        <?= Html::submitButton('ENVIAR FORMULARIO', ['class' => 'btn btn-pastel-blue text-white rounded-3 pr-4 pl-4', 'style' => 'border-radius:50px']) ?>
                     </div>
                 </div>
 

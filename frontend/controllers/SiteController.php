@@ -18,6 +18,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use frontend\models\Anuncios;
 
 /**
  * Site controller
@@ -78,6 +79,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+
+        $entradas = \frontend\models\Entradas::find()->orderBy(['id' => SORT_DESC])->all();
+        $anuncios = Anuncios::find()->where(['lugar' => 'inicio'])->all();
         $ubicaciones = Ubicaciones::find()->all();
         $model = new \frontend\models\PropiedadesSearch();
         $model2 = new \frontend\models\PreConstruccionesSearch();
@@ -86,8 +90,10 @@ class SiteController extends Controller
         return $this->render('index',[
             'model' => $model,
             'model2' => $model2,
+            'entradas' => $entradas,
             'propiedades' => $propiedades,
             'ubicaciones' => $ubicaciones,
+            'anuncios' => $anuncios,
             'pre_construcciones' => $pre_construcciones,
         ]);
     }

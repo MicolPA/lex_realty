@@ -40,9 +40,9 @@ class Anuncios extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'photo_url' => 'Photo Url',
+            'photo_url' => 'Foto',
             'lugar' => 'Lugar',
-            'date' => 'Date',
+            'date' => 'Fecha',
         ];
     }
 }

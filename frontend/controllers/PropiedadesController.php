@@ -14,6 +14,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use frontend\models\Anuncios;
 use frontend\models\ContactForm;
 
 /**
@@ -42,13 +43,22 @@ class PropiedadesController extends Controller
      */
     public function actionIndex()
     {
+        $anuncios = Anuncios::find()->where(['lugar' => 'sidebar'])->all();
         $searchModel = new PropiedadesSearch();
         $ubicaciones = Ubicaciones::find()->all();
         $tipos = PropiedadesTipo::find()->all();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $ubicaciones, $tipos);
+        $countQuery = clone $dataProvider->query;
+        $pagination = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);
+        $model = $dataProvider->query->offset($pagination->offset)
+        ->limit($pagination->limit)
+        ->all();
 
-        return $this->render('index', [
+        return $this->render($anuncios ? 'index2' : 'index', [
             'tipos' => $tipos,
+            'model' => $model,
+            'anuncios' => $anuncios,
+            'pagination' => $pagination,
             'ubicaciones' => $ubicaciones,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -173,6 +183,42 @@ class PropiedadesController extends Controller
 
         return $imagen;
 
+    }
+
+    function actionContactarAgente($id, $type=1, $user_id, $propiedad=1){
+
+        if ($propiedad == 1) {
+            $propiedad_m = $this->findModel($id);
+        }else{
+            $propiedad_m = \frontend\models\PreConstrucciones::findOne($id);
+        }
+        $model = new ContactForm();
+        $agente = User::findOne($user_id);
+        if ($model->load(Yii::$app->request->post())) {
+
+            $this->layout = false;
+            $this->render('email-user', ['nombre' =>  $model->name, 'correo' => $model->email, 'telefono' => $model->subject, 'cantidad' => $model->body, 'propiedad' => $propiedad_m, 'type' => $type, 'forma_pago' => $model->forma_pago, 'monto_reserva' => $model->monto_reserva, 'fecha_cierre' => $model->fecha_cierre, 'correo_agente' => $agente['email'], 'propiedad_check' => $propiedad]);
+
+            if ($type == 1) {
+                Yii::$app->session->setFlash('success1', 'Propuesta enviada correctamente');
+            }else{
+                Yii::$app->session->setFlash('success1', 'Mensaje enviado correctamente');
+            }
+
+            if ($propiedad) {
+                return $this->redirect(['index']);
+            }else{
+                return $this->redirect(['/pre-construcciones/index']);
+            }
+
+        }
+
+        return $this->render('contactar-agente', [
+            'type' => $type,
+            'agente' => $agente,
+            'model' => $model,
+            'propiedad' => $propiedad_m,
+        ]);
     }
 
     function actionEnviarPropuesta($id, $type=1, $user_id, $propiedad=1){

@@ -95,9 +95,13 @@ $this->title = 'Propiedades';
                         <?php ActiveForm::end(); ?>
                     </div>
 
-                    <div class="text-center">
-                        <a href="javascript:showSearch(1)" class="m-auto pt-2 pb-2 pr-4 pl-4 text-white border-0" style="background: #44546b">PROPIEDADES</a>
-                        <a href="javascript:showSearch(2)" class="m-auto pt-2 pb-2 pr-3 pl-3 text-white border-0" style="background: #638eb0">PRE-CONSTRUCCIONES</a>
+                    <div class="m-auto text-center pl-4 pr-4 d-sm-none">
+                        <a href="javascript:showSearch(1)" class="pt-2 pb-2 pr-4 pl-4 text-white border-0 bg-pastel-blue btn-block">PROPIEDADES</a>
+                        <a href="javascript:showSearch(2)" class="pt-2 pb-2 pr-3 pl-3 text-white border-0 bg-blue-2 btn-block">PRE-CONSTRUCCIONES</a>
+                    </div>
+                    <div class="m-auto text-center pl-4 pr-4 d-xs-none">
+                        <a href="javascript:showSearch(1)" class="pt-2 pb-2 pr-4 pl-4 text-white border-0 bg-pastel-blue">PROPIEDADES</a>
+                        <a href="javascript:showSearch(2)" class="pt-2 pb-2 pr-3 pl-3 text-white border-0 bg-blue-2">PRE-CONSTRUCCIONES</a>
                     </div>
                 </div>
             </div>
@@ -105,7 +109,32 @@ $this->title = 'Propiedades';
     </div>
 
 </div>
-<div class="bg-white" style="height: 400px"></div>
+<?php if (count($entradas) > 0): ?>
+    <div class="bg-white">
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-md-12">
+                    <h2 class="title-light text-center text-blue mb-5">ENTRADAS</h2>
+                </div>
+                <?php foreach ($entradas as $entrada): ?>
+                    <div class="col-md-3 mb-4">
+                        <a href="<?= $entrada->url ?>" class='no-link'>
+                            <img src="/frontend/web/<?= $entrada->photo_url ?>" class='w-100 rounded' height='160px'>
+                            <p class="font-weight-bold mt-4 text-dark"><?= $entrada->titulo ?></p>
+                        </a>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
+<?php endif ?>
+<?php if ($anuncios): ?>
+    <div class="bg-white text-center pt-3 pb-3" style="min-height: 300px">
+        <?php foreach ($anuncios as $a): ?>
+            <img src="/frontend/web/<?= $a->photo_url ?>" alt="">
+        <?php endforeach ?>
+    </div>
+<?php endif ?>
 <div class="pt-4 pb-4" style=";background-image: url(/frontend/web/images/slide-oscuro.jpg);background-repeat: no-repeat;background-size: cover;margin-top: -3rem">
     <div class="container">
         <div class="row mt-5">
@@ -262,7 +291,7 @@ $this->title = 'Propiedades';
 </div>
 
 <div class="pt-4 pb-4" style="background: #d5d8dd">
-    <div class="container">
+    <div class="container d-xs-none">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-3">
                 <h1 class="h4 title-light text-darkblue mb-4">BUSCAR POR CIUDAD</h1>
@@ -312,7 +341,67 @@ $this->title = 'Propiedades';
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
             
+            
+        </div>
+    </div>
+    <div class="container d-sm-none">
+        <div class="row mt-5">
+            <div class="col-md-12 text-center mb-3">
+                <h1 class="h4 title-light text-darkblue mb-4">BUSCAR POR CIUDAD</h1>
+            </div>
+
+            <div class="col-md-12 col-xs-12">
+                <div id="carouselExampleControls23" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php $count = 0; $count2 = 0; ?>
+                        <?php foreach ($ubicaciones as $m): ?>
+                            <?php $count++ ?>
+                            <div class="carousel-item <?= $count==1 ? 'active' : '' ?>">
+                                <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
+                                    <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:160px">
+                                    <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-2" style="font-family: 'Benton-book', Arial, sans-serif">
+                                        <?= mb_strtoupper($m->nombre) ?>
+                                     </p>
+                                </a>
+                            </div>    
+                        <?php endforeach ?>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls23" role="button" data-slide="prev" style="background: #444; top: -64px; padding-top: 70px; margin: 0px;bottom: 28px;">
+                        <i class="fas fa-chevron-left text-white fa-2x font-weight-bold float-left"></i>
+                        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                        <span class="sr-only">Previous</span>
+                    </a> 
+                    <a class="carousel-control-next" href="#carouselExampleControls23" role="button" data-slide="next" style="background: #444; top: -64px; padding-top: 70px; margin: 0px;bottom: 28px;">
+                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                        <i class="fas fa-chevron-right text-white fa-2x font-weight-bold float-left"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                      
+                </div>
+            </div>
+
+            </div>
+
+           
+            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-5">
+                <p class="text-secondary ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsam, maiores. Temporibus explicabo magni possimus non natus repellat fuga consectetur recusandae dolorum atque laboriosam itaque harum animi dicta accusamus ea nesciunt, illum unde, voluptatem ullam eos. Hic quaerat libero dolor ea dolorem autem modi nostrum cum, voluptatibus quidem expedita reprehenderit sequi fugiat voluptates harum, earum! At ex porro quos, modi, atque laboriosam vitae incidunt animi cumque nisi, ullam necessitatibus debitis.
+                </p>
+
+                <p class="text-secondary ">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsam, maiores. Temporibus explicabo magni possimus non natus repellat fuga consectetur recusandae dolorum atque laboriosam itaque harum animi dicta accusamus ea nesciunt, illum unde, voluptatem ullam eos. Hic quaerat libero dolor ea dolorem autem modi nostrum cum, voluptatibus quidem expedita reprehenderit sequi fugiat voluptates harum, earum! At ex porro quos, modi, atque laboriosam vitae incidunt animi cumque nisi, ullam necessitatibus debitis.
+                </p>
+
+            </div>
         </div>
     </div>
 </div>

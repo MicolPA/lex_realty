@@ -117,7 +117,7 @@ use yii\helpers\ArrayHelper;
 
                 <div class="row">
                     <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">
-                        <?= Html::submitButton('ENVIAR FORMULARIO', ['class' => 'btn btn-warning text-white rounded-3 pr-4 pl-4', 'style' => 'border-radius:50px']) ?>
+                        <?= Html::submitButton('ENVIAR FORMULARIO', ['class' => 'btn btn-pastel-blue text-white rounded-3 pr-4 pl-4', 'style' => 'border-radius:50px']) ?>
                     </div>
                 </div>
 
