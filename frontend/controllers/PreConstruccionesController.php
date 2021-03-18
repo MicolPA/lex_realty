@@ -41,7 +41,7 @@ class PreConstruccionesController extends Controller
     {
         $searchModel = new PreConstruccionesSearch();
         $ubicaciones = Ubicaciones::find()->all();
-        $tipos = PropiedadesTipo::find()->all();
+        $tipos = PropiedadesTipo::find()->where(['<>', 'id', 2])->all();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $ubicaciones, $tipos);
         $countQuery = clone $dataProvider->query;
         $pagination = new \yii\data\Pagination(['totalCount' => $countQuery->count()]);

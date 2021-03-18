@@ -51,7 +51,7 @@ class PreConstrucciones extends \yii\db\ActiveRecord
         return [
             [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'riezgo_id', 'impuestos', 'cargas_gramabes', 'deslinde', 'certificado_titulo', 'permisos_municipales', 'permiso_ambiental', 'objeccion_ministerio_turismo', 'permiso_obras_publicas', 'confortur', 'precio', 'user_id'], 'integer'],
             [['fecha_publicacion', 'metros', 'pies'], 'safe'],
-            [['titulo_publicacion', 'celular_contacto', 'detalles', 'foto_1', 'foto_2', 'foto_3', 'foto_4'], 'string', 'max' => 255],
+            [['titulo_publicacion', 'celular_contacto', 'detalles'], 'string', 'max' => 255],
         ];
     }
 
@@ -84,10 +84,6 @@ class PreConstrucciones extends \yii\db\ActiveRecord
             'pies' => 'Pies',
             'user_id' => 'User ID',
             'fecha_publicacion' => 'Fecha Publicacion',
-            'foto_1' => 'Foto 1',
-            'foto_2' => 'Foto 2',
-            'foto_3' => 'Foto 3',
-            'foto_4' => 'Foto 4',
         ];
     }
 

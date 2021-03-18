@@ -79,7 +79,7 @@ $this->title = 'Propiedades';
                         <div class="container">
                             <div class="row p-lg-0 bg-white div-buscador pl-5 pr-5 text-center">
                                 <div class="col-md-5 text-center">
-                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-4">

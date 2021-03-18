@@ -21,12 +21,12 @@ $this->title = 'PROPUESTA';
 <div class="container mt-5 bg-white">
 
     <div class="row bg-white">
-        <div class="col-md-4">
-            <img src="/frontend/web/<?= $agente->photo_url ?>" width='100%'>
+        <div class="col-md-4 pr-md-3">
+            <img src="/frontend/web/<?= $agente->photo_url ?>" width='100%' class='pl-md-5 pr-md-5 mb-5'>
         </div>
         <div class="col-md-8">
 
-            <p class="h2 font-weight-light"><?= $agente->first_name . ' ' . $agente->last_name ?></p>
+                <p class="h2 mt-xs-3" style="font-weight: 200 !important;letter-spacing: 5px;"><?= $agente->first_name . ' ' . $agente->last_name ?></p>
                 <p class="h5 text-blue font-weight-bold"><?= $agente->inmobiliaria ?></p>
                 <p class="mt-4 text-muted"><?= $agente->descripcion ?></p>
             <div class="">
