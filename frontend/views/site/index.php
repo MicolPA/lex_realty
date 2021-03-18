@@ -114,7 +114,7 @@ $this->title = 'Propiedades';
         <div class="container">
             <div class="row pt-5 pb-5">
                 <div class="col-md-12">
-                    <h2 class="title-light text-center text-blue mb-5">ENTRADAS</h2>
+                    <h2 class="h4 title-light text-center text-blue mb-5">PUBLICACIONES</h2>
                 </div>
                 <?php foreach ($entradas as $entrada): ?>
                     <div class="col-md-3 mb-4">

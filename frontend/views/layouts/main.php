@@ -80,7 +80,7 @@ AppAsset::register($this);
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link btn btn-warning btn-sm">ADM</a>
+                    <a href="/frontend/web/admin" class="nav-link btn btn-sm" style="background: #f2f2f2;color:#638eb0">ADM</a>
                 </li>
             <?php endif ?>
           </ul>
