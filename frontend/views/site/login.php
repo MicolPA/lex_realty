@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row mt-5 pt-5">
         <div class="col-lg-8 m-auto card mt-5 p-5">
-            <img class="m-auto" src="/frontend/web/images/Realty_12LEX_LOGO.png" width="200px">
+            <img class="m-auto" src="/frontend/web/images/logo-principal.png" width="220px">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
                 <div class="pl-5 pr-5 pt-5">
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
                     <div class="form-group">
-                        <?= Html::submitButton('Iniciar sesión', ['class' => 'btn btn-warning btn-block input-r text-white', 'name' => 'login-button', 'style' => 'font-size:20px !important']) ?>
+                        <?= Html::submitButton('Iniciar sesión', ['class' => 'btn btn-gray btn-block input-r text-white', 'name' => 'login-button', 'style' => 'font-size:20px !important']) ?>
                     </div>
                 </div>
 
