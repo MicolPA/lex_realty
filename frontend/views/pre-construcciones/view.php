@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = ['label' => 'Propiedades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<style>
+<!-- <style>
     .swal-modal{
         width:65% !important;
     }
@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
     .swal-overlay--show-modal{
         background: #0c1528;
     }
-</style>
+</style> -->
 <div class="container mb-5">
 
     

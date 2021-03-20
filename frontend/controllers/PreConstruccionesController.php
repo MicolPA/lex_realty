@@ -124,10 +124,13 @@ class PreConstruccionesController extends Controller
             $galeria->save();
             $model->galeria_id = $galeria->id;
             $model->fecha_publicacion = date("Y-m-d H:i:s");
-            $model->save();
 
-            Yii::$app->session->setFlash('success1','Pre-construcción registrada correctamente');
-            return $this->redirect(['ver', 'id' => $model->id]);
+            if ($model->save()) {
+                Yii::$app->session->setFlash('success1','Pre-construcción registrada correctamente');
+                return $this->redirect(['ver', 'id' => $model->id]);
+            }else{
+                Yii::$app->session->setFlash('error1','Error al guardar la Pre-construcción');
+            }
         }
 
 
