@@ -141,7 +141,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="pl-3 pb-3">
                                     <div class="row mb-2">
                                         
-                                        <div class="col-md-7 col-sm-7 col-lg-7 col-xs-7 pr-0" style="height: 100px">
+                                        <div class="col-md-7 col-sm-7 col-lg-7 col-xs-7 pr-0" style="height: 80px">
                                             <p class="m-0 mt-3 text-blue font-weight-light title-cards-f"><?= $m->titulo_publicacion ?></p>
                                         </div>
                                         <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5">
