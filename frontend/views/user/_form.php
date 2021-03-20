@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'photo_url')->fileInput([])->label($model->photo_url ? "CARGADA" : "SUBIR FOTO") ?>
                 </div>
                 <div class="form-group text-center">
-                    <?= Html::submitButton('Guardar', ['class' => 'btn btn-warning rounded-3']) ?>
+                    <?= Html::submitButton('Guardar', ['class' => 'btn btn-pastel-blue text-white rounded-3']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

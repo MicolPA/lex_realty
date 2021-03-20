@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
                 </div>
 
                 <div class="form-group text-center">
-                    <?= Html::submitButton('Guardar', ['class' => 'btn btn-warning rounded-3']) ?>
+                    <?= Html::submitButton('Guardar', ['class' => 'btn btn-pastel-blue text-white rounded-3']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>
