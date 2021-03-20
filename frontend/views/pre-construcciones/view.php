@@ -177,7 +177,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="row mt-4">
         <div class="col-md-12 pr-0 pl-sm-none">
-            <div class="bg-lightgray rounded p-3">
+            <div class="bg-lightgray rounded p-4">
                 <h2 class="h33 mb-3 text-gray2 font-weight-light">Características</h2>
 
                 <div class="row">
@@ -190,18 +190,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?php $check = $model->deslinde ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
 
+                    </div>
+
+                    <div class="col-md-4">
                         <?php $check = $model->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISOS MUNICIPALES</p>
 
-                       
-                    </div>
-
-                    <div class="col-md-6">
-                         <?php $check = $model->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
+                        <?php $check = $model->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO AMBIENTAL</p>
 
                         <?php $check = $model->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+
+                    </div>
+
+                    <div class="col-md-4">
 
                         <?php $check = $model->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO DE OBRAS PUBLICAS</p>
