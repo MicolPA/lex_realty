@@ -23,7 +23,7 @@ use yii\helpers\ArrayHelper;
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
                 <div class="form-group">
-                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
                 </div>
 
                 <div class="form-group">
@@ -61,7 +61,7 @@ use yii\helpers\ArrayHelper;
                 <?php endif ?>
 
                     <div class="col-md-6">
-                        <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO', 'required' => 'required'])->label(false) ?>
+                        <?= $form->field($model, 'precio')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'PRECIO DESDE', 'required' => 'required'])->label(false) ?>
 
                         <!-- <h6 class="font-weight-bold">Área</h6> -->
                     </div>

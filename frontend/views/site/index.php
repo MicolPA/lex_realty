@@ -79,7 +79,7 @@ $this->title = 'Propiedades';
                         <div class="container">
                             <div class="row p-lg-0 bg-white div-buscador pl-5 pr-5 text-center">
                                 <div class="col-md-5 text-center">
-                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-4">
@@ -296,15 +296,14 @@ $this->title = 'Propiedades';
             <div class="col-md-12 text-center mb-3">
                 <h1 class="h4 title-light text-darkblue mb-4">BUSCAR POR CIUDAD</h1>
             </div>
-            <div class="col-md-1">
+           <!--  <div class="col-md-1">
                 <a class="carousel-control-prev" href="#carouselExampleControls22" role="button" data-slide="prev">
                     <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
-                    <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                     <span class="sr-only">Previous</span>
                 </a> 
-            </div>
+            </div> -->
 
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div id="carouselExampleControls22" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <?php $count = 0; $count2 = 0; ?>
@@ -334,13 +333,12 @@ $this->title = 'Propiedades';
 
             </div>
 
-            <div class="col-md-1">
+            <!-- <div class="col-md-1">
                 <a class="carousel-control-next" href="#carouselExampleControls22" role="button" data-slide="next">
-                    <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                     <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold float-left"></i>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
+            </div> -->
 
             
             
@@ -374,7 +372,7 @@ $this->title = 'Propiedades';
                         <span class="sr-only">Previous</span>
                     </a> 
                     <a class="carousel-control-next" href="#carouselExampleControls23" role="button" data-slide="next" style="background: #444; top: -64px; padding-top: 70px; margin: 0px;bottom: 28px;">
-                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <i class="fas fa-chevron-right text-white fa-2x font-weight-bold float-left"></i>
                         <span class="sr-only">Next</span>
                     </a>
