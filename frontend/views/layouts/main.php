@@ -113,7 +113,7 @@ AppAsset::register($this);
     <?php
     $msj = Yii::$app->session->getFlash('error1');
     echo '<script type="text/javascript">';
-    echo "setTimeout(function () { swal('Correcto','$msj','error');";
+    echo "setTimeout(function () { swal('Error','$msj','error');";
     echo '}, 1000);</script>';
     ?>
 <?php endif; ?>  

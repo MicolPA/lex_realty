@@ -31,7 +31,7 @@ class m201217_225744_create_tables extends Migration
             'cargas_gramabes' => $this->integer(),
             'deslinde' => $this->integer(),
             'certificado_titulo' => $this->integer(),
-            'detalles' => $this->string(),
+            'detalles' => $this->text(),
             'user_id' => $this->integer(),
             'fecha_publicacion' => $this->dateTime(),
             'foto_1' => $this->string(),

@@ -36,7 +36,7 @@ class m210302_170638_new_table_pre_construcciones extends Migration
             'permiso_obras_publicas' => $this->integer(),
             'confortur' => $this->integer(),
             'celular_contacto' => $this->string(),
-            'detalles' => $this->string(),
+            'detalles' => $this->text(),
             'precio' => $this->integer(),
             'galeria_id' => $this->integer(),
             'user_id' => $this->integer(),
