@@ -1,12 +1,12 @@
 console.log('hola');
 
-$(".ubicacion").prepend("<option value=''>TODAS</option>");
+$(".ubicacion").prepend("<option value=''>Todas</option>");
 $(".ubicacion").prepend("<option value='' selected>Ubicación</option>");
 
-$(".calificacion").prepend("<option value=''>TODAS</option>");
+$(".calificacion").prepend("<option value=''>Todas</option>");
 $(".calificacion").prepend("<option value='' selected>Calificación</option>");
 
-$(".tipo").prepend("<option value=''>TODOS</option>");
+$(".tipo").prepend("<option value=''>Todos</option>");
 $(".tipo").prepend("<option value='' selected>Tipo</option>");
 
 

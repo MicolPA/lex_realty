@@ -20,7 +20,7 @@ class AppAsset extends AssetBundle
         'js/jquery-2.2.4.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js',
         'js/bootstrap.min.js',
-        'js/main.js?v=6',
+        'js/main.js?v=7',
         'js/all.min.js',
         'js/sweetalert.min.js',
 
