@@ -86,7 +86,7 @@ class SiteController extends Controller
         $model = new \frontend\models\PropiedadesSearch();
         $model2 = new \frontend\models\PreConstruccionesSearch();
         $propiedades = Propiedades::find()->where(['riezgo_id' => 1])->orderBy([ 'rand()' => SORT_DESC])->limit(4)->all();
-        $pre_construcciones = PreConstrucciones::find()->orderBy([ 'rand()' => SORT_DESC])->limit(4)->all();
+        $pre_construcciones = PreConstrucciones::find()->orderBy([ 'rand()' => SORT_DESC])->limit(3)->all();
         return $this->render('index',[
             'model' => $model,
             'model2' => $model2,
