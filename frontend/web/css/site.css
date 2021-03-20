@@ -42,12 +42,12 @@
 	background: #44546b !important;
 }
 
-.btn-pastel-blue:hover, .btn-gray:hover{
+.btn-pastel-blue:hover, .btn-gray:hover, .nav-item:hover, .btn-dark:hover{
 	background: #638eb0 !important;
 }
-.nav-item a:hover{
+/*.nav-item a:hover{
 	color: #638eb0 !important;
-}
+}*/
 .text-pastel-blue{
 	color: #44546b !important;
 }
@@ -62,6 +62,9 @@
 }
 .bg-light-blue-3{
 	background: #d5d9de;
+}
+.bg-blue3{
+	background: #0c1427;
 }
 .span-price{
 	letter-spacing: 4px;

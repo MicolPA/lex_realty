@@ -58,7 +58,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="container">
                 <div class="carousel-container position-relative row">
                   
-                <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal">
+                <!-- <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal"> -->
                     <div id="myCarousel" class="carousel slide first-part" data-ride="carousel">
 
                       <div class="carousel-inner">
@@ -78,12 +78,12 @@ $this->params['breadcrumbs'][] = $this->title;
                       </div>
                       
                     </div>
-                </a>
-                <div class="text-right" style="position: inherit;width: 100%">
+                <!-- </a> -->
+               <!--  <div class="text-right" style="position: inherit;width: 100%">
                     <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
                       <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
                     </button>
-                </div>
+                </div> -->
 
                 <!-- Carousel Navigation -->
                 <div id="carousel-thumbs" class="carousel slide bg-white" data-ride="carousel">
@@ -171,7 +171,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div> -->
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=0" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/propiedades/contactar-agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&type=2&propiedad=0" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
+                <a href="/frontend/web/propiedades/contactar-agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&type=2&propiedad=0" class="btn-block text-white text-center p-0 pt-2 pb-2 btn btn-dark h6">CONTACTAR UN AGENTE</a>
             </div>
         </div>
     </div>

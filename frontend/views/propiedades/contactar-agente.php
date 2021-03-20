@@ -24,7 +24,7 @@ $this->title = 'PROPUESTA';
         <div class="col-md-4 pr-md-3">
             <img src="/frontend/web/<?= $agente->photo_url ?>" width='100%' class='pl-md-5 pr-md-5 mb-5'>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
 
                 <p class="h2 mt-xs-3" style="font-weight: 200 !important;letter-spacing: 5px;"><?= $agente->first_name . ' ' . $agente->last_name ?></p>
                 <p class="h5 text-blue font-weight-bold"><?= $agente->inmobiliaria ?></p>
@@ -44,18 +44,18 @@ $this->title = 'PROPUESTA';
                     <?= $form->field($model, 'subject')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'TELEFONO', 'required' => 'required'])->label(false) ?>
                 </div>
 
-                <div class="bg-blue w-95 m-auto">
+                <div class="bg-blue3 w-95 m-auto">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="pt-5 pl-4">
-                                <p class="text-blue font-14 m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
-                                <p class="text-blue font-14 m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
-                                <p class="text-blue font-14"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
+                                <p class="text-white font-14 m-0"><span class="font-weight-bold">PROPIEDAD:</span> <?= $propiedad->titulo_publicacion ?></p>
+                                <p class="text-white font-14 m-0"><span class="font-weight-bold">UBICACIÓN:</span> <?= $propiedad->ubicacion->nombre ?></p>
+                                <p class="text-white font-14"><span class="font-weight-bold">METRAJE:</span> <?= $propiedad->metros ?> MT2</p>
                             </div>
                         </div>
 
                         <div class="col-md-6">
-                            <img src="/frontend/web/<?= $propiedad->foto_1 ?>" width="100%" height="220px">
+                            <img src="/frontend/web/<?= $propiedad->foto_1 ?>" width="100%" height="180px">
                         </div>
                     </div>
                 </div>

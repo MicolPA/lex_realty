@@ -129,7 +129,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                 </div>
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=1" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=1" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6">CONTACTAR UN AGENTE</a>
+                <a href="/frontend/web/propiedades/agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=1" class="btn-block text-white text-center p-0 pt-2 pb-2 btn btn-dark h6">CONTACTAR UN AGENTE</a>
             </div>
         </div>
     </div>
