@@ -226,17 +226,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-md-4">
                         <?php if ($model->certificado_titulo): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> CERTIFICADO DE TITULO</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> CERTIFICADO DE TITULO</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> CERTIFICADO DE TITULO</p>
                         <?php endif ?>
                         <?php if ($model->cargas_gramabes): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> LIBRES DE CARGAS Y GRAVÁMENES</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
                         <?php endif ?>
                         <?php if ($model->deslinde): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> DESLINDE</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> DESLINDE</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> DESLINDE</p>
                         <?php endif ?>
@@ -245,17 +245,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <div class="col-md-4">
                          <?php if ($model->permisos_municipales): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> PERMISOS MUNICIPALES</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> PERMISOS MUNICIPALES</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISOS MUNICIPALES</p>
                         <?php endif ?>
                         <?php if ($model->permiso_ambiental): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> PERMISO AMBIENTAL</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> PERMISO AMBIENTAL</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISO AMBIENTAL</p>
                         <?php endif ?>
                         <?php if ($model->objeccion_ministerio_turismo): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> DESLINDE</p>
                         <?php endif ?>
@@ -265,12 +265,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="col-md-4">
 
                         <?php if ($model->permiso_obras_publicas): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-1"></i> PERMISO DE OBRAS PUBLICAS</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-1"></i> PERMISO DE OBRAS PUBLICAS</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISO DE OBRAS PUBLICAS</p>
                         <?php endif ?>
                         <?php if ($model->confortur): ?>
-                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> CONFORTUR</p>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success2 mr-2"></i> CONFORTUR</p>
                             <?php else: ?>
                             <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> CONFORTUR</p>
                         <?php endif ?>

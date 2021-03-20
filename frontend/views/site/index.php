@@ -18,7 +18,7 @@ $this->title = 'Propiedades';
         .col-lg-3 {
             -ms-flex: 0 0 25%;
             flex: 0 0 25%;
-            max-width: 24%;
+            max-width: 24.5%;
         }
     }
 </style>
@@ -318,7 +318,7 @@ $this->title = 'Propiedades';
                                     <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
                                         <div class="col-md-3 col-lg-3" style="display: inline-block;">
                                             <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:130px">
-                                            <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 pb-1 text-white">23<?= $total ?> Propiedades</span></p>
+                                            <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 text-white font-weight-light">23<?= $total ?> Propiedades</span></p>
                                             <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-4" style="font-family: 'Benton-book', Arial, sans-serif">
                                                 <?= mb_strtoupper($m->nombre) ?>
                                              </p>
@@ -359,10 +359,14 @@ $this->title = 'Propiedades';
                     <div class="carousel-inner">
                         <?php $count = 0; $count2 = 0; ?>
                         <?php foreach ($ubicaciones as $m): ?>
-                            <?php $count++ ?>
+                            <?php 
+                                $count++;
+                                $total = \frontend\models\Propiedades::find()->where(['ubicacion_id' => $m->id])->count();
+                             ?>
                             <div class="carousel-item <?= $count==1 ? 'active' : '' ?>">
                                 <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
                                     <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:160px">
+                                    <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 text-white font-weight-light">23<?= $total ?> Propiedades</span></p>
                                     <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-2" style="font-family: 'Benton-book', Arial, sans-serif">
                                         <?= mb_strtoupper($m->nombre) ?>
                                      </p>
@@ -376,7 +380,7 @@ $this->title = 'Propiedades';
                         <span class="sr-only">Previous</span>
                     </a> 
                     <a class="carousel-control-next" href="#carouselExampleControls23" role="button" data-slide="next" style="background: #444; top: -64px; padding-top: 70px; margin: 0px;bottom: 28px;">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                         <i class="fas fa-chevron-right text-white fa-2x font-weight-bold float-left"></i>
                         <span class="sr-only">Next</span>
                     </a>
@@ -394,12 +398,12 @@ $this->title = 'Propiedades';
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12 p-5">
-                <p class="text-secondary ">
+            <div class="col-md-12 pt-5 pr-5 pb-5">
+                <p class="text-secondary font-14">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsam, maiores. Temporibus explicabo magni possimus non natus repellat fuga consectetur recusandae dolorum atque laboriosam itaque harum animi dicta accusamus ea nesciunt, illum unde, voluptatem ullam eos. Hic quaerat libero dolor ea dolorem autem modi nostrum cum, voluptatibus quidem expedita reprehenderit sequi fugiat voluptates harum, earum! At ex porro quos, modi, atque laboriosam vitae incidunt animi cumque nisi, ullam necessitatibus debitis.
                 </p>
 
-                <p class="text-secondary ">
+                <p class="text-secondary font-14">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsam, maiores. Temporibus explicabo magni possimus non natus repellat fuga consectetur recusandae dolorum atque laboriosam itaque harum animi dicta accusamus ea nesciunt, illum unde, voluptatem ullam eos. Hic quaerat libero dolor ea dolorem autem modi nostrum cum, voluptatibus quidem expedita reprehenderit sequi fugiat voluptates harum, earum! At ex porro quos, modi, atque laboriosam vitae incidunt animi cumque nisi, ullam necessitatibus debitis.
                 </p>
 

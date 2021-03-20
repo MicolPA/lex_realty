@@ -67,6 +67,12 @@
 .bg-blue3{
 	background: #0c1427;
 }
+.bg-success2{
+	background: #88CB32;
+}
+.text-success2{
+	color: #88CB32;
+}
 .span-price{
 	letter-spacing: 4px;
 	font-weight: bold;
