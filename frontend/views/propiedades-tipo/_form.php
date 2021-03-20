@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
     			<?= $form->field($model, 'nombre')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3 mt-3', 'placeholder' =>'NOMBRE'])->label(false) ?>
 
 			    <div class="form-group text-center">
-			        <?= Html::submitButton('Guardar', ['class' => 'btn btn-warning rounded-3']) ?>
+			        <?= Html::submitButton('Guardar', ['class' => 'btn btn-pastel-blue text-white rounded-3']) ?>
 			    </div>
 
 			    <?php ActiveForm::end(); ?>
