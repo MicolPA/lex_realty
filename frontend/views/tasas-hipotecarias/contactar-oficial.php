@@ -24,7 +24,7 @@ $this->title = 'PROPUESTA';
                     <h2 class="text-white h5 m-0">Llene los siguientes datos para enviar su propuesta</h2>
                 </div>
                 <div class="col-md-12">
-                    <img class="mb-5 mt-4" src="/frontend/web/<?= $oficial->photo_url ?>" width="300px">
+                    <img class="mb-5 mt-4" src="/frontend/web/<?= $oficial->photo_url ?>" width="280px">
                 </div>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
