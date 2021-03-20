@@ -64,13 +64,13 @@ $this->params['breadcrumbs'][] = $this->title;
                       <div class="carousel-inner">
                          
                         <div class="carousel-item active" data-slide-number="0">
-                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
                         <?php $count = 0; ?>
                         <?php foreach ($fotos as $foto): ?>
                             <?php $count++ ?>
                             <div class="carousel-item" data-slide-number="<?= $count ?>">
-                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                         <?php endforeach ?>
                         <!-- Button trigger modal -->
@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div> -->
 
                 <!-- Carousel Navigation -->
-                <div id="carousel-thumbs" class="carousel slide bg-white" data-ride="carousel">
+                <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="row mx-0">

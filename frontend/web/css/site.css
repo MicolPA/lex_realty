@@ -44,6 +44,7 @@
 
 .btn-pastel-blue:hover, .btn-gray:hover, .nav-item:hover, .btn-dark:hover{
 	background: #638eb0 !important;
+	border-color: #638eb0 !important;
 }
 /*.nav-item a:hover{
 	color: #638eb0 !important;

@@ -64,13 +64,13 @@ $this->params['breadcrumbs'][] = $this->title;
                       <div class="carousel-inner">
                          
                         <div class="carousel-item active" data-slide-number="0">
-                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                         </div>
                         <?php $count = 0; ?>
                         <?php foreach ($fotos as $foto): ?>
                             <?php $count++ ?>
                             <div class="carousel-item" data-slide-number="<?= $count ?>">
-                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
                             </div>
                         <?php endforeach ?>
                         <!-- Button trigger modal -->
@@ -86,7 +86,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div> -->
 
                 <!-- Carousel Navigation -->
-                <div id="carousel-thumbs" class="carousel slide bg-white" data-ride="carousel">
+                <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom" data-ride="carousel">
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="row mx-0">
@@ -175,7 +175,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
     </div>
-    <div class="row mt-4">
+    <!-- <div class="row mt-4">
         <div class="col-md-12 pr-0 pl-sm-none">
             <div class="bg-lightgray rounded p-5">
                 <h2 class="h33 mb-3 text-gray2 font-weight-light">Características</h2>
@@ -211,6 +211,70 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <?php $check = $model->confortur ? "dot-full-2.png" : 'dot.png' ?>
                         <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> CONFORTUR</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div> -->
+    <div class="row mt-4">
+        <div class="col-md-12 pr-0 pl-sm-none">
+            <div class="bg-lightgray rounded p-5">
+                <h2 class="h33 mb-3 text-gray2 font-weight-light">Características</h2>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <?php if ($model->certificado_titulo): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> CERTIFICADO DE TITULO</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> CERTIFICADO DE TITULO</p>
+                        <?php endif ?>
+                        <?php if ($model->cargas_gramabes): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                        <?php endif ?>
+                        <?php if ($model->deslinde): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> DESLINDE</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> DESLINDE</p>
+                        <?php endif ?>
+
+                    </div>
+
+                    <div class="col-md-4">
+                         <?php if ($model->permisos_municipales): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> PERMISOS MUNICIPALES</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISOS MUNICIPALES</p>
+                        <?php endif ?>
+                        <?php if ($model->permiso_ambiental): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> PERMISO AMBIENTAL</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISO AMBIENTAL</p>
+                        <?php endif ?>
+                        <?php if ($model->objeccion_ministerio_turismo): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> DESLINDE</p>
+                        <?php endif ?>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <?php if ($model->permiso_obras_publicas): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-1"></i> PERMISO DE OBRAS PUBLICAS</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> PERMISO DE OBRAS PUBLICAS</p>
+                        <?php endif ?>
+                        <?php if ($model->confortur): ?>
+                            <p class="m-0 small text-gray mb-2"><i class="fas fa-circle text-success mr-2"></i> CONFORTUR</p>
+                            <?php else: ?>
+                            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/dot.png" class='mr-1' width="15px"> CONFORTUR</p>
+                        <?php endif ?>
+
                     </div>
                 </div>
                 
