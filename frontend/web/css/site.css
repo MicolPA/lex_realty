@@ -235,6 +235,19 @@ input[type="file"] {
 	color:#0e1227;
 }
 
+.contenedor_total{
+	margin-top: -2.5rem;
+}
+
+.contenedor_total span{
+	opacity: 0.8;
+}
+
+.contenedor_total span:hover{
+	opacity: 1 !important;
+	background: #44546b !important;
+}
+
 
 .carousel-indicators li{
 	box-sizing: none !important;
