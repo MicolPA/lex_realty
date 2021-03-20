@@ -58,7 +58,7 @@ if (Yii::$app->user->isGuest) {
           <ul class="navbar-nav mr-auto">
 
             <?php if (Yii::$app->user->identity->id == 1): ?>
-            <li class="nav-item active pr-4">
+            <li class="nav-item active">
                 <a class="nav-link" href="/frontend/web/admin">INICIO</a>
             </li>
             <li class="nav-item dropdown active pl-3 pr-3">
@@ -100,7 +100,7 @@ if (Yii::$app->user->isGuest) {
               </div>
             </li> -->
             <?php endif ?>
-            <li class="nav-item active pr-4">
+            <li class="nav-item active">
                 <a class="nav-link" href="/frontend/web/site/logout">CERRAR SESIÓN</a>
             </li>
             <!-- <li class="nav-item active pl-4 pr-4">

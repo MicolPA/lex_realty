@@ -60,8 +60,8 @@ AppAsset::register($this);
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active pr-4">
-                <a class="nav-link" href="/">INICIO</a>
+            <li class="nav-item active">
+                <a class="nav-link text-center" href="/">INICIO</a>
             </li>
             <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link" href="/frontend/web/propiedades">PROPIEDADES</a>
@@ -79,7 +79,7 @@ AppAsset::register($this);
                 <a class="nav-link" href="#">PUBLICACIONES</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
-                <li class="nav-item active pl-4 pr-4">
+                <li class="nav-item2 active pl-4 pr-4">
                     <a href="/frontend/web/admin" class="nav-link btn btn-sm" style="background: #f2f2f2;color:#638eb0">ADM</a>
                 </li>
             <?php endif ?>
