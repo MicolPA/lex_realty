@@ -183,34 +183,34 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="row">
                     <div class="col-md-4">
                         <?php $check = $model->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> CERTIFICADO DE TITULO</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> CERTIFICADO DE TITULO</p>
 
                         <?php $check = $model->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
                         <?php $check = $model->deslinde ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> DESLINDE</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> DESLINDE</p>
 
                     </div>
 
                     <div class="col-md-4">
                         <?php $check = $model->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> PERMISOS MUNICIPALES</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> PERMISOS MUNICIPALES</p>
 
                         <?php $check = $model->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> PERMISO AMBIENTAL</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> PERMISO AMBIENTAL</p>
 
                         <?php $check = $model->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
 
                     </div>
 
                     <div class="col-md-4">
 
                         <?php $check = $model->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> PERMISO DE OBRAS PUBLICAS</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> PERMISO DE OBRAS PUBLICAS</p>
 
                         <?php $check = $model->confortur ? "dot-full-2.png" : 'dot.png' ?>
-                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-1' width="17px"> CONFORTUR</p>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" class='mr-2' width="17px"> CONFORTUR</p>
                     </div>
                 </div>
                 
