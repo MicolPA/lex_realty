@@ -40,7 +40,7 @@ $this->title = 'PROPUESTA';
                     <?= $form->field($model, 'email')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'CORREO', 'required' => 'required'])->label(false) ?>
                 </div>
 
-                <div class="form-group mb-0">
+                <div class="form-group">
                     <?= $form->field($model, 'subject')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'TELEFONO', 'required' => 'required'])->label(false) ?>
                 </div>
 
