@@ -1,3 +1,8 @@
+<style>
+    .table th, .table td{
+        border:none !important;
+    }
+</style>
 <div class="container">
     <div class="container">
         <div class="row mt-5 pt-5 m-auto" style="max-width: 800px">
