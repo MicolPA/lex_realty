@@ -179,7 +179,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if ($extra): ?>
         <div class="row mt-4">
             <div class="col-md-12 pr-0 pl-sm-none">
-                <div class="bg-lightgray rounded p-4">
+                <div class="bg-lightgray rounded p-5">
                     <h2 class="h33 mb-3 text-gray2 font-weight-light">Características principales</h2>
                     <div class="row">
                         <?php if ($extra->aire_acondicionado): ?>
