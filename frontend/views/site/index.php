@@ -55,15 +55,15 @@ $this->title = 'Propiedades';
                         <div class="container">
                             <div class="row p-lg-0 bg-white div-buscador pl-5 pr-5 text-center">
                                 <div class="col-md-3 text-center">
-                                    <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary ubicacion'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-3">
-                                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Tipo', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary tipo'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <?php echo $form->field($model, 'riezgo_id')->dropDownList(array('1' => 'A+'),['prompt'=>'Calificación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model, 'riezgo_id')->dropDownList(array('1' => 'A+'),['class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary calificacion'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-3 text-right">
@@ -79,11 +79,11 @@ $this->title = 'Propiedades';
                         <div class="container">
                             <div class="row p-lg-0 bg-white div-buscador pl-5 pr-5 text-center">
                                 <div class="col-md-5 text-center">
-                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'Ubicación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model2, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary ubicacion'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-4">
-                                    <?php echo $form->field($model2, 'riezgo_id')->dropDownList(array('1' => 'A+'),['prompt'=>'Calificación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary'])->label(false); ?>
+                                    <?php echo $form->field($model2, 'riezgo_id')->dropDownList(array('1' => 'A+'),['prompt'=>'Calificación', 'class' => 'form-control select-center h5 mt-2 mb-0 border-0 font-weight-bold text-secondary calificacion'])->label(false); ?>
                                 </div>
 
                                 <div class="col-md-3 text-right">

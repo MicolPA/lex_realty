@@ -1,5 +1,15 @@
 console.log('hola');
 
+$(".ubicacion").prepend("<option value=''>TODAS</option>");
+$(".ubicacion").prepend("<option value='' selected>Ubicación</option>");
+
+$(".calificacion").prepend("<option value=''>TODAS</option>");
+$(".calificacion").prepend("<option value='' selected>Calificación</option>");
+
+$(".tipo").prepend("<option value=''>TODOS</option>");
+$(".tipo").prepend("<option value='' selected>Tipo</option>");
+
+
 jQuery('input[type=file]').change(function(){
 	console.log('aqui');
  	var filename = jQuery(this).val().split('\\').pop();
