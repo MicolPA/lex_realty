@@ -89,11 +89,12 @@ class PropiedadesController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionVer($id)
+    public function actionVer($id, $first=null)
     {
         $extra = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
         return $this->render('view', [
             'extra' => $extra,
+            'first' => $first,
             'model' => $this->findModel($id),
         ]);
     }

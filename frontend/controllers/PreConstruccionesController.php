@@ -77,9 +77,10 @@ class PreConstruccionesController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionVer($id)
+    public function actionVer($id, $first=null)
     {
         return $this->render('view', [
+            'first' => $first,
             'model' => $this->findModel($id),
         ]);
     }

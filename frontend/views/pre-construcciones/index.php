@@ -127,7 +127,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
             <?php if ($count > 0): ?>
                 <?php foreach ($model as $m): ?>
-                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $m->id ?>" class="no-link text-blue">
+                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $m->id ?>&first=<?= $m->id ?>" class="no-link text-blue">
                         <div class="col-md-4 mt-4 mb-2">
                             <div class="bg-white">
                                 <div class="contenedor">
@@ -155,7 +155,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     
 
                                     <span class="span-price pl-2 pr-2 font-12">PRECIO DESDE</span>
-                                    <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($m->precio, 0) ?></p>
+                                    <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($m->precio, 2) ?></p>
                                     <div class="detalles" style="height: 190px;font-family: 'Benton-book', Arial, sans-serif">
 
                                         <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>

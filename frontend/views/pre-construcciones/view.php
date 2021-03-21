@@ -23,6 +23,10 @@ $this->title = $model->titulo_publicacion;
 $this->params['breadcrumbs'][] = ['label' => 'Propiedades', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
+
+$next_propiedad = \frontend\models\PreConstrucciones::find()->where(['<', 'id', $model->id])->orderBy(['id' => SORT_DESC])->one();
+$prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', $model->id])->orderBy(['id' => SORT_ASC])->one();
+
 ?>
 <!-- <style>
     .swal-modal{
@@ -293,6 +297,43 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
 
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6 col-xs-6 col-sm-6 text-right" style="max-width: 50% !important">
+            <?php if ($model->id == $first or !$prev_propiedad): ?>
+                <a href="/frontend/web/pre-construcciones" class="no-link font-weight-bold float-right mt-3">
+                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
+                </a>
+                <div class="w-fit float-right">
+                    <a href="/frontend/web/pre-construcciones" class="no-link text-secondary font-weight-bold">
+                        <i class="fal fas fa-chevron-left" style="font-size: 60px;color:#aeb1b6"></i> 
+                    </a>
+                </div>
+                
+            <?php else: ?>
+                <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-right mt-3">
+                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
+                </a>
+                <div class="w-fit float-right">
+                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                        <i class="fal fas fa-chevron-left" style="font-size: 60px;color:#aeb1b6"></i> 
+                    </a>
+                </div>
+            <?php endif ?>
+        </div>
+        <?php if ($next_propiedad): ?>
+            <div class="col-md-6 col-xs-6 col-sm-6" style="max-width: 50% !important">
+                <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mt-3">
+                    <span class="font-12" style="color:#aeb1b6">SIGUIENTE</span>
+                </a>
+                <div class="w-fit float-left">
+                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                        <i class="fal fas fa-chevron-right" style="font-size: 60px;color:#aeb1b6"></i> 
+                    </a>
+                </div>
+            </div>
+        <?php endif ?>
     </div>
 
     
