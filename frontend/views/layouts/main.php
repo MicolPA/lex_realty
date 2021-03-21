@@ -94,9 +94,35 @@ AppAsset::register($this);
     </div>
 </div>
 
-<footer class="bg-darkblue pt-5" style="height: 200px">
+<footer class="bg-darkblue pt-5" style="min-height: 200px">
     <div class="container">
-        <img class="mt-4" src="/frontend/web/images/logo-footer.png" width="200px">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="mt-4 mb-3" src="/frontend/web/images/logo-footer.png" width="200px">
+            </div>
+
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a class="text-white" href="/frontend/web/propiedades">Propiedades</a></li>
+                    <li><a class="text-white" href="/frontend/web/tasas-hipotecarias">Tasa hipotecaria</a></li>
+                    <li><a class="text-white" href="/frontend/web/pre-construcciones">Pre construcciones</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <ul class="list-unstyled">
+                    <li><a class="text-white" href="#">Publicaciones</a></li>
+                    <li><a class="text-white" href="#">Agentes inmobiliarios</a></li>
+                    <li><a class="text-white" href="#">Desarrolladores</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 p-md-0">
+                <ul class="list-unstyled">
+                    <li><a class="text-white" href="#">Terminos y condiciones</a></li>
+                    <li><a class="text-white" href="#">Política de privacidad</a></li>
+                    <li><a class="text-white" href="#">Contactos</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </footer>
 

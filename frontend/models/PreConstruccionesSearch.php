@@ -65,7 +65,7 @@ class PreConstruccionesSearch extends PreConstrucciones
                 array_push($tipos_all, $tipo->id);
             }
         }
-
+        
         // echo $sort;
         // exit;
 
@@ -81,6 +81,18 @@ class PreConstruccionesSearch extends PreConstrucciones
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
+        }
+
+        if (isset($get['precio_desde'])) {
+            if ($get['precio_desde']) {
+                $query->andFilterWhere(['>=', 'precio', $get['precio_desde']]);
+            }
+        }
+
+        if (isset($get['precio_hasta'])) {
+            if ($get['precio_hasta']) {
+                $query->andFilterWhere(['<=', 'precio', $get['precio_hasta']]);
+            }
         }
 
         // grid filtering conditions

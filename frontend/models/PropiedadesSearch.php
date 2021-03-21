@@ -42,32 +42,45 @@ class PropiedadesSearch extends Propiedades
     public function search($params, $ubicaciones=array(), $tipos=array())
     {
         $get = Yii::$app->request->get();
-        $this->riezgo_id = isset($get['calificacion']) ? 1 : null;
-        if (isset($get['precio'])) {
-            $sort = "precio";
-            $sort_type = $get['precio'] == 1 ? SORT_ASC : SORT_DESC;
-        }else{
-            $sort = "id";
-            $sort_type = SORT_DESC;
-        }
+        $query = Propiedades::find();
+        // $this->riezgo_id = isset($get['calificacion']) ? 1 : null;
+        // if (isset($get['precio'])) {
+        //     $sort = "precio";
+        //     $sort_type = $get['precio'] == 1 ? SORT_ASC : SORT_DESC;
+        // }else{
+        //     $sort = "id";
+        //     $sort_type = SORT_DESC;
+        // }
 
-        $query = Propiedades::find()->orderBy([$sort => $sort_type]);
-        $ub_all = array();
-        foreach ($ubicaciones as $ub) {
-            if (isset($get["ubicacion_$ub->id"])) {
-                array_push($ub_all, $ub->id);
-            }
-        }
+        // $query = Propiedades::find()->orderBy([$sort => $sort_type]);
+        // $ub_all = array();
+        // foreach ($ubicaciones as $ub) {
+        //     if (isset($get["ubicacion_$ub->id"])) {
+        //         array_push($ub_all, $ub->id);
+        //     }
+        // }
 
-        $tipos_all = array();
-        foreach ($tipos as $tipo) {
-            if (isset($get["tipo_$tipo->id"])) {
-                array_push($tipos_all, $tipo->id);
-            }
-        }
+        // $tipos_all = array();
+        // foreach ($tipos as $tipo) {
+        //     if (isset($get["tipo_$tipo->id"])) {
+        //         array_push($tipos_all, $tipo->id);
+        //     }
+        // }
 
         // echo $sort;
         // exit;
+
+        if (isset($get['precio_desde'])) {
+            if ($get['precio_desde']) {
+                $query->andFilterWhere(['>=', 'precio', $get['precio_desde']]);
+            }
+        }
+
+        if (isset($get['precio_hasta'])) {
+            if ($get['precio_hasta']) {
+                $query->andFilterWhere(['<=', 'precio', $get['precio_hasta']]);
+            }
+        }
 
         // add conditions that should always apply here
 
@@ -84,15 +97,15 @@ class PropiedadesSearch extends Propiedades
         }
 
         // grid filtering conditions
-        $query->andFilterWhere(['in', 'ubicacion_id', $ub_all]);
-        $query->andFilterWhere(['in', 'tipo_propiedad', $tipos_all]);
+        // $query->andFilterWhere(['in', 'ubicacion_id', $ub_all]);
+        // $query->andFilterWhere(['in', 'tipo_propiedad', $tipos_all]);
         $query->andFilterWhere([
             'id' => $this->id,
             'ubicacion_id' => $this->ubicacion_id,
             'tipo_propiedad' => $this->tipo_propiedad,
             'habitaciones' => $this->habitaciones,
             'baños' => $this->baños,
-            'riezgo_id' => $this->riezgo_id,
+            'riezgo_id' => $this->riezgo_id ? 1 : null,
             'impuestos' => $this->impuestos,
             'cargas_gramabes' => $this->cargas_gramabes,
             'deslinde' => $this->deslinde,

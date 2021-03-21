@@ -3,26 +3,16 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
-use yii\helpers\ArrayHelper;
 
 $count = $dataProvider->query->count();
 $get = Yii::$app->request->get();
 $precio = isset($get['precio']) ? $get['precio'] : '';
 $calificacion = isset($get['calificacion']) ? $get['calificacion'] : '';
-$precio_desde = isset($get['precio_desde']) ? $get['precio_desde'] : '';
-$precio_hasta = isset($get['precio_hasta']) ? $get['precio_hasta'] : '';
 
 
 $this->title = 'PRE CONSTRUCCIONES';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
-<style>
-    .radios-div label{
-        margin-right: 10px;
-        color:#9d9fa0 !important;
-    }
-</style>
 
 <div class="container">
 
@@ -39,16 +29,27 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
         <div class="row pt-2 bg-darkblue mb-0" id="accordion">
-            <div class="col-md-2">
-                <a class="text-white font-weight-bold-2 font-12" data-toggle="collapse" data-target="#collapseUbicacion" aria-expanded="true" aria-controls="collapseUbicacion" href="#">UBICACIÓN <i class="fas fa-caret-down"></i></a>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-6 text-lg-center">
+                        <a class="text-white font-weight-bold-2 font-12" data-toggle="collapse" data-target="#collapseUbicacion" aria-expanded="true" aria-controls="collapseUbicacion" href="#">UBICACIÓN <i class="fas fa-caret-down"></i></a>
+                    </div>
+
+                    <div class="col-md-6 text-lg-center">
+                        <!-- <a class="text-white font-weight-bold-2" href="#">CALIFICACIÓN <i class="fas fa-caret-down"></i></a> -->
+                    </div>
+
+                </div>
             </div>
-            <div class="col-md-4 text-lg-left">
+            <div class="col-md-3 text-lg-center">
 
                 <div class="dropdown">
                     <a class="text-white font-weight-bold-2 font-12" data-toggle="collapse" data-target="#collapsePrecio" aria-expanded="true" aria-controls="collapsePrecio" href="#">PRECIO <i class="fas fa-caret-down"></i></a>
                 </div>
+
+                
             </div>
-            <div class="col-md-2 text-lg-left">
+            <div class="col-md-3 text-lg-center">
 
                 <div class="dropdown">
                     <a class="text-white font-weight-bold-2 font-12" data-toggle="collapse" data-target="#collapseCalificacion" aria-expanded="true" aria-controls="collapseCalificacion" href="#">CALIFICACIÓN <i class="fas fa-caret-down"></i></a>
@@ -58,39 +59,70 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <div class="col-md-3">
                 <div class="row">
-                    <div class="col-md-6 text-lg-left">
-                    <a class="text-white font-weight-bold-2 font-12 pl-2" data-toggle="collapse" data-target="#collapseTipo" aria-expanded="true" aria-controls="collapseUbicacion" href="#">TIPO <i class="fas fa-caret-down"></i></a>
+                    <div class="col-md-6 text-lg-center">
+                        <!-- <a class="text-white font-weight-bold-2" href="#">ORDENAR <i class="fas fa-caret-down"></i></a> -->
+                    </div>
+                    <div class="col-md-6 text-lg-center">
+                    <a class="text-white font-weight-bold-2 font-12" data-toggle="collapse" data-target="#collapseTipo" aria-expanded="true" aria-controls="collapseUbicacion" href="#">TIPO <i class="fas fa-caret-down"></i></a>
                     </div>
 
                 </div>    
             </div>
+            <div class="col-md-12 bg-gray">
+                <?php $form = ActiveForm::begin(['method' => 'GET', 'id' => 'form-search', 'action' => '/frontend/web/pre-construcciones'], ['enctype' => 'multipart/form-data']); ?>
+
+                    <div id="collapseUbicacion" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="mt-3">
+                        <?php foreach ($ubicaciones as $u): ?>
+                            <div class="custom-control custom-checkbox mb-3" style="width: fit-content;display: inline-block;">
+                              <input type="checkbox" class="custom-control-input" id="ub_<?= $u->id ?>" name="ubicacion[<?= $u->id ?>" <?= isset($get["ubicacion_$u->id"]) ? "checked" : "" ?>>
+                              <label class="custom-control-label text-darkblue mr-2" for="ub_<?= $u->id ?>"><p class="font-10 mt-1 mb-0"><?= mb_strtoupper($u->nombre) ?></p></label>
+                            </div>
+                        <?php endforeach ?>
+                      </div>
+                    </div>
+                    <div class="collapse" id="collapseTipo" data-parent="#accordion">
+                      <div class="mt-3">
+                        <?php foreach ($tipos as $u): ?>
+                            <div class="custom-control custom-checkbox mb-3" style="width: fit-content;display: inline-block;">
+                              <input type="checkbox" class="custom-control-input" id="tipo_<?= $u->id ?>" name="tipo[<?= $u->id ?>" <?= isset($get["tipo_$u->id"]) ? "checked" : "" ?>>
+                              <label class="custom-control-label text-darkblue mr-2" for="tipo_<?= $u->id ?>"><p class="mt-1 mb-0 font-weight-bold-2 font-10"><?= mb_strtoupper($u->nombre) ?></p></label>
+                            </div>
+                        <?php endforeach ?>
+                      </div>
+                    </div>
+
+                    <div class="collapse" id="collapsePrecio" data-parent="#accordion">
+                        <div class="mt-3 mb-3">
+                            <div class="custom-control custom-radio" style="width: fit-content;display: inline-block;">
+                                <input type="radio" class="custom-control-input" id="precio_bajo" name="precio" value="1" <?= $precio == "1" ? "checked" : "" ?>>
+                                <label class="custom-control-label text-darkblue mr-2" for="precio_bajo"><p class="font-10 mb-0 mt-1">Menor a mayor</p></label>
+                            </div>
+                            <div class="custom-control custom-radio" style="width: fit-content;display: inline-block;">
+                                <input type="radio" class="custom-control-input" id="precio_alto" name="precio" value="2" <?= $precio == "2" ? "checked" : "" ?>>
+                                <label class="custom-control-label text-darkblue mr-2" for="precio_alto"><p class="font-10 mb-0 mt-1">Mayor a menor</p></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="collapseCalificacion" data-parent="#accordion">
+                        <div class="mt-3 mb-3">
+                            <div class="custom-control custom-checkbox" style="width: fit-content;display: inline-block;">
+                                <input type="checkbox" class="custom-control-input" id="calificacion" name="calificacion" value="1" <?= $calificacion == "1" ? "checked" : "" ?>>
+                                <label class="custom-control-label text-darkblue mr-2" for="calificacion"><p class="font-10 mb-0 mt-1">A+</p></label>
+                            </div>
+                        </div>
+                    </div>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
-        <?php $form = ActiveForm::begin(['action' => 'pre-construcciones', 'method' => 'GET', 'options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
-        <div class="row bg-white pt-4 mb-4">
 
-            <div class="col-md-2 text-center">
-                <?php echo $form->field($searchModel, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'prompt' => 'Todas'])->label(false); ?>
+        <div class="row mb-2">
+            <div class="col-md-12 p-lg-0 text-right">
+                <a href="javascript:buscar('form-search')" class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #44546b">Aplicar filtros</a>
+                <a href="/frontend/web/pre-construcciones" class="btn btn-secondary pl-4 pr-4 text-white btn-sm" style="border-radius: 0px">Limpiar búsqueda</a>
+                <a class="btn pl-4 pr-4 text-white btn-sm" style="border-radius: 0px;background: #628eaf">RESULTADOS <?= $count ?></a>
             </div>
-
-            <div class="col-md-2">
-                <input type="text" name='precio_desde' class="input-r pl-4 pr-4 pt-2 pb-2" placeholder="DESDE" value="<?= $precio_desde ?>">
-            </div>
-            <div class="col-md-2">
-                <input type="text" name='precio_hasta' class="input-r pl-4 pr-4 pt-2 pb-2" placeholder="HASTA" value="<?= $precio_hasta ?>">
-            </div>
-
-            <div class="col-md-2 radios-div">
-                <?= $form->field($searchModel, 'riezgo_id')->label('')->radioList(['' => 'Todas', 1 => 'A+'], ['class' => 'mt-0', 'style' => 'margin-top:-1rem !important']); ?>
-            </div>
-            <div class="col-md-2">
-                <?php echo $form->field($searchModel, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'prompt' => 'Todos'])->label(false); ?>
-            </div>
-            <div class="col-md-2 text-right">
-                <?= Html::submitButton('Aplicar Filtros', ['class' => 'btn btn-pastel-blue text-white rounded-3 btn-sm pr-3 pl-3', 'style' => 'border-radius:50px;']) ?>
-            </div>
-
         </div>
-        <?php ActiveForm::end(); ?>
 
         <div class="row mb-5 <?= $count > 0 ? "bg-lightgray" : "" ?> p-4" style='padding-top: 0 !important'>
             <?php if ($count > 0): ?>
