@@ -27,9 +27,9 @@
 			<br>
 			<div style="background:#44546b;color:white;text-align: center;padding: 0.5rem">
 				<?php if ($propiedad_check): ?>
-					<a href="http://propiedades.lexrealtymagazine.com/frontend/web/propiedades/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PROPIEDAD</a>
+					<a href="https://drtitlesearch.com/frontend/web/propiedades/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PROPIEDAD</a>
 					<?php else: ?>
-					<a href="http://propiedades.lexrealtymagazine.com/frontend/web/pre-construccion/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PRE-CONSTRUCCIÓN</a>
+					<a href="https://drtitlesearch.com/frontend/web/pre-construccion/ver?id=<?= $propiedad->id ?>" style="color:white;text-decoration: none">VER PRE-CONSTRUCCIÓN</a>
 				<?php endif ?>
 			</div>
 			
