@@ -322,7 +322,7 @@ $this->title = 'Propiedades';
                                     <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
                                         <div class="col-md-3 col-lg-3" style="display: inline-block;">
                                             <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:130px">
-                                            <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 text-white font-weight-light">23<?= $total ?> Propiedades</span></p>
+                                            <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 text-white font-weight-light"><?= $total ?> Propiedades</span></p>
                                             <p class="text-center text-darkblue font-weight-bold font-14 mb-0 mt-4" style="font-family: 'Benton-book', Arial, sans-serif">
                                                 <?= mb_strtoupper($m->nombre) ?>
                                              </p>
