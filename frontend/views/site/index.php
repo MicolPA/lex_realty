@@ -319,7 +319,7 @@ $this->title = 'Propiedades';
                             <?php if ($count == 1 or $count2 == 1): ?>
                                 <div class="carousel-item row <?= $count==1 ? 'active' : '' ?>">
                             <?php endif ?>
-                                    <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion%5B<?= $m->id ?>=on">
+                                    <a class="no-link text-dark" href="/frontend/web/propiedades?ubicacion=<?= $m->id ?>">
                                         <div class="col-md-3 col-lg-3" style="display: inline-block;">
                                             <img src="/frontend/web/<?= $m->portada ?>" class="w-100" style="height:130px">
                                             <p class="text-center contenedor_total"><span class="rounded-pill btn-pastel-blue pr-4 pl-4 text-white font-weight-light"><?= $total ?> Propiedades</span></p>

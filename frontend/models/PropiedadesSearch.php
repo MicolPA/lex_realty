@@ -81,6 +81,11 @@ class PropiedadesSearch extends Propiedades
                 $query->andFilterWhere(['<=', 'precio', $get['precio_hasta']]);
             }
         }
+        if (isset($get['ubicacion'])) {
+            if ($get['ubicacion']) {
+                $this->ubicacion_id = $get['ubicacion'];
+            }
+        }
 
         // add conditions that should always apply here
 
