@@ -47,14 +47,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     return $data->ubicacion->nombre;
                                 }
                             ],
-                            [
-                                'label' => 'Riesgo',
-                                'attribute' => 'riezgo_id',
-                                'value' => function($data){
-                                    $riesgo = \frontend\models\PropiedadesRiesgo::findOne($data->riezgo_id);
-                                    return $riesgo['nombre'];
-                                }
-                            ],
+                           
+                            'fecha_publicacion',
                             // 'habitaciones',
                             //'baños',
                             //'riezgo_id',

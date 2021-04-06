@@ -42,7 +42,7 @@ class PropiedadesSearch extends Propiedades
     public function search($params, $ubicaciones=array(), $tipos=array())
     {
         $get = Yii::$app->request->get();
-        $query = Propiedades::find();
+        $query = Propiedades::find()->orderBy(['id' => SORT_DESC]);
         // $this->riezgo_id = isset($get['calificacion']) ? 1 : null;
         // if (isset($get['precio'])) {
         //     $sort = "precio";
