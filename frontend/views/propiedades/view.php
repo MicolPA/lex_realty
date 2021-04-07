@@ -34,7 +34,7 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
                 <div class="carousel-container position-relative row">
                   
                 <!-- <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal"> -->
-                    <div id="myCarousel" class="carousel slide first-part" data-ride="carousel">
+                    <div id="myCarousel" class="carousel slide first-part w-100" data-ride="carousel">
 
                       <div class="carousel-inner">
                          

@@ -186,7 +186,20 @@ class PreConstruccionesController extends Controller
             $galeria->save();
             $model->galeria_id = $galeria->id;
         }
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->foto_1 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 1);
+            $model->foto_2 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 2);
+            $model->foto_3 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 3);
+            $model->foto_4 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 4);
+            $galeria->foto_5 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 5);
+            $galeria->foto_6 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 6);
+            $galeria->foto_7 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 7);
+            $galeria->foto_8 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 8);
+            $galeria->foto_9 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 9);
+            $galeria->foto_10 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 10);
+            $galeria->foto_11 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 11);
+            $galeria->foto_12 = $this->get_photo_url($galeria, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 12);
+            $model->save();
             return $this->redirect(['listado']);
         }
 

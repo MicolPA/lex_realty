@@ -151,8 +151,8 @@ $this->title = 'Propiedades';
                     <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
                         <div class="col-md-3 mt-4 mb-2">
                             <div class="bg-white">
-                                <div class="contenedor">
-                                    <img src="/frontend/web/<?= $m->foto_1 ?>" width='100%' style="height:150px">
+                                <div class="contenedor w-100">
+                                    <div style="width: 100%;height: 150px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');background-size:cover;background-position:center;"></div>
                                     <div class="bg-darkblue pt-1 pb-1">
                                         <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                     </div>
