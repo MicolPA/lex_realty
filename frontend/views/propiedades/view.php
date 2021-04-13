@@ -113,12 +113,21 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
                 </div> <!-- /row -->
             </div> <!-- /container -->
         </div>
-        <div class="col-md-3 rounded bg-lightgray pb-5">
+        <div class="col-md-3 rounded bg-white pb-5">
             <div>
-                <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light" style="background: #44546b"><?= Html::encode($this->title) ?></h1>
+                <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light bg-darkblue"><?= Html::encode($this->title) ?></h1>
 
-                <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
-                <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
+                <div style="width:80%;display: inline-block;">
+                    <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
+                    <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
+                </div>
+                <?php if ($model->riezgo_id == 1): ?>
+                    <div class="d-inline p-2 float-right text-white text-center" style="background: #44546b;width: 19%">
+                        <p class="mb-0 h4 font-weight-lighter">A+</p>
+                    </div>
+                <?php endif ?>
+
+                
 
                 <span class="font-weight-bold h3">US$<?= number_format($model->precio) ?></span>
 
@@ -154,7 +163,7 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
     <?php if ($extra): ?>
         <div class="row mt-4">
             <div class="col-md-12 pr-0 pl-sm-none">
-                <div class="bg-lightgray rounded p-5">
+                <div class="bg-white rounded p-5">
                     <h2 class="h33 mb-3 text-gray2 font-weight-light">Características principales</h2>
                     <div class="row">
                         <?php if ($extra->aire_acondicionado): ?>
@@ -257,7 +266,7 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
     <?php endif ?>
     <div class="row mt-3">
         <div class="col-md-12 pr-0 pl-sm-none">
-            <div class="bg-lightgray rounded p-5">
+            <div class="bg-white rounded p-5">
                 <h2 class="h33 text-gray2 font-weight-light">Descripción</h2>
 
                 <div class="mt-4">
@@ -269,49 +278,49 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
     </div>
 
     <div class="row mt-5">
-        <div class="col-md-6 col-xs-6 col-sm-6 text-right" style="max-width: 50% !important">
-            <?php if ($model->id == $first or !$prev_propiedad): ?>
-                <a href="/frontend/web/propiedades" class="no-link font-weight-bold float-right ml-3">
-                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
-                </a>
-                <div class="w-fit float-right">
-                    <a href="/frontend/web/propiedades" class="no-link text-secondary font-weight-bold">
-                        <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
-                    </a>
-                </div>
-                
-            <?php else: ?>
-                <a href="/frontend/web/propiedades/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-right ml-3">
-                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
-                </a>
-                <div class="w-fit float-right">
-                    <a href="/frontend/web/propiedades/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
-                        <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
-                    </a>
-                </div>
-            <?php endif ?>
-        </div>
-        <?php if ($next_propiedad): ?>
-            <div class="col-md-6 col-xs-6 col-sm-6" style="max-width: 50% !important">
-                <a href="/frontend/web/propiedades/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mr-3">
-                    <span class="font-12" style="color:#aeb1b6">SIGUIENTE</span>
-                </a>
-                <div class="w-fit float-left">
-                    <a href="/frontend/web/propiedades/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
-                        <i class="fal fas fa-chevron-right" style="font-size: 20px;color:#aeb1b6"></i> 
-                    </a>
-                </div>
-            </div>
-        <?php endif ?>
+        <div class="col-md-12"> 
+            <div class="bg-white pt-3 pb-3 rounded"> 
+                <div class="row">   
+                    <div class="col-md-6 col-xs-6 col-sm-6 text-right" style="max-width: 50% !important">
+                        <?php if ($model->id == $first or !$prev_propiedad): ?>
+                            <a href="/frontend/web/propiedades" class="no-link font-weight-bold float-right ml-3">
+                                <span class="font-12" style="color:#aeb1b6">ANTERIOR PROPIEDAD</span>
+                            </a>
+                            <div class="w-fit float-right">
+                                <a href="/frontend/web/propiedades" class="no-link text-secondary font-weight-bold">
+                                    <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
+                                </a>
+                            </div>
+                            
+                        <?php else: ?>
+                            <a href="/frontend/web/propiedades/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-right ml-3">
+                                <span class="font-12" style="color:#aeb1b6">ANTERIOR PROPIEDAD</span>
+                            </a>
+                            <div class="w-fit float-right">
+                                <a href="/frontend/web/propiedades/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                                    <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
+                                </a>
+                            </div>
+                        <?php endif ?>
+                    </div>
+                    <?php if ($next_propiedad): ?>
+                        <div class="col-md-6 col-xs-6 col-sm-6" style="max-width: 50% !important">
+                            <a href="/frontend/web/propiedades/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mr-3">
+                                <span class="font-12" style="color:#aeb1b6">SIGUIENTE PROPIEDAD</span>
+                            </a>
+                            <div class="w-fit float-left">
+                                <a href="/frontend/web/propiedades/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                                    <i class="fal fas fa-chevron-right" style="font-size: 20px;color:#aeb1b6"></i> 
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif ?>
+                </div>  
+            </div>  
+        </div>  
     </div>
 
-    <div class="row">
-        <div class="col-md-12 mt-5">
-            <div class="rounded bg-white p-3">
-                <?= $this->render('/pre-construcciones/_comments', []) ?>
-            </div>
-        </div>
-    </div>
+
 
     
 

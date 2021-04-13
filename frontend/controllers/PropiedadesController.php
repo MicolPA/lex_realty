@@ -311,6 +311,12 @@ class PropiedadesController extends Controller
 
         if ($model->load(Yii::$app->request->post()) and $extras->load(Yii::$app->request->post())) {
 
+            if ($model->impuestos and $model->cargas_gramabes and $model->deslinde and $model->certificado_titulo) {
+                $model->riezgo_id = 1;
+            }else{
+                $model->riezgo_id = 0;
+            }
+
             $model->foto_1 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 1);
             $model->foto_2 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 2);
             $model->foto_3 = $this->get_photo_url($model, $model->tipoPropiedad->nombre, $model->titulo_publicacion, 3);
