@@ -112,8 +112,10 @@ class UserController extends Controller
                 $model->photo_url = $old_url;
             }
             if ($post['password'] != '000000000') {
-                $model->setPassword($post['password']);
-                $model->generateAuthKey();
+                $user = \common\models\User::findOne($id);
+                $user->setPassword($post['password']);
+                $user->generateAuthKey();
+                $user->save();
             }
             $model->first_name = $post['User']['first_name'];
             $model->last_name = $post['User']['last_name'];
