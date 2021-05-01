@@ -190,6 +190,7 @@ class PropiedadesController extends Controller
 
         if ($propiedad == 1) {
             $propiedad_m = $this->findModel($id);
+            $listado_propiedades = Propiedades::find()->where(['<=', 'precio', $propiedad_m['precio'] + 50000])->andWhere(['>=', 'precio', $propiedad_m['precio'] - 50000])->andWhere(['user_id' => $propiedad_m['user_id']])->andWhere(['<>', 'id', $propiedad_m['id']])->orderBy(['rand()' => SORT_DESC])->limit(4)->all();
         }else{
             $propiedad_m = \frontend\models\PreConstrucciones::findOne($id);
         }
@@ -219,6 +220,7 @@ class PropiedadesController extends Controller
             'agente' => $agente,
             'model' => $model,
             'propiedad' => $propiedad_m,
+            'listado_propiedades' => isset($listado_propiedades) ? $listado_propiedades : array(),
         ]);
     }
 

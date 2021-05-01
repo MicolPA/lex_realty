@@ -148,64 +148,64 @@ $this->title = 'Propiedades';
         </div>
         <div class="row bg-light-2">
             <?php foreach ($propiedades as $m): ?>
-                    <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
-                        <div class="col-md-3 mt-4 mb-2">
-                            <div class="bg-white">
-                                <div class="contenedor w-100">
-                                    <div style="width: 100%;height: 150px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');background-size:cover;background-position:center;"></div>
-                                    <div class="bg-darkblue pt-1 pb-1">
-                                        <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
-                                    </div>
-                                   
+                <a href="/frontend/web/propiedades/ver?id=<?= $m->id ?>" class="no-link text-blue">
+                    <div class="col-md-3 mt-4 mb-2">
+                        <div class="bg-white">
+                            <div class="contenedor w-100">
+                                <div style="width: 100%;height: 150px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');background-size:cover;background-position:center;"></div>
+                                <div class="bg-darkblue pt-1 pb-1">
+                                    <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                 </div>
+                               
+                            </div>
 
-                                <div class="pl-3">
-                                    <div class="row mb-2">
-                                        
-                                        <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 pr-0" style="height:60px">
-                                            <p class="m-0 mt-3 text-blue font-weight-light title-cards-f"><?= $m->titulo_publicacion ?></p>
-                                        </div>
-                                        <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 pl-0">
-                                            <?php if ($m->riezgo_id == 1): ?>
-                                                <div class="bg-gray2 text-center pt-2 pb-2">
-                                                    <p class="mb-0 text-white h5 font-weight-light">A+</p>
-                                                </div>
-                                            <?php endif ?>
-                                        </div>
+                            <div class="pl-3">
+                                <div class="row mb-2">
+                                    
+                                    <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8 pr-0" style="height:60px">
+                                        <p class="m-0 mt-3 text-blue font-weight-light title-cards-f"><?= $m->titulo_publicacion ?></p>
                                     </div>
-                                    
-
-                                    <p class="font-weight-bold font-18 mt-2 mb-2">US$<?= number_format($m->precio, 0) ?></p>
-                                    <p class="text-muted m-0 font-12 mb-2">
-                                         <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
-                                         <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>
-                                         <img src="/frontend/web/images/size-icon.png" width='35px'> <?= number_format($m->metros, 2) ?> M<sup>2</sup>
-                                        
-                                    </p>
-                                    
-                                    <div class="detalles" style="height: 80px;font-family: 'Benton-book', Arial, sans-serif">
-
-                                        <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
-                                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
-
-                                        <?php $check = $m->impuestos ? "dot-full-2.png" : 'dot.png' ?>
-                                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
-
-                                        <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
-                                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
-                                        <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
-                                        <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+                                    <div class="col-md-4 col-sm-4 col-lg-4 col-xs-4 pl-0">
+                                        <?php if ($m->riezgo_id == 1): ?>
+                                            <div class="bg-gray2 text-center pt-2 pb-2">
+                                                <p class="mb-0 text-white h5 font-weight-light">A+</p>
+                                            </div>
+                                        <?php endif ?>
                                     </div>
-                                    
-
-                                    
-                                    <a href="/frontend/web/propiedades/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0 h5 pt-1 pb-1" style="visibility: hidden;">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
-
                                 </div>
+                                
+
+                                <p class="font-weight-bold font-18 mt-2 mb-2">US$<?= number_format($m->precio, 0) ?></p>
+                                <p class="text-muted m-0 font-12 mb-2">
+                                     <img src="/frontend/web/images/bed-icon.png" width='35px'> <?= $m->habitaciones ?>
+                                     <img src="/frontend/web/images/shower-icon.png" width='35px'> <?= $m->baños ?>
+                                     <img src="/frontend/web/images/size-icon.png" width='35px'> <?= number_format($m->metros, 2) ?> M<sup>2</sup>
+                                    
+                                </p>
+                                
+                                <div class="detalles" style="height: 80px;font-family: 'Benton-book', Arial, sans-serif">
+
+                                    <?php $check = $m->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
+
+                                    <?php $check = $m->impuestos ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
+
+                                    <?php $check = $m->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
+                                    <?php $check = $m->deslinde ? "dot-full-2.png" : 'dot.png' ?>
+                                    <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+                                </div>
+                                
+
+                                
+                                <a href="/frontend/web/propiedades/agente?id=<?= $m->id ?>" class="btn-block bg-blue text-white text-center p-0 h5 pt-1 pb-1" style="visibility: hidden;">CONTACTAR UN AGENTE <i class="fas fa-phone-alt ml-3"></i></a>
 
                             </div>
-                        </div>      
-                    </a>
+
+                        </div>
+                    </div>      
+                </a>
             <?php endforeach ?>
         </div>
     </div>
