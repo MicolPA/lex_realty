@@ -98,7 +98,7 @@ $this->title = 'PROPUESTA';
     <div class="row mb-5 mt-5">
         <?php if (count($listado_propiedades) > 0): ?>
             <?php foreach ($listado_propiedades as $p): ?>
-                <div class="col-md-3 mt-4 mb-2 pl-0">
+                <div class="col-md-3 mt-4 mb-2">
                     <a href="/frontend/web/propiedades/ver?id=<?= $p->id ?>" class="no-link text-blue">
                         <div class="bg-white">
                             <div class="contenedor w-100">
