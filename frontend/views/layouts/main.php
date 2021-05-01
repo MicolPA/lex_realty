@@ -70,13 +70,13 @@ AppAsset::register($this);
                 <a class="nav-link" href="/frontend/web/pre-construcciones">PRE CONSTRUCCIONES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
-                <a class="nav-link" href="#">DESARROLLADORES</a>
+                <a class="nav-link" href="/frontend/web/desarrolladores">DESARROLLADORES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
                 <a class="nav-link" href="/frontend/web/tasas-hipotecarias">TASA HIPOTECARIA</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
-                <a class="nav-link" href="#">PUBLICACIONES</a>
+                <a class="nav-link" href="https://www.publicaciones.drtitlesearch.com">PUBLICACIONES</a>
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item2 active pl-4 pr-4">
