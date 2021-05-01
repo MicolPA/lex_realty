@@ -42,8 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                        
                                     </div>
 
-                                    <div class="pt-4 pb-4 pl-2 pr-2 text-center">
-                                        <img src="/frontend/web/<?= $m->logo ?>" width='50%'>
+                                    <div class="pt-4 pb-4 pl-2 pr-2 text-center" style="height: 90px">
+                                        <img src="/frontend/web/<?= $m->logo ?>" width='120px'>
                                     </div>
 
                                 </div>
