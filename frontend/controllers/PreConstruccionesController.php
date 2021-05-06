@@ -80,7 +80,7 @@ class PreConstruccionesController extends Controller
     public function actionVer($id, $first=null)
     {
         $model = $this->findModel($id);
-        Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web".$model['foto_1'];
+        Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/".$model['foto_1'];
 
         return $this->render('view', [
             'first' => $first,
