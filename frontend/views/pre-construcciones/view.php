@@ -187,7 +187,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
             </div>
         </div>
     </div>
-    <!-- <div class="row mt-4">
+    <!-- <div class="row mt-4"> 
         <div class="col-md-12 pr-0 pl-sm-none">
             <div class="bg-white rounded p-5">
                 <h2 class="h33 mb-3 text-gray2 font-weight-light">Características</h2>
