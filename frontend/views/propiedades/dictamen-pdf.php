@@ -34,26 +34,55 @@
 			
 		</div>
 		<div style="width: 400px;display: inline-block;padding: 2.5rem 0rem 0rem 0.2rem;float: right;">
-			<div style="background: white;height: 150px;padding: 1rem;width: 75%;border-radius: 4px">
-				<p class="text-muted m-0 font-12 mb-2">
-                    <img src="/frontend/web/images/bed-icon.png" width='50px'> <?= $propiedad->habitaciones ?>
-                    <img src="/frontend/web/images/shower-icon.png" width='50px'> <?= $propiedad->baños ?>
-                    <img src="/frontend/web/images/size-icon.png" width='50px'> <?= number_format($propiedad->metros, 2) ?> M<sup>2</sup>
-                </p>
-                <br>
-                <div class="detalles" style="color:#585858;height: 80px;padding-top:0.1rem;font-family: 'Benton-book', Arial, sans-serif">
+			<div style="background: white;height: 150px;padding: 1rem;width: 75%;border-radius: 4px;margin-bottom: <?= $propiedad_check ? '1rem' : '3rem'; ?>">
+				
+                <?php if ($propiedad_check): ?>
+                	<p class="text-muted m-0 font-12 mb-2">
+	                    <img src="/frontend/web/images/bed-icon.png" width='50px'> <?= $propiedad->habitaciones ?>
+	                    <img src="/frontend/web/images/shower-icon.png" width='50px'> <?= $propiedad->baños ?>
+	                    <img src="/frontend/web/images/size-icon.png" width='50px'> <?= number_format($propiedad->metros, 2) ?> M<sup>2</sup>
+	                </p>
+	                <br>
+	                <div class="detalles" style="color:#585858;height: 80px;padding-top:0.1rem;font-family: 'Benton-book', Arial, sans-serif">
 
-		            <?php $check = $propiedad->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
-		            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
+			            <?php $check = $propiedad->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
+			            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
 
-		            <?php $check = $propiedad->impuestos ? "dot-full-2.png" : 'dot.png' ?>
-		            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
+			            <?php $check = $propiedad->impuestos ? "dot-full-2.png" : 'dot.png' ?>
+			            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> IMPUESTOS AL DÍA</p>
 
-		            <?php $check = $propiedad->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
-		            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
-		            <?php $check = $propiedad->deslinde ? "dot-full-2.png" : 'dot.png' ?>
-		            <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
-		        </div>
+			            <?php $check = $propiedad->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
+			            <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS GRABAMES</p>
+			            <?php $check = $propiedad->deslinde ? "dot-full-2.png" : 'dot.png' ?>
+			            <p class="m-0 small text-gray"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+			        </div>
+                <?php else: ?>
+                	<div class="detalles" style="color:#585858;margin-top:1rem;font-family: 'Benton-book', Arial, sans-serif">
+
+			            <?php $check = $propiedad->certificado_titulo ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CERTIFICADO DE TITULO</p>
+
+                        <?php $check = $propiedad->cargas_gramabes ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> LIBRES DE CARGAS Y GRAVÁMENES</p>
+                        <?php $check = $propiedad->deslinde ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> DESLINDE</p>
+
+                        <?php $check = $propiedad->permisos_municipales ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISOS MUNICIPALES</p>
+                        <?php $check = $propiedad->permiso_ambiental ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO AMBIENTAL</p>
+
+                        <?php $check = $propiedad->objeccion_ministerio_turismo ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> NO OBJECIÓN DEL MINISTERIO DE TURISMO</p>
+
+                        <?php $check = $propiedad->permiso_obras_publicas ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> PERMISO DE OBRAS PUBLICAS</p>
+
+                        <?php $check = $propiedad->confortur ? "dot-full-2.png" : 'dot.png' ?>
+                        <p class="m-0 small text-gray mb-2"><img src="/frontend/web/images/<?= $check ?>" alt="" width="17px"> CONFORTUR</p>
+			        </div>
+                <?php endif ?>
+               
 			</div>
 		</div>
 		<br>

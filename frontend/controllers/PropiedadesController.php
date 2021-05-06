@@ -376,13 +376,17 @@ class PropiedadesController extends Controller
         ]);
     }
 
-    public function actionVerDictamen($id){
+    public function actionVerDictamen($id, $propiedad_check=1){
 
         $this->layout = '@app/views/layouts/main-admin';
-        $propiedad = $this->findModel($id);
+        if ($propiedad_check) {
+            $propiedad = $this->findModel($id);
+        }else{
+            $propiedad = \frontend\models\PreConstrucciones::findOne($id);
+        }
         $dictamen = \frontend\models\Constantes::find()->where(['nombre' => 'dictamen'])->one();
 
-        $content = $this->renderPartial('dictamen-pdf',['dictamen' => $dictamen,'propiedad' => $propiedad,]);
+        $content = $this->renderPartial('dictamen-pdf',['dictamen' => $dictamen,'propiedad' => $propiedad, 'propiedad_check' => $propiedad_check]);
 
         // setup kartik\mpdf\Pdf component
         $pdf = new Pdf([
