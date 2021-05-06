@@ -1,6 +1,6 @@
 <style>
-    .gc-header-left{
-        display: none !important;
+    .gc-header-brand-wrapper{
+      display: none !important;
     }
 </style>
 <div id="graphcomment"></div>
@@ -26,6 +26,8 @@
 
     setTimeout(function(){
         console.log('holaa');
+        $(".gc-header-brand-wrapper").hide();
+        $(".gc-header-brand-wrapper").attr('style', 'width:0px !important');
         $("ul.gc-header-left").hide();
         $(".gc-header-left").attr('style', 'display:none !important');
     },10000)
