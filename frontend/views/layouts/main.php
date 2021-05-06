@@ -11,7 +11,8 @@ use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
-
+$default_imagen = "/frontend/web/images/logo-principal.png";
+$imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$default_imagen;
 
 ?>
 
@@ -22,8 +23,11 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="<?= $imagen_url ?>">
+    <meta name="twitter:image" content="<?= $imagen_url ?>" />
+
     <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= mb_strtoupper(Html::encode($this->title)) ?></title>
     <?php $this->head() ?>
 </head>
 <body>

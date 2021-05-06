@@ -36,6 +36,8 @@ class ProyectosController extends Controller
      */
     public function actionIndex($desarrolladoras_id)
     {
+        $desarrolladora = \frontend\models\Desarrolladores::findOne($desarrolladoras_id); 
+        Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/".$desarrolladora['portada'];
         $searchModel = new ProyectosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $desarrolladoras_id);
 
@@ -47,6 +49,7 @@ class ProyectosController extends Controller
 
         return $this->render('index', [
             'model' => $model,
+            'desarrolladora' => $desarrolladora,
             'pagination' => $pagination,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
@@ -73,8 +76,10 @@ class ProyectosController extends Controller
      */
     public function actionVer($id)
     {
+        $model = $this->findModel($id);
+        Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/".$model['foto_1'];
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
