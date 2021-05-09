@@ -385,6 +385,10 @@ input[type="file"] {
 	.a-plus{
 		font-size: 18px !important;
 	}
+
+	.cajas-iconos p, .cajas-iconos span{
+		margin-left: 3rem !important;
+	}
 }
 @media (min-width: 990px){
 	.carousel-item .active{
