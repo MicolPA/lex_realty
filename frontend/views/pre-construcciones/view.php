@@ -152,7 +152,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                 </div>
                 <?php if ($model->riezgo_id == 1): ?>
                     <div class="d-inline p-2 float-right text-white text-center" style="background: #44546b;width: 19%">
-                        <p class="mb-0 h4 font-weight-lighter">A+</p>
+                        <p class="mb-0 h4 font-weight-lighter  a-plus">A+</p>
                     </div>
                 <?php endif ?>
 

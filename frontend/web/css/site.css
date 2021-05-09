@@ -11,6 +11,10 @@
 	color: #0c1528;
 }
 
+.cajas-iconos img{
+	width: 40px;
+}
+
 .wrap, .bg-blue, html{
 	background: #d5d9de;
 }
@@ -359,7 +363,28 @@ input[type="file"] {
 		border-radius: 10px !important;
 	}
 
+	.title-cards-f{
+		font-size: 16px !important;
+	}
+	.cajas-iconos img{
+		width: 30px;
+	}
 
+	.a-plus{
+		font-size: 14px !important;
+	}
+
+}
+@media (max-width: 768px){
+	.title-cards-f{
+		font-size: 22px !important;
+	}
+	.cajas-iconos img{
+		width: 50px;
+	}
+	.a-plus{
+		font-size: 18px !important;
+	}
 }
 @media (min-width: 990px){
 	.carousel-item .active{
