@@ -13,14 +13,7 @@ class m210608_234309_add_field_tasa_hipotecaria extends Migration
     public function safeUp()
     {
 
-        // $this->alterColumn('{{%tasas_hipotecarias}}', 'tasa', $this->string()->defaultValue(null));
-
-        // $this->addColumn('{{%tasas_hipotecarias}}', 'tasa_2', $this->string()->defaultValue(null));
-        // $this->addColumn('{{%tasas_hipotecarias}}', 'tasa_3', $this->string()->defaultValue(null));
-
-
-        // $this->addColumn('{{%tasas_hipotecarias}}', 'duracion_2', $this->string()->defaultValue(null));
-        // $this->addColumn('{{%tasas_hipotecarias}}', 'duracion_3', $this->string()->defaultValue(null));
+        
 
         $this->addColumn('{{%tasas_hipotecarias}}', 'tipo', $this->string()->defaultValue(null));
         $this->addColumn('{{%tasas_hipotecarias}}', 'tipo_2', $this->string()->defaultValue(null));
