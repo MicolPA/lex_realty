@@ -1,3 +1,9 @@
+<?php 
+
+$this->title = 'TASAS HIPOTECARIAS';
+
+ ?>
+
 <style>
     .table th, .table td{
         border:none !important;
