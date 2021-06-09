@@ -19,10 +19,45 @@ use yii\widgets\ActiveForm;
             <div class="card p-4">
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
                 <?= $form->field($model, 'nombre_banco')->textInput(['maxlength' => true]) ?>
+                <div class="row">
+                    
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'duracion')->textInput(['maxlength' => true]) ?>
+                    </div>
 
-                <?= $form->field($model, 'tasa')->textInput() ?>
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'tasa')->textInput([]) ?>
+                    </div>
 
-                <?= $form->field($model, 'duracion')->textInput(['maxlength' => true]) ?>
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'tipo')->textInput(['value' => !$model->tipo ? 'TASA FIJA' : $model->tipo]) ?>
+                    </div>
+
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'duracion_2')->textInput(['maxlength' => true]) ?>
+                    </div>
+
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'tasa_2')->textInput([]) ?>
+                    </div>
+
+                     <div class="col-md-4">
+                        <?= $form->field($model, 'tipo_2')->textInput(['value' => !$model->tipo_2 ? 'TASA FIJA' : $model->tipo_2]) ?>
+                    </div>
+
+
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'duracion_3')->textInput(['maxlength' => true]) ?>
+                    </div>
+
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'tasa_3')->textInput([]) ?>
+                    </div>
+
+                    <div class="col-md-4">
+                        <?= $form->field($model, 'tipo_3')->textInput(['value' => !$model->tipo_3 ? 'TASA FIJA' : $model->tipo_3]) ?>
+                    </div>
+                </div>
 
                 <?= $form->field($model, 'correo')->textInput(['maxlength' => true]) ?>
 
