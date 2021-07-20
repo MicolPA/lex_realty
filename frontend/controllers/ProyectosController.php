@@ -51,11 +51,13 @@ class ProyectosController extends Controller
 
 
         $rating = new StarsRatingCount();
+        $rating_model = new \frontend\models\Desarrolladores();
         $rating->desarrollador_id = $desarrolladoras_id;
 
         $post = Yii::$app->request->post();
         if ($rating->load($post)) {
             $this->saveRating($rating, $desarrolladoras_id);
+            return $this->redirect(['index', 'desarrolladoras_id' => $desarrolladoras_id, 'stars' => 1]);
         }
 
         return $this->render('index', [
@@ -65,7 +67,36 @@ class ProyectosController extends Controller
             'pagination' => $pagination,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'rating_model' => $rating_model,
+            'ratings_total' => $this->getRatingTotal($desarrolladoras_id),
         ]);
+    }
+
+    function getRatingTotal($desarrolladoras_id){
+
+        $data['fecha_entrega'] = 0;
+        $data['calidad_materiales'] = 0;
+        $data['entrega_areas_sociales'] = 0;
+        $data['entrega_design'] = 0;
+
+        $model = StarsRatingCount::find()->where(['desarrollador_id' => $desarrolladoras_id])->all();
+        
+        if (count($model) > 0) {
+            $count = count($model);
+            foreach ($model as $m) {
+                $data['fecha_entrega'] += $m->fecha_entrega;
+                $data['calidad_materiales'] += $m->calidad_materiales;
+                $data['entrega_areas_sociales'] += $m->entrega_areas_sociales;
+                $data['entrega_design'] += $m->entrega_design;
+            }
+
+            $data['fecha_entrega'] = $data['fecha_entrega'] / $count;
+            $data['calidad_materiales'] = $data['calidad_materiales'] / $count;
+            $data['entrega_areas_sociales'] = $data['entrega_areas_sociales'] / $count;
+            $data['entrega_design'] = $data['entrega_design'] / $count;
+        }
+        return $data;
+
     }
 
     function saveRating($rating, $desarrolladoras_id){

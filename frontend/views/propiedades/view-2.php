@@ -34,7 +34,7 @@ echo StarRating::widget(['model' => $model, 'attribute' => 'titulo_publicacion',
 echo StarRating::widget([
     'name' => 'titulo_publicacion',
     'value' => 3,
-    'pluginOptions' => ['displayOnly' => true]
+    'pluginOptions' => ['displayOnly' => true,'theme' => 'krajee-uni',]
 ]); ?>
 <?= Html::submitButton('PAGAR', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?>
                 <?php ActiveForm::end(); ?>
