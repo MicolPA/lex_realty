@@ -28,6 +28,10 @@ return [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                'PayPalRestApi'=>[
+                    'class'=>'bitcko\paypalrestapi\PayPalRestApi',
+                    'redirectUrl'=>'/site/make-payment', // Redirect Url after payment
+                ]
             ],
         ],
     ],

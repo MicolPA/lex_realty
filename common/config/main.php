@@ -9,5 +9,11 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'PayPalRestApi'=>[
+            'class'=>'bitcko\paypalrestapi\PayPalRestApi',
+            'redirectUrl'=>'/site/make-payment', // Redirect Url after payment
+        ]
     ],
 ];
+
+

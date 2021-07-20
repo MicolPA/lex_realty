@@ -44,7 +44,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
         <div class="p-0">
             <div class="row">
                 <div class="col-md-4 lg-text-right pr-5 pl-5 pt-3 pb-3 container bg-white m-0">
-                   <a href="/"><img src="/frontend/web/images/logo-principal.png" width="200px"></a>
+                   <a href="/"><img src="/frontend/web/images/logo-principal.png" width="200px"> </a>
                 </div>
                 <div class="col-md-8 container pt-4 bg-light-blue">
                     <form class="form-inline" action="/frontend/web/propiedades" method="get">
@@ -63,13 +63,13 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
         </button>
 
         <div class="collapse navbar-collapse" id="navbarsExample07">
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav m-auto">
             <li class="nav-item active">
                 <a class="nav-link text-center" href="/">INICIO</a>
             </li>
-            <li class="nav-item dropdown active pl-3 pr-3">
+            <!-- <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link" href="/frontend/web/propiedades">PROPIEDADES</a>
-            </li>
+            </li> -->
             <li class="nav-item active pl-3 pr-3">
                 <a class="nav-link" href="/frontend/web/pre-construcciones">PRE CONSTRUCCIONES</a>
             </li>
@@ -93,7 +93,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
       </div>
     </nav>
     
-    <div class="pb-4">
+    <div class="">
         <?= $content ?>
     </div>
 </div>

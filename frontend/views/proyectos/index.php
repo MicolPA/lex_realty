@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use kartik\rating\StarRating;
 
 $count = $dataProvider->query->count();
 
@@ -20,6 +21,16 @@ $this->params['breadcrumbs'][] = $this->title;
         /*background: #131927;*/
         background: rgba(19,23,38,0.9);
     }
+    .rating-container .caption, .theme-krajee-uni .clear-rating{
+        display: none;
+    }
+    form{
+        width: 100%;
+    }
+    .div-label{
+        min-width: 130px !important;
+        font-size: 12px !important;
+    }
 </style>
 
 <div class="container">
@@ -32,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div> -->
 
        
-        <div class="row mb-5 p-5 mt-4 bg-white border-rounded" style='padding-top: 0 !important'>
+        <div class="row p-5 mt-4 bg-white border-rounded" style='padding-top: 0 !important'>
             <div class="col-md-12 mt-5 mb-5 pb-3"> 
                 <img src="/frontend/web/<?= $desarrolladora['logo'] ?>" style='max-width:200px;'>
             </div>
@@ -162,6 +173,104 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
 
             <?php if ($count > 0): ?>
+
+                <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off']]); ?>
+                    <div class="col-md-12 mt-5">
+                        <p class="h3 font-weight-lighter">Tu valoración</p>
+                        <hr>
+                        <div class="row align-items-center">
+                            <div class="col-md-2 div-label">
+                                <label class="font-weight-normal text-darkblue">Fecha de entrega</label>
+                            </div>
+                            <div class="col-md-2 pl-md-0">
+                                <?= StarRating::widget(['model' => $rating, 'attribute' => 'fecha_entrega', 
+                                        'language' => 'es',
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'filledStar' => '&#x2605;',
+                                            'emptyStar' => '&#x2606;',
+                                            'language' => 'es',
+                                            'filledStar' => '<i class="fas fa-star"></i>',
+                                            'emptyStar' => '<i class="far fa-star"></i>',
+                                            
+                                        ]
+                                    ]);
+                                 ?> 
+                            </div>
+                            <div class="col-md-2 div-label">
+                                <label class="font-weight-normal text-darkblue">Calidad de materiales </label>
+                            </div>
+                            <div class="col-md-2 pl-md-0">
+                                <?= StarRating::widget(['model' => $rating, 'attribute' => 'calidad_materiales', 
+                                        'language' => 'es',
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'filledStar' => '&#x2605;',
+                                            'emptyStar' => '&#x2606;',
+                                            'language' => 'es',
+                                            'filledStar' => '<i class="fas fa-star"></i>',
+                                            'emptyStar' => '<i class="far fa-star"></i>',
+                                            
+                                        ]
+                                    ]);
+                                 ?> 
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-2 div-label">
+                                <label class="font-weight-normal text-darkblue">Entrega de areas sociales  </label>
+                            </div>
+                            <div class="col-md-2 pl-md-0">
+                                <?= StarRating::widget(['model' => $rating, 'attribute' => 'entrega_areas_sociales', 
+                                        'language' => 'es',
+                                        // 'required' => 'required',
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'filledStar' => '&#x2605;',
+                                            'emptyStar' => '&#x2606;',
+                                            'language' => 'es',
+                                            'filledStar' => '<i class="fas fa-star"></i>',
+                                            'emptyStar' => '<i class="far fa-star"></i>',
+                                            
+                                        ]
+                                    ]);
+                                 ?> 
+                            </div>
+                            <div class="col-md-2 div-label">
+                                <label class="font-weight-normal text-darkblue">Entrega según diseño original </label>
+                            </div>
+                            <div class="col-md-2 pl-md-0">
+                                <?= StarRating::widget(['model' => $rating, 'attribute' => 'entrega_design', 
+                                        'language' => 'es',
+                                        'pluginOptions' => [
+                                            'theme' => 'krajee-uni',
+                                            'filledStar' => '&#x2605;',
+                                            'emptyStar' => '&#x2606;',
+                                            'language' => 'es',
+                                            'filledStar' => '<i class="fas fa-star"></i>',
+                                            'emptyStar' => '<i class="far fa-star"></i>',
+                                            
+                                        ]
+                                    ]);
+                                 ?> 
+                            </div>
+                        </div>
+                        <div class="row align-items-center mt-3">
+                            <div class="col-md-3">
+                                <?= $form->field($rating, 'email')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Correo', 'type' => 'email'])->label(false) ?>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <?= Html::submitButton('Enviar valoración', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                <?php ActiveForm::end(); ?>
                 <div class="col-md-12 mt-5">
                     <?= $this->render('/pre-construcciones/_comments', []) ?>
                 </div>

@@ -61,6 +61,7 @@ if (Yii::$app->user->isGuest) {
             <li class="nav-item active">
                 <a class="nav-link" href="/frontend/web/admin">INICIO</a>
             </li>
+            
             <li class="nav-item dropdown active pl-3 pr-3">
               <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">UBICACIONES</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
@@ -71,10 +72,10 @@ if (Yii::$app->user->isGuest) {
             <?php endif ?>
             
             <li class="nav-item dropdown active pl-3 pr-3">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">PROPIEDADES</a>
+              <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton" data-toggle="dropdown">DESARROLLADORAS</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdownMenuButton">
-                <a class="dropdown-item" href="/frontend/web/propiedades/create">CREAR</a>
-                <a class="dropdown-item" href="/frontend/web/propiedades/listado">LISTADO</a>
+                <a class="dropdown-item" href="/frontend/web/desarrolladores/create">CREAR</a>
+                <a class="dropdown-item" href="/frontend/web/desarrolladores/listado">LISTADO</a>
               </div>
             </li>
             <li class="nav-item dropdown active pl-3 pr-3">

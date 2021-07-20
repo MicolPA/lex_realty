@@ -88,7 +88,7 @@
 		<br>
 		<br>
 		<br>
-		<div style="width:630px;background: white;margin-left: 3rem;border-radius:4px;border:1px solid #9d9f9c;padding:0.5rem;color:#585858">
+		<div style="width:630px;background: white;margin-left: 3rem;border-radius:4px;padding:0.5rem;color:#585858">
 			<p><?= $dictamen->contenido ?></p>
 		</div>
 </div>

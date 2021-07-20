@@ -94,9 +94,10 @@ class PropiedadesController extends Controller
     {
         $model = $this->findModel($id);
         Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/".$model['foto_1'];
+        
 
         $extra = PropiedadesExtras::find()->where(['propiedad_id' => $id])->one();
-        return $this->render('view', [
+        return $this->render('view-2', [
             'extra' => $extra,
             'first' => $first,
             'model' => $model,

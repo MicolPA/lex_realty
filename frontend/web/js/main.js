@@ -17,7 +17,7 @@ jQuery('input[type=file]').change(function(){
  	console.log(jQuery(this));
  	console.log(filename);
  	console.log(idname);
- 	jQuery('div.field-'+idname+' label').html("<span class='text-success'>CARGADA</span>");
+ 	jQuery('div.field-'+idname+' label').html("<span class='text-success font-12'>CARGADA</span>");
  	// jQuery('div.field-'+idname+' label').attr("style", 'padding-left:1rem !important;padding-right: 1rem !important');
 });
 
@@ -34,7 +34,7 @@ function imgBigger(url){
       swal({
           title: "",
           text: '',
-          button: "Cerrar",
+          button: false,
           icon: url,
         });
 

@@ -56,6 +56,7 @@
 .text-pastel-blue{
 	color: #44546b !important;
 }
+
 .bg-blue-2{
 	background: #638eb0;
 }
@@ -106,6 +107,20 @@
     color: #666666!important;
 }
 
+.text-inicio .small{
+	font-size: 10px !important;
+}
+
+.text-inicio .big{
+	font-size: 24px !important;
+	font-weight: 500;
+}
+
+.text-inicio p{
+	max-width: 180px;
+	/*display: contents;*/
+}
+
 .h33 {
     font-size: 1.4rem;
 }
@@ -120,6 +135,9 @@
 }
 .font-14{
 	font-size: 14px
+}
+.font-16{
+	font-size: 16px
 }
 .font-18{
 	font-size: 18px
@@ -419,6 +437,10 @@ input[type="file"] {
 		position: absolute;top: 150px !important
 	}
 
+	.text-inicio{
+		margin-top: -20rem !important;
+	}
+
 }
 
 .font-weight-bold-2{
@@ -550,4 +572,23 @@ input[type="file"] {
 
 .my-checkbox label input{
 	margin-right: 3px !important;
+}
+
+
+.theme-krajee-uni .star, .theme-krajee-uni svg{
+	font-size: 24px !important;
+}
+
+.rating-container .filled-stars {
+	color: #ffd814 !important;
+}
+#graphcomment, #gc-iframe{
+	    background: #f2f2f2 !important;
+}
+.rating-container .rating-stars{
+	font-size: 0px;
+}
+
+.rating-md{
+	font-size: 20px !important;
 }

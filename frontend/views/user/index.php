@@ -68,7 +68,7 @@ $page = isset(Yii::$app->request->get()['lideres']) ? 5 : 6;
                             //'updated_at',
                             //'verification_token',
 
-                            ['class' => 'yii\grid\ActionColumn'],
+                            // ['class' => 'yii\grid\ActionColumn'],
                         ],
                     ]); ?>
                 </div>

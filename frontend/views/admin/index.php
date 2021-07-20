@@ -2,10 +2,10 @@
 
 	<div class="row mt-5">
 		<div class="col-md-4">
-			<a href="/frontend/web/user" class="no-link">
+			<a href="/frontend/web/formularios" class="no-link">
 				<div class="bg-darkblue mt-5 text-white text-center pt-5 pb-5">
-					<i class="fas fa-users fa-2x"></i>
-					<p class="text-center text-white mt-4 h4 font-weight-light">USUARIOS</p>
+					<i class="fas fa-file-alt fa-2x"></i>
+					<p class="text-center text-white mt-4 h4 font-weight-light">SOLICITUDES</p>
 				</div>
 			</a>
 		</div>
@@ -37,10 +37,18 @@
 			</a>
 		</div>
 		<div class="col-md-3">
-			<a href="/frontend/web/desarrolladores/listado" class="no-link">
+			<a href="/frontend/web/user" class="no-link">
 				<div class="bg-pastel-blue mt-5 text-white text-center pt-3 pb-2">
-					<i class="fas fa-industry fa-2x"></i>
-					<p class="text-center text-white mt-4 h5 font-weight-light">DESARROLLADORAS</p>
+					<i class="fas fa-users fa-2x"></i>
+					<p class="text-center text-white mt-4 h5 font-weight-light">USUARIOS</p>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-3">
+			<a href="/frontend/web/user" class="no-link">
+				<div class="bg-pastel-blue mt-5 text-white text-center pt-3 pb-2">
+					<i class="fas fa-users fa-2x"></i>
+					<p class="text-center text-white mt-4 h5 font-weight-light">USUARIOS</p>
 				</div>
 			</a>
 		</div>
@@ -52,11 +60,19 @@
 				</div>
 			</a>
 		</div>
-		<div class="col-md-3">
-			<a href="/frontend/web/propiedades/dictamen" class="no-link">
+		<div class="col-md-6">
+			<a href="/frontend/web/titulos" class="no-link">
 				<div class="bg-pastel-blue mt-5 text-white text-center pt-3 pb-2">
 					<i class="fas fa-file-alt fa-2x"></i>
-					<p class="text-center text-white mt-4 h5 font-weight-light">TEXTO DICTAMEN</p>
+					<p class="text-center text-white mt-4 h5 font-weight-light">TITULOS</p>
+				</div>
+			</a>
+		</div>
+		<div class="col-md-6">
+			<a href="/frontend/web/constantes" class="no-link">
+				<div class="bg-pastel-blue mt-5 text-white text-center pt-3 pb-2">
+					<i class="fas fa-file-alt fa-2x"></i>
+					<p class="text-center text-white mt-4 h5 font-weight-light">CONSTANTES</p>
 				</div>
 			</a>
 		</div>

@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
+use frontend\models\StarsRatingCount;
 
 /**
  * ProyectosController implements the CRUD actions for Proyectos model.
@@ -37,6 +38,7 @@ class ProyectosController extends Controller
     public function actionIndex($desarrolladoras_id)
     {
         $desarrolladora = \frontend\models\Desarrolladores::findOne($desarrolladoras_id); 
+
         Yii::$app->view->params['imagen_url'] = $_SERVER['HTTP_HOST'] . "/frontend/web/".$desarrolladora['portada'];
         $searchModel = new ProyectosSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams, $desarrolladoras_id);
@@ -47,13 +49,37 @@ class ProyectosController extends Controller
         ->limit($pagination->limit)
         ->all();
 
+
+        $rating = new StarsRatingCount();
+        $rating->desarrollador_id = $desarrolladoras_id;
+
+        $post = Yii::$app->request->post();
+        if ($rating->load($post)) {
+            $this->saveRating($rating, $desarrolladoras_id);
+        }
+
         return $this->render('index', [
             'model' => $model,
             'desarrolladora' => $desarrolladora,
+            'rating' => $rating,
             'pagination' => $pagination,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    function saveRating($rating, $desarrolladoras_id){
+
+        $verify = StarsRatingCount::find()->where(['desarrollador_id' => $desarrolladoras_id, 'email' => $rating->email])->one();
+        if (!$verify) {
+            $rating->date = date("Y-m-d H:i:s");
+            $rating->save();
+            Yii::$app->session->setFlash('success1','Valoración enviada correctamente');
+        }else{
+            Yii::$app->session->setFlash('error1', 'Usted ya ha enviado una valoración anteriormente');
+        }
+
+
     }
 
     public function actionListado()

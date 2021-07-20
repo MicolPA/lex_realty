@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
+use kartik\rating\StarRating;
 
 $count = $dataProvider->query->count();
 
@@ -32,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php if ($count > 0): ?>
                 <?php foreach ($model as $m): ?>
                         <div class="col-md-4 mt-4 mb-2">
-                            <a href="/frontend/web/proyectos/index?desarrolladoras_id=<?= $m->id ?>" class="no-link text-blue w-100">
+                            <a href="/frontend/web/proyectos/index?desarrolladoras_id=<?= $m->id ?>&stars=1" class="no-link text-blue w-100">
                                 <div class="bg-white w-100">
                                     <div class="contenedor w-100">
                                         <div style="width: 100%;height: 240px;background-image: url('/frontend/web/<?= $m->portada ?>');background-size:cover;background-position:center;"></div>

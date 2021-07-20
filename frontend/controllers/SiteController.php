@@ -19,6 +19,8 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 use frontend\models\Anuncios;
+use common\components\paypal;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -80,6 +82,20 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
+        $model = new \frontend\models\Formularios();
+        $constante = \frontend\models\Constantes::find()->where(['nombre' => 'precio_debida_diligencia'])->one();
+        $titulos = \frontend\models\Titulos::find()->all();
+        
+        return $this->render('index',[
+            'model' => $model,
+            'constante' => $constante,
+            'titulos' => $titulos,
+        ]);
+    }
+
+    public function actionIndexOld()
+    {
+
         $entradas = \frontend\models\Entradas::find()->orderBy(['id' => SORT_DESC])->all();
         $anuncios = Anuncios::find()->where(['lugar' => 'inicio'])->all();
         $ubicaciones = Ubicaciones::find()->all();
@@ -87,7 +103,7 @@ class SiteController extends Controller
         $model2 = new \frontend\models\PreConstruccionesSearch();
         $propiedades = Propiedades::find()->where(['riezgo_id' => 1])->orderBy([ 'rand()' => SORT_DESC])->limit(4)->all();
         $pre_construcciones = PreConstrucciones::find()->orderBy([ 'rand()' => SORT_DESC])->limit(3)->all();
-        return $this->render('index',[
+        return $this->render('index-old',[
             'model' => $model,
             'model2' => $model2,
             'entradas' => $entradas,
@@ -288,6 +304,243 @@ class SiteController extends Controller
 
         return $this->render('resendVerificationEmail', [
             'model' => $model
+        ]);
+    }
+
+
+    public function saveForm($post){
+
+        $post = Yii::$app->request->post();
+        $model = new \frontend\models\Formularios();
+        
+        if ($model->load($post)) {
+
+            $path = $this->getPath();
+            $model->identificacion_url = UploadedFile::getInstance($model, 'identificacion_url');
+            $imagen = $path . trim($model->identificacion) . "-identificacion.". $model->identificacion_url->extension;
+            $model->identificacion_url->saveAs($imagen);
+            $model->identificacion_url = $imagen;
+
+            $model->certificado_titulo_url = UploadedFile::getInstance($model, 'certificado_titulo_url');
+            $imagen = $path . trim($model->identificacion) . "-certificado.". $model->certificado_titulo_url->extension;
+            $model->certificado_titulo_url->saveAs($imagen);
+            $model->certificado_titulo_url = $imagen;
+
+            $model->pago_total =  $post['precio'];
+
+            
+            $model->date = date("Y-m-d H:i:s");
+            echo $post['precio'];
+            $model->save();
+            return $model;
+            // setcookie("id_form", $model->id, time() + 3600); 
+            // $this->redirect(['checkout', 'item_name' => 'Solicitud Debida Diligencia', 'amount' => $post['precio'], 'form_id' => $model->id]);
+        }
+    }
+
+    function getPath(){
+
+        $path = "images/formularios-info/";
+        if (!file_exists($path)) {
+            mkdir($path, 0777, true);
+        }
+        return $path;
+    }
+
+    public function actionCheckout(){
+
+        // if (!$form_id) {$this->redirect(['index']); }
+
+        $post = Yii::$app->request->post();
+
+        if ($model = $this->saveForm($post)) {
+
+            $post = Yii::$app->request->post();
+            return $this->render('checkout', [
+                'model' => $model,
+                'precio' => $post['precio'],
+            ]);
+
+        }
+
+        $this->redirect(['index']);
+    }
+
+    public function actionCheckoutOld($item_name, $amount){
+        // Setup order information array with all items
+        $params = [
+            'method'=>'paypal',
+            'intent'=>'sale',
+            'order'=>[
+                'description' => 'Pago solicitud ' . $item_name . ' drtitlesearch.com',
+                'subtotal'=>$amount,
+                'shippingCost'=>0,
+                'total'=>$amount,
+                'currency'=>'USD',
+                'items'=>[
+                    [
+                        'name'=> $item_name,
+                        'price'=> $amount,
+                        'quantity'=> 1,
+                        'currency'=>'USD'
+                    ],
+                    
+
+                ]
+
+            ]
+        ];
+        
+        // In this action you will redirect to the PayPpal website to login with you buyer account and complete the payment
+        Yii::$app->PayPalRestApi->checkOut($params);
+    }
+
+    public function actionMakePayment(){
+
+        $constante = \frontend\models\Constantes::find()->where(['nombre' => 'precio_debida_diligencia'])->one();
+         // Setup order information array 
+        $params = [
+            'order'=>[
+                'description'=>'Pago solicitud Solicitud Debida Diligencia drtitlesearch.com',
+                'subtotal'=> $constante['contenido'],
+                'shippingCost'=> 0,
+                'total'=> $constante['contenido'],
+                'currency'=>'USD',
+            ]
+        ];
+        // In case of payment success this will return the payment object that contains all information about the order
+        // In case of failure it will return Null
+        var_dump(Yii::$app->PayPalRestApi->processPayment($params));
+        print_r(\yii\helpers\Json::decode(Yii::$app->PayPalRestApi->processPayment($params)));
+        exit;
+        $result = Yii::$app->PayPalRestApi->processPayment($params);
+        return $this->saveTransaction(Yii::$app->request->get(), $result);
+    }
+
+    function saveTransaction($data, $result){
+        $view = 'payment-fail';
+
+        $record = \frontend\models\Formularios::findOne($_COOKIE['id_form']);
+        if ($data) {
+            $model = new \frontend\models\TransactionInfo();
+
+            $model->payment_id = $data['paymentId'];
+            $model->token = $data['token'];
+            $model->payer_id = $data['PayerID'];
+            if ($data['success']) {
+                $view = 'payment-success';
+                $model->state = 1;
+            }else{
+                $model->state = 0;
+            }
+            $model->date = date("Y-m-d H:i:s");
+            if ($model->save()) {
+                $record->transaction_id = $model->id;
+                $record->pagado = $model->state;
+            }
+        }else{
+            $record->pagado = 0;
+        }
+        
+        $record->save();
+        unset($_COOKIE['id_form']);
+
+        return $this->redirect([$view]);
+
+    }
+
+    function actionPaymentSuccess($id){
+        $model = \frontend\models\Formularios::findOne($id);
+        $transaccion = \frontend\models\TransactionDetails::findOne($model['transaction_id']);
+
+        if ($model->email_notification == 0) {
+            $this->sendEmailNotificacion($model, $transaccion);
+        }
+
+        return $this->render('payment-success', [
+            'model' => $model,
+            'transaccion' => $transaccion,
+        ]);
+    }
+
+
+    function sendEmailNotificacion($model, $transaccion){
+
+        $this->render('email-config', ['model' => $model, 'transaccion' => $transaccion]);
+    }
+
+    function actionPrueba($id){
+
+        $model = \frontend\models\Formularios::findOne($id);
+        $transaccion = \frontend\models\TransactionDetails::findOne($model['transaction_id']);
+        
+        $this->render('email-config', ['model' => $model, 'transaccion' => $transaccion]);
+    }
+
+    function actionPaymentFail(){
+        return $this->render('payment-fail', [
+        ]);
+    }
+
+    function actionSaveTransaction(){
+
+        $get = Yii::$app->request->get();
+        $payer = $get['payer'];
+        // exit;
+
+        $model = new \frontend\models\TransactionDetails();
+
+        $model->payer_first_name = $payer['name']['given_name'];
+        $model->payer_last_name = $payer['name']['surname'];
+        $model->payer_id = $payer['payer_id'];
+        $model->payer_email = $payer['email_address'];
+        $model->country_code = $payer['address']['country_code'];
+
+        //Id de la transaccion
+        $model->invoice_number = $get['data']['purchase_units'][0]['payments']['captures'][0]['id'];
+        $model->amount = $get['data']['purchase_units'][0]['payments']['captures'][0]['amount']['value'];
+        // $model->amount = $data['transactions']['amount']['total'];
+
+
+        $model->state = $get['data']['status'];
+        $model->date = date("Y-m-d H:i:s");
+
+        // $model->pagado = $data['status'] == 'COMPLETED' ? 1 : 0;
+
+        if ($model->save()) {
+            $record = \frontend\models\Formularios::findOne($get['form_id']);
+            $record->transaction_id = "$model->id";
+            if ($model->state == 'COMPLETED') {
+                $record->pagado = 1;
+            }
+            $record->procesado = 1;
+            $record->save();
+        }
+
+        return \yii\helpers\Json::encode($model);
+
+
+
+
+    }
+
+    function actionVerSolicitud($id){
+
+        $model = \frontend\models\Formularios::findOne($id);
+        $transaccion = \frontend\models\TransactionDetails::findOne($model['transaction_id']);
+
+        $post = Yii::$app->request->post();
+        if ($post) {
+            if ($post['identificacion'] == $model['identificacion'] and $post['no_transaccion'] == $transaccion['invoice_number']) {
+               Yii::$app->session->setFlash('success1', 'Correcto');
+            } else {
+                Yii::$app->session->setFlash('error1', 'Los datos suministrados no coinciden');
+            }
+        }
+        
+        return $this->render('ver-solicitud', [
+            'model' => $model,
+            'transaccion' => $transaccion,
         ]);
     }
 }
