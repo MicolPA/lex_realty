@@ -498,7 +498,7 @@ class SiteController extends Controller
 
         //Id de la transaccion
         $model->invoice_number = $get['data']['purchase_units'][0]['payments']['captures'][0]['id'];
-        $model->amount = $get['data']['purchase_units'][0]['payments']['captures'][0]['amount']['value'];
+        // $model->amount = $get['data']['purchase_units'][0]['payments']['captures'][0]['amount']['value'];
         // $model->amount = $data['transactions']['amount']['total'];
 
 
@@ -515,6 +515,9 @@ class SiteController extends Controller
             }
             $record->procesado = 1;
             $record->save();
+        }else{
+         print_r($model->errors);
+         exit;
         }
 
         return \yii\helpers\Json::encode($model);
