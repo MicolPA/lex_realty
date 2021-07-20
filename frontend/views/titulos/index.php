@@ -42,11 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
                                             'method' => 'post',
                                         ],
                                     ]);
-                                         return "$update $delete";
+                                         return "$delete";
                                 },
                             ],
 
-                            ['class' => 'yii\grid\ActionColumn'],
+                            // ['class' => 'yii\grid\ActionColumn'],
                         ],
                     ]); ?>
                 </div>
