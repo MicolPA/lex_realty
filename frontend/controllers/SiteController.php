@@ -330,7 +330,7 @@ class SiteController extends Controller
 
             
             $model->date = date("Y-m-d H:i:s");
-            echo $post['precio'];
+            // echo $post['precio'];
             $model->save();
             return $model;
             // setcookie("id_form", $model->id, time() + 3600); 
