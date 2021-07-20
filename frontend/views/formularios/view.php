@@ -95,7 +95,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'payer_email:email',
                             'country_code',
                             'invoice_number',
-                            'amount',
+                            // 'amount',
                             // 'token',
                             // 'procesado',
                             'date',
