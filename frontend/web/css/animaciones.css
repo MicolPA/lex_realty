@@ -1,0 +1,62 @@
+/*.VelozIn  {
+  
+  font-family: Arial;
+  margin: 100px 200px;
+  font-size: 40px;
+  
+}
+*/
+
+.VelozIn {
+ 
+  animation: VelozIn 1s;
+
+}
+
+
+
+/* Creamos la animación (con keyframes) */
+
+@keyframes VelozIn {
+ 
+  0% {
+    opacity: 0;
+    transform: translateX(-100vw) skewX(70deg);
+  }
+    
+  60% {
+    opacity: 1;
+    transform: skewX(-20deg);
+    
+  }
+  
+  80% {
+    transform: skewX(15deg);
+  }
+  
+}
+
+.jump-infinite{
+  animation: subir-bajar 2s infinite;
+}
+@keyframes subir-bajar {
+  
+ 
+  
+  
+ 
+  
+  60% {
+    transform: scale(1.4);
+  }
+  
+  /*70% {*/
+    /*transform: translateY(0%);*/
+  /*}*/
+  
+  /*80% {*/
+    /*transform: translateY(-50%);*/
+  /*}*/
+  
+  
+}

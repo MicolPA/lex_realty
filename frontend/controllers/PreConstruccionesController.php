@@ -37,6 +37,8 @@ class PreConstruccionesController extends Controller
      * Lists all PreConstrucciones models.
      * @return mixed
      */
+
+    
     public function actionIndex()
     {
         $searchModel = new PreConstruccionesSearch();
@@ -181,6 +183,7 @@ class PreConstruccionesController extends Controller
      */
     public function actionUpdate($id)
     {
+        $this->layout = '@app/views/layouts/main-admin';
         $model = $this->findModel($id);
 
         $galeria = PropiedadesGaleria::find()->where(['id' => $model->galeria_id, 'propiedades' => 0])->one();

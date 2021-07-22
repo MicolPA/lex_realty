@@ -53,7 +53,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
         background: #0c1528;
     }
 </style> -->
-<div class="container mb-5">
+<div class="container pb-5">
 
     
 
@@ -148,13 +148,22 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
 
                 <div style="width:80%;display: inline-block;">
                     <p class="m-0"><i class="fas fa-map-marker-alt mr-2"></i> <?= $model->ubicacion->nombre ?></p>
-                    <p><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
+                    <p class="m-0"><i class="fas fa-circle-notch"></i> <?= isset($model->tipoPropiedad->nombre) ? $model->tipoPropiedad->nombre : '' ?></p>
+                    <p class="m-0">
+                        <?php if (isset($model->desarrollador->id)): ?>
+                            <a href="/frontend/web/desarrolladores/index?id=<?= $model->desarrollador->id ?>&stars=1" class="no-link text-dark"><i class="fas fa-hard-hat"></i> <?= isset($model->desarrollador->nombre) ? $model->desarrollador->nombre : '' ?></a>
+                        <?php endif ?>
+                    </p>
                 </div>
                 <?php if ($model->riezgo_id == 1): ?>
                     <div class="d-inline p-2 float-right text-white text-center" style="background: #44546b;width: 19%">
                         <p class="mb-0 h4 font-weight-lighter  a-plus">A+</p>
                     </div>
                 <?php endif ?>
+                    <p>
+                        <i class="fas fa-calendar-alt"></i> <span class="font-weight-normal">Fecha de entrega:</span>
+                        <span class="m-0 font-weight-light"><?= $model->fecha_entrega ?></span>
+                    </p>
 
                 <span class="span-price pl-2 pr-2 font-12">PRECIO DESDE</span>
                 <p class="font-weight-bold h4 mt-0 mb-2">US$<?= number_format($model->precio, 0) ?></p>
@@ -182,7 +191,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                     </div>
                 </div> -->
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=0" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
-                <a href="/frontend/web/propiedades/contactar-agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&type=2&propiedad=0" class="btn-block btn btn-outline-dark text-center p-0 pt-2 pb-2 h6">CONTACTAR UN AGENTE</a>
+                <!-- <a href="/frontend/web/propiedades/contactar-agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&type=2&propiedad=0" class="btn-block btn btn-outline-dark text-center p-0 pt-2 pb-2 h6">CONTACTAR UN AGENTE</a> -->
                 <a href="/frontend/web/propiedades/ver-dictamen?id=<?= $model->id ?>&propiedad_check=0" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6" target='_blank'>DESCARGAR DICTAMEN</a>
             </div>
         </div>

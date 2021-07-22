@@ -125,3 +125,34 @@ function showSearch(type){
     $(".div_pre_construccion").hide();
   }
 }
+
+function formSubmit(id) {
+
+  if ($("#"+id)[0].checkValidity()){
+    swal({
+      title: "",
+      text: name,
+      icon: '/frontend/web/images/loading-buffering.gif',
+      closeOnClickOutside: false,
+      buttons: [""],
+    });
+
+    $('#'+id).submit();
+  }else{
+      $("#"+id)[0].reportValidity();
+  }
+}
+
+window.addEventListener('load',function(){
+
+  document.getElementById('fecha').type= 'text';
+
+  document.getElementById('fecha').addEventListener('blur',function(){
+    document.getElementById('fecha').type= 'text';
+  });
+
+  document.getElementById('fecha').addEventListener('focus',function(){
+    document.getElementById('fecha').type= 'date';
+  });
+
+});

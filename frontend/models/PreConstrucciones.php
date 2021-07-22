@@ -50,7 +50,7 @@ class PreConstrucciones extends \yii\db\ActiveRecord
     {
         return [
             [['tipo_propiedad', 'ubicacion_id', 'habitaciones', 'baños', 'riezgo_id', 'impuestos', 'cargas_gramabes', 'deslinde', 'certificado_titulo', 'permisos_municipales', 'permiso_ambiental', 'objeccion_ministerio_turismo', 'permiso_obras_publicas', 'confortur', 'precio', 'user_id'], 'integer'],
-            [['fecha_publicacion', 'metros', 'pies', 'detalles'], 'safe'],
+            [['fecha_publicacion', 'metros', 'pies', 'detalles', 'desarrollador_id', 'fecha_entrega'], 'safe'],
             [['titulo_publicacion', 'celular_contacto'], 'string', 'max' => 255],
         ];
     }
@@ -106,5 +106,10 @@ class PreConstrucciones extends \yii\db\ActiveRecord
     public function getGaleria()
     {
         return $this->hasOne(PropiedadesGaleria::className(), ['id' => 'galeria_id']);
+    }
+
+    public function getDesarrollador()
+    {
+        return $this->hasOne(Desarrolladores::className(), ['id' => 'desarrollador_id']);
     }
 }

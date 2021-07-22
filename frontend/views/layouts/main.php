@@ -40,7 +40,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
     }
 </style>
 <div class="wrap">
-    <div class="container-fluid bg-light-blue">
+    <div class="container-fluid bg-light-blue container-header">
         <div class="p-0">
             <div class="row">
                 <div class="col-md-4 lg-text-right pr-5 pl-5 pt-3 pb-3 container bg-white m-0">
@@ -74,7 +74,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
                 <a class="nav-link" href="/frontend/web/pre-construcciones">PRE CONSTRUCCIONES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
-                <a class="nav-link" href="/frontend/web/desarrolladores">DESARROLLADORES</a>
+                <a class="nav-link" href="/frontend/web/desarrolladores?stars=1">DESARROLLADORES</a>
             </li>
             <li class="nav-item active pl-3 pr-3 ">
                 <a class="nav-link" href="/frontend/web/tasas-hipotecarias">TASA HIPOTECARIA</a>

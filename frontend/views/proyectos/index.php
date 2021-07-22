@@ -11,7 +11,6 @@ $count = $dataProvider->query->count();
 $this->title = "PROYECTOS ". $desarrolladora['nombre'];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <style>
     .radios-div label{
         margin-right: 10px;
@@ -43,14 +42,15 @@ $this->params['breadcrumbs'][] = $this->title;
         </div> -->
 
        
-        <div class="row p-5 mt-4 bg-white border-rounded" style='padding-top: 0 !important'>
+        <div class="row p-5 mt-4 bg-white border-rounded mb-5" style='padding-top: 0 !important'>
             <div class="col-md-12 mt-5 mb-5 pb-3"> 
                 <img src="/frontend/web/<?= $desarrolladora['logo'] ?>" style='max-width:200px;'>
             </div>
             <?php if ($count > 0): ?>
                 <?php foreach ($model as $m): ?>
                     <div class="col-md-4 mt-4 mb-2">
-                        <a href="#" class="no-link text-blue w-100" data-toggle="modal" data-target="#staticBackdrop<?= $m->id ?>">
+                        <!-- <a href="#" class="no-link text-blue w-100" data-toggle="modal" data-target="#staticBackdrop<?//= $m->id ?>"> -->
+                        <a href="/frontend/web/proyectos/ver?id=<?= $m->id ?>" class="no-link text-blue w-100">
                             <div class="bg-white w-100">
                                 <div class="contenedor w-100">
                                     <div style="width: 100%;height: 240px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');background-size:cover;background-position:center;"></div>

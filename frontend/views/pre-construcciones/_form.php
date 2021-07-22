@@ -22,12 +22,20 @@ use yii\helpers\ArrayHelper;
                 </div>
                 <?php $form = ActiveForm::begin(['options' => ['autocomplete' => 'off'],], ['enctype' => 'multipart/form-data']); ?>
 
-                <div class="form-group">
-                     <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
-                </div>
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <?php echo $form->field($model, 'tipo_propiedad')->dropDownList(ArrayHelper::map(\frontend\models\PropiedadesTipo::find()->where(['<>', 'id', 2])->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'TIPO DE PROYECTO', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    </div>
 
-                <div class="form-group">
-                     <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'UBICACIÓN', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    <div class="form-group col-md-12">
+                        <?php echo $form->field($model, 'ubicacion_id')->dropDownList(ArrayHelper::map(\frontend\models\Ubicaciones::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=>'UBICACIÓN', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <?php echo $form->field($model, 'desarrollador_id')->dropDownList(ArrayHelper::map(\frontend\models\Desarrolladores::find()->orderBy(['nombre'=>SORT_ASC])->all(), 'id', 'nombre'),['prompt'=> 'DESARROLLADOR', 'class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'required' => 'required'])->label(false); ?>
+                    </div>
+                    <div class="col-md-6">
+                        <?= $form->field($model, 'fecha_entrega')->textInput(['class' => 'input-r pl-4 pr-4 pt-3 pb-3', 'placeholder' =>'FECHA DE ENTREGA', 'required' => 'required', 'type' => 'date', 'id' => 'fecha'])->label(false) ?>
+                    </div>
                 </div>
 
                <div class="row">

@@ -108,16 +108,16 @@
 }
 
 .text-inicio .small{
-	font-size: 10px !important;
+	font-size: 11px !important;
 }
 
 .text-inicio .big{
-	font-size: 24px !important;
+	font-size: 26px !important;
 	font-weight: 500;
 }
 
 .text-inicio p{
-	max-width: 180px;
+	max-width: 200px;
 	/*display: contents;*/
 }
 
@@ -127,20 +127,26 @@
 .nav-link{
 	font-size: 13px !important;
 }
+.font-8{
+	font-size: 8px;
+}
 .font-10{
-	font-size: 10px
+	font-size: 10px;
 }
 .font-12{
-	font-size: 12px
+	font-size: 12px;
 }
 .font-14{
-	font-size: 14px
+	font-size: 14px;
 }
 .font-16{
-	font-size: 16px
+	font-size: 16px;
 }
 .font-18{
-	font-size: 18px
+	font-size: 18px;
+}
+.font-20{
+	font-size: 20px;
 }
 .text-blue{
 	color:#0e1227 !important;
@@ -329,6 +335,10 @@ input[type="file"] {
     font-size: 1.1rem;
 }
 
+.title-titulos{
+	margin-top: 3rem;
+}
+
 @media (max-width: 991px){
 
 	#carousel-thumbs{
@@ -439,6 +449,14 @@ input[type="file"] {
 
 	.text-inicio{
 		margin-top: -20rem !important;
+	}
+
+	.div-content-home{
+		position: absolute;
+	}
+
+	.title-titulos{
+		margin-top:-1rem;position: absolute;z-index: 1;
 	}
 
 }

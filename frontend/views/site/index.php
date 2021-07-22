@@ -63,6 +63,13 @@ $this->title = 'Inicio';
         font-size: 14px !important;
     }
 
+    .swal-modal{
+        background: transparent;
+    }
+    .swal-icon img{
+        width: 20% !important;
+    }
+
 </style>
 <div class="container-fluid">
     <div class="row" style=";">
@@ -91,29 +98,41 @@ $this->title = 'Inicio';
             <div class="bg-darkblue" style="height: 1200px;position: absolute;top: 0px;width: 100%;opacity: 0.8">
             </div>
             <div class="">
-                <div class='row align-items-center' style="margin: auto !important;position: absolute;top: 80px;width: 100%">
-                    <div class="col-md-4 text-inicio text-white text-right">
-                        <div class="fit-content float-right">
-                            <p class="mb-0 text-right">
-                                <p class="mb-0" style="line-height:2px">SOLICITA TU DEBIDA</p>
-                                <p class="big mb-0">DILIGENCIA</p>
-                                <p class="small mb-0" style="line-height:12px">MÁS CONSULTA DE 20 MINUTOS GRATIS CON UN ABOGADO EXPERTO.</p>
-                                <p class="font-18 mt-1 font-weight-normal">TOTAL <b>USD$ <?= $constante ? $constante['contenido'] : 120 ?></b></p>
-                            </p>
+                <div class='row align-items-center div-content-home' style="margin: auto !important;top: 80px;width: 100%">
+                    <div class="col-md-5">
+                        <div class="row">
+                            <div class="col-md-10 text-inicio text-white text-right pr-4 m-0">
+                                <div class="fit-content float-right">
+                                    <p class="mb-0 text-right">
+                                        <p class="mb-2 font-20 VelozIn" style="line-height:2px">SOLICITA TU DEBIDA</p>
+                                        <p class="big mb-0 h2 VelozIn">DILIGENCIA</p>
+                                        <p class="small mb-0 mt-1 VelozIn" style="line-height:12px">MÁS CONSULTA DE 20 MINUTOS GRATIS CON UN ABOGADO EXPERTO.</p>
+                                        <p class="font-18 mt-1 font-weight-normal VelozIn">TOTAL <b>USD$ <?= $constante ? $constante['contenido'] : 120 ?></b></p>
+                                    </p>
 
-                           <!--  <p class="font-12 mt-5">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae esse odio ad cum nulla tempora unde sunt iste blanditiis ipsa voluptatum dignissimos amet sed rem illo beatae velit, ducimus.
-                            </p> -->
+                                   <!--  <p class="font-12 mt-5">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae esse odio ad cum nulla tempora unde sunt iste blanditiis ipsa voluptatum dignissimos amet sed rem illo beatae velit, ducimus.
+                                    </p> -->
 
+                                </div>
+
+                            </div>
+                            <div class="text-white text-inicio d-xs-none m-0">
+                                <i class="fas fa-caret-right float-right icon-big jump-infinite"></i>
+                            </div>
                         </div>
-
+                        <div class="row">
+                            <div class="col-md-8 text-white float-right ml-auto pr-lg-5 pr-md-4">
+                                <p class="font-12 pr-lg-5 pr-md-4 text-right">
+                                    Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Officiis, reiciendis voluptatum libero necessitatibus nostrum a ipsum consequuntur doloribus fugit laborum. Nemo, id dolor, commodi unde repellendus fugit a, magni recusandae soluta tenetur sunt est voluptatibus sit? Natus, tempore, eos, mollitia quasi earum blanditiis aut eaque saepe illo non quaerat distinctio fuga eius animi perspiciatis dolore aperiam ex. Rem dolorum mollitia illum. Fuga dignissimos doloribus ipsum accusantium impedit. Porro nam perspiciatis eaque qui ab voluptatum maiores quia laboriosam deserunt, illum dolore voluptatibus illo quas quae quos aliquid ipsam sed rerum delectus nobis! Voluptate iste laudantium debitis eaque, odio culpa beatae autem!
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-white text-inicio d-xs-none">
-                        <i class="fas fa-caret-right float-right icon-big"></i>
-                    </div>
+                    
                     <div class="col-md-5 pl-lg-4 pr-lg-4 pl-md-4 pr-md-4">
-                        <?php $form = ActiveForm::begin(['action' => 'site/checkout', 'method' => 'POST', 'options' => ['autocomplete' => 'on'],], ['enctype' => 'multipart/form-data']); ?>
-                            <div class=" m-auto bg-white rounded-2 p-5 text-center">
+                        <?php $form = ActiveForm::begin(['action' => 'site/checkout', 'method' => 'POST', 'id' => 'form', 'options' => ['autocomplete' => 'on'],], ['enctype' => 'multipart/form-data']); ?>
+                            <div class=" m-auto bg-white rounded-2 p-lg-5 p-sm-2 text-center">
                                 <div class="form-group mb-5">
                                     <h2 class="display-4" style="font-size:18px"><span class="bg-blue-2 p-1 pr-3 pl-3 rounded-2 text-white">COMPLETA ESTE FORMULARIO</span></h2>
                                     <p class="font-weight-lighter text-dark" style="font-size:20px">PARA SOLICITAR TU DEBIDA DILIGENCIA</p>
@@ -170,13 +189,14 @@ $this->title = 'Inicio';
                                 <input type="hidden" name="precio" value="<?= $constante ? $constante['contenido'] : 120 ?>">
 
                                 <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">
-                                    <?= Html::submitButton('PAGAR', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?>
+                                    <!-- <?//= Html::submitButton('PAGAR', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?> -->
+                                    <a href="javascript:formSubmit('form')" class="btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold">PAGAR</a>
                                 </div>
                             </div>
                         <?php ActiveForm::end(); ?>
                     </div>
                 </div>
-                <p class="text-center w-100" style="margin-top:-1rem;position: absolute;z-index: 1;"> <span class="bg-blue-2 p-1 pr-4 pl-4 font-weight-lighter rounded-2 text-white">TIPOS DE TITULOS</span> </p>
+                <p class="text-center w-100 title-titulos"> <span class="bg-blue-2 p-1 pr-4 pl-4 font-weight-lighter rounded-2 text-white">TIPOS DE TITULOS</span> </p>
 
                 <div class="pt-4 pb-4" style="background: #d5d8dd">
                     <div class="container d-xs-none">
@@ -230,10 +250,6 @@ $this->title = 'Inicio';
                     </div>
                     <div class="container d-sm-none">
                         <div class="row mt-5">
-                            <div class="col-md-12 text-center mb-3">
-                                <h1 class="h4 title-light text-darkblue mb-4">BUSCAR POR CIUDAD</h1>
-                            </div>
-
                             <div class="col-md-12 col-xs-12">
                                 <div id="carouselExampleControls23" class="carousel slide" data-ride="carousel">
                                     <div class="carousel-inner">
