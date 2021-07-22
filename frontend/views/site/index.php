@@ -66,7 +66,7 @@ $this->title = 'Inicio';
     .swal-modal{
         background: transparent;
     }
-    .swal-icon img{
+    .swal-loading img{
         width: 20% !important;
     }
 

@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-3">
-                <h1 class="h4 title-light"><?= Html::encode($this->title) ?></h1>
+                <h1 class="title-light"><?= Html::encode($this->title) ?></h1>
             </div>
         </div>
 

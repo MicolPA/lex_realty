@@ -135,6 +135,7 @@ function formSubmit(id) {
       icon: '/frontend/web/images/loading-buffering.gif',
       closeOnClickOutside: false,
       buttons: [""],
+      className: 'swal-loading'
     });
 
     $('#'+id).submit();
