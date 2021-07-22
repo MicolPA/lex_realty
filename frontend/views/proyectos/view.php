@@ -39,7 +39,7 @@ for ($i = 2; $i < 9; $i++) {
 <div class="container-fluid mb-5">
     <div class="row">
         <div class="col-md-12">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-dialog modal-lg modal-dialog-centered mt-5">
                 <div class="modal-content">
                   <div class="modal-header bg-pastel-blue">
                     <!-- <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5> -->
@@ -95,7 +95,7 @@ for ($i = 2; $i < 9; $i++) {
                             <?= $model->descripcion ?>
                         </p>
 
-                        <button type="button" class="btn btn-secondary text-center btn-block bg-pastel-blue mt-4 btn-sm" data-dismiss="modal">CERRAR</button>
+                        <a href="<?= Yii::$app->request->referrer ? Yii::$app->request->referrer : '/frontend/web/proyectos/index?desarrolladoras_id=' . $model->desarrollador_id .'&stars=1' ?>" class="btn btn-secondary text-center btn-block bg-pastel-blue mt-4 btn-sm" data-dismiss="modal">CERRAR</a>
                     </div>
                   </div>
                     
