@@ -193,6 +193,47 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                 <a href="/frontend/web/propiedades/enviar-propuesta?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&propiedad=0" class="btn-block text-success text-center p-0 pt-2 pb-2 btn btn-outline-success mt-4 h6">ENVIAR PROPUESTA</a>
                 <!-- <a href="/frontend/web/propiedades/contactar-agente?id=<?= $model->id ?>&user_id=<?= $model->user_id ?>&type=2&propiedad=0" class="btn-block btn btn-outline-dark text-center p-0 pt-2 pb-2 h6">CONTACTAR UN AGENTE</a> -->
                 <a href="/frontend/web/propiedades/ver-dictamen?id=<?= $model->id ?>&propiedad_check=0" class="btn-block text-dark text-center p-0 pt-2 pb-2 btn btn-outline-dark h6" target='_blank'>DESCARGAR DICTAMEN</a>
+
+                <div class="row mt-4">
+                    <div class="col-md-6 col-xs-6 col-sm-6 text-right" style="max-width: 50% !important">
+                        <div class="bg-white h-100">
+                            <?php if ($model->id == $first or !$prev_propiedad): ?>
+                                <a href="/frontend/web/pre-construcciones" class="no-link font-weight-bold float-right ml-2">
+                                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
+                                </a>
+                                <div class="w-fit float-right" style="margin-top: 0.15rem !important;">
+                                    <a href="/frontend/web/pre-construcciones" class="no-link text-secondary font-weight-bold">
+                                        <i class="fal fas fa-chevron-left" style="font-size: 18px;color:#aeb1b6"></i> 
+                                    </a>
+                                </div>
+                                
+                            <?php else: ?>
+                                <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-right ml-2">
+                                    <span class="font-12" style="color:#aeb1b6">ANTERIOR</span>
+                                </a>
+                                <div class="w-fit float-right" style="margin-top: 0.15rem !important;">
+                                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                                        <i class="fal fas fa-chevron-left" style="font-size: 18px;color:#aeb1b6"></i> 
+                                    </a>
+                                </div>
+                            <?php endif ?>
+                        </div>
+                    </div>
+                    <?php if ($next_propiedad): ?>
+                        <div class="col-md-6 col-xs-6 col-sm-6" style="max-width: 50% !important">
+                            <div class="bg-white h-100">
+                                <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mr-2">
+                                    <span class="font-12" style="color:#aeb1b6">SIGUIENTE</span>
+                                </a>
+                                <div class="w-fit float-left" style="margin-top: 0.15rem !important;">
+                                    <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
+                                        <i class="fal fas fa-chevron-right" style="font-size: 18px;color:#aeb1b6"></i> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif ?>
+                </div>
             </div>
         </div>
     </div>
@@ -326,7 +367,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                                 <a href="/frontend/web/pre-construcciones" class="no-link font-weight-bold float-right ml-2">
                                     <span class="font-12" style="color:#aeb1b6">ANTERIOR PROYECTO</span>
                                 </a>
-                                <div class="w-fit float-right">
+                                <div class="w-fit float-right" style="margin-top: 0.15rem !important;">
                                     <a href="/frontend/web/pre-construcciones" class="no-link text-secondary font-weight-bold">
                                         <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
                                     </a>
@@ -336,7 +377,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                                 <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-right ml-2">
                                     <span class="font-12" style="color:#aeb1b6">ANTERIOR PROYECTO</span>
                                 </a>
-                                <div class="w-fit float-right">
+                                <div class="w-fit float-right" style="margin-top: 0.15rem !important;">
                                     <a href="/frontend/web/pre-construcciones/ver?id=<?= $prev_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
                                         <i class="fal fas fa-chevron-left" style="font-size: 20px;color:#aeb1b6"></i> 
                                     </a>
@@ -350,7 +391,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                                 <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mr-2">
                                     <span class="font-12" style="color:#aeb1b6">SIGUIENTE PROYECTO</span>
                                 </a>
-                                <div class="w-fit float-left">
+                                <div class="w-fit float-left" style="margin-top: 0.15rem !important;">
                                     <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link text-secondary font-weight-bold">
                                         <i class="fal fas fa-chevron-right" style="font-size: 20px;color:#aeb1b6"></i> 
                                     </a>
