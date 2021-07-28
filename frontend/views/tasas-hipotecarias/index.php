@@ -17,7 +17,7 @@ $this->title = 'TASAS HIPOTECARIAS';
                 <p class="title-light text-white text-center p-2 m-0">TASA HIPOTECARIA</p>
             </div>
 
-            <div class="accordion w-100 bg-white" id="accordionExample">
+            <div class="accordion w-100 bg-white mb-5" id="accordionExample">
                 <?php foreach ($dataProvider->query->all() as $m): ?>
                   <div class="card">
                     <div class="card-header bg-white" id="headingOne<?= $m->id ?>">
@@ -85,11 +85,11 @@ $this->title = 'TASAS HIPOTECARIAS';
 
                         </div>
                         <div class="row">
-                                    <div class="col-md-8"></div>
-                                    <div class="col-md-4">
-                                        <a href="/frontend/web/tasas-hipotecarias/contactar-oficial?id=<?= $m->id ?>" class="btn btn-gray text-white rounded-3 btn-block btn-sm">CONTACTAR OFICIAL</a>
-                                    </div>
-                                </div>
+                            <div class="col-md-8"></div>
+                            <div class="col-md-4">
+                                <a href="/frontend/web/tasas-hipotecarias/contactar-oficial?id=<?= $m->id ?>" class="btn btn-gray text-white rounded-3 btn-block btn-sm">CONTACTAR OFICIAL</a>
+                            </div>
+                        </div>
                       </div>
                     </div>
                   </div>

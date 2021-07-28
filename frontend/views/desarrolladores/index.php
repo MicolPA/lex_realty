@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="pt-4 pb-4 pl-2 pr-2 text-center">
                                         <img src="/frontend/web/<?= $m->logo ?>" width='120px'>
                                     </div>
-                                    <div style="height:180px">
+                                    <div>
                                         <?= $this->render('_rating', ['id' => $m->id]) ?>
                                     </div>
                                     

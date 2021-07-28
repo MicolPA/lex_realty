@@ -298,7 +298,7 @@ $this->title = 'Inicio';
 
                     <div class="container">
                         <p class="p-5">
-                            Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Consequatur similique soluta ea quis totam minus, repellat quisquam et consequuntur, voluptates! Velit laborum ut ipsam eum expedita voluptate nostrum quae rem id quidem! A perferendis temporibus blanditiis deleniti optio laudantium deserunt, quae molestias atque dignissimos nemo nobis, ab nisi officiis voluptas!
+                            La Jurisdicción Inmobiliaria de República Dominicana  emite cuatro certificados de título que reconocen derechos sobre la propiedad inmobiliaria, conoce el aspecto físico de cada título y su alcance jurídico.
                         </p>
                     </div>
                 </div>

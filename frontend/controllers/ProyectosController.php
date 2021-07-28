@@ -78,6 +78,7 @@ class ProyectosController extends Controller
         $data['calidad_materiales'] = 0;
         $data['entrega_areas_sociales'] = 0;
         $data['entrega_design'] = 0;
+        $data['seguimiento_construccion'] = 0;
 
         $model = StarsRatingCount::find()->where(['desarrollador_id' => $desarrolladoras_id])->all();
         
@@ -88,12 +89,14 @@ class ProyectosController extends Controller
                 $data['calidad_materiales'] += $m->calidad_materiales;
                 $data['entrega_areas_sociales'] += $m->entrega_areas_sociales;
                 $data['entrega_design'] += $m->entrega_design;
+                $data['seguimiento_construccion'] += $m->seguimiento_construccion;
             }
 
             $data['fecha_entrega'] = $data['fecha_entrega'] / $count;
             $data['calidad_materiales'] = $data['calidad_materiales'] / $count;
             $data['entrega_areas_sociales'] = $data['entrega_areas_sociales'] / $count;
             $data['entrega_design'] = $data['entrega_design'] / $count;
+            $data['seguimiento_construccion'] = $data['seguimiento_construccion'] / $count;
         }
         return $data;
 
