@@ -32,6 +32,10 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
     #graphcomment, #gc-iframe{
         background: #fff !important;
     }
+
+    #carousel-thumbs{
+        width: 100% !important;
+    }
 </style>
 <!-- <style>
     .swal-modal{
@@ -145,7 +149,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                 </div> <!-- /row -->
             </div> <!-- /container -->
         </div>
-        <div class="col-md-3 rounded bg-white pb-5">
+        <div class="col-md-3 rounded bg-white pb-2">
             <div>
                 <h1 class="text-white mt-4 mb-4 h6 text-center pt-2 pb-2 rounded font-weight-light bg-darkblue"><?= Html::encode($this->title) ?></h1>
 
@@ -198,8 +202,8 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
 
                 <a href="/frontend/web/tasas-hipotecarias" class="btn-block text-primary text-center p-0 pt-2 pb-2 btn btn-outline-primary h6">TASAS HIPOTECARIAS</a>
 
-                <div class="row mt-5">
-                    <div class="col-md-6 col-xs-6 col-sm-6 text-right" style="max-width: 50% !important">
+                <div class="row mt-5 pt-5">
+                    <div class="col-md-6 col-xs-6 col-sm-6 text-right mt-4" style="max-width: 50% !important">
                         <div class="bg-white h-100">
                             <?php if ($model->id == $first or !$prev_propiedad): ?>
                                 <a href="/frontend/web/pre-construcciones" class="no-link font-weight-bold float-right ml-2">
@@ -224,7 +228,7 @@ $prev_propiedad = \frontend\models\PreConstrucciones::find()->where(['>', 'id', 
                         </div>
                     </div>
                     <?php if ($next_propiedad): ?>
-                        <div class="col-md-6 col-xs-6 col-sm-6" style="max-width: 50% !important">
+                        <div class="col-md-6 col-xs-6 col-sm-6 mt-4" style="max-width: 50% !important">
                             <div class="bg-white h-100">
                                 <a href="/frontend/web/pre-construcciones/ver?id=<?= $next_propiedad->id ?>&first=<?= $first ?>" class="no-link font-weight-bold float-left mr-2">
                                     <span class="font-12" style="color:#aeb1b6">SIGUIENTE</span>

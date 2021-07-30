@@ -123,9 +123,9 @@ $this->title = 'Inicio';
                         </div>
                         <div class="row">
                             <div class="col-md-8 text-white float-right ml-auto pr-lg-5 pr-md-4">
-                                <p class="font-12 pr-lg-5 pr-md-4 text-right">
+                                <!-- <p class="font-12 pr-lg-5 pr-md-4 text-right">
                                     Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Officiis, reiciendis voluptatum libero necessitatibus nostrum a ipsum consequuntur doloribus fugit laborum. Nemo, id dolor, commodi unde repellendus fugit a, magni recusandae soluta tenetur sunt est voluptatibus sit? Natus, tempore, eos, mollitia quasi earum blanditiis aut eaque saepe illo non quaerat distinctio fuga eius animi perspiciatis dolore aperiam ex. Rem dolorum mollitia illum. Fuga dignissimos doloribus ipsum accusantium impedit. Porro nam perspiciatis eaque qui ab voluptatum maiores quia laboriosam deserunt, illum dolore voluptatibus illo quas quae quos aliquid ipsam sed rerum delectus nobis! Voluptate iste laudantium debitis eaque, odio culpa beatae autem!
-                                </p>
+                                </p> -->
                             </div>
                         </div>
                     </div>

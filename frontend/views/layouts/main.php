@@ -47,10 +47,10 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
                    <a href="/"><img src="/frontend/web/images/logo-principal.png" width="200px"> </a>
                 </div>
                 <div class="col-md-8 container pt-4 bg-light-blue">
-                    <form class="form-inline" action="/frontend/web/propiedades" method="get">
+                    <!-- <form class="form-inline" action="/frontend/web/propiedades" method="get">
                         <input class="form-control mr-sm-2 bg-light-blue" name="PropiedadesSearch[titulo_publicacion]" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
                         <button class="btn my-2 my-sm-0" type="submit" style="background: #e9eaec"><i class="fas fa-search"></i></button>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
