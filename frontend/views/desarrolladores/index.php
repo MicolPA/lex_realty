@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
        
-        <div class="row mb-5 p-4" style='padding-top: 0 !important'>
+        <div class="row mb-5 p-4" style='padding-top: 0 !important;'>
             <?php if ($count > 0): ?>
                 <?php foreach ($model as $m): ?>
                         <div class="col-md-4 mt-4 mb-2">

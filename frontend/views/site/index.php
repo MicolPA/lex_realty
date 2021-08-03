@@ -12,15 +12,21 @@ $this->title = 'Inicio';
         .container, .container-sm, .container-md, .container-lg, .container-xl {
             max-width: 1140px !important;
         }
-    }
-
-    @media (min-width: 992px){
         .col-lg-3 {
             -ms-flex: 0 0 25%;
             flex: 0 0 25%;
             max-width: 24.5%;
         }
     }
+
+    @media (min-width: 767px){
+        
+
+        .c-image, .d-cont{
+            height: 1200px;
+        }
+    }
+
 
     select option{
         font-size: 14px !important;
@@ -33,6 +39,26 @@ $this->title = 'Inicio';
         padding-bottom: 2rem !important;
         border-radius: 5px;
         color: white !important;
+    }
+    @media (max-width: 766px){
+        #carouselExampleControls{
+            display: none;
+        }
+
+        .title-content{
+            margin-top: 1rem;
+            text-align: left;
+            width: 100%;
+            color:  #0c1528;
+        }
+
+        .title-titulos{
+            margin-top: 8rem;
+        }
+
+        .carousel-control-next, .carousel-control-prev{
+            padding-top: 100px !important;
+        }
     }
 
     .icon-index .form-group{
@@ -77,13 +103,13 @@ $this->title = 'Inicio';
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item home-carousel-item active">
-                  <img src="/frontend/web/images/slide.jpg" class="d-block w-100" height="1200px">
+                  <img src="/frontend/web/images/slide.jpg" class="d-block w-100 c-image">
                 </div>
                 <div class="carousel-item home-carousel-item">
-                  <img src="/frontend/web/images/slide-2.jpg" class="d-block w-100" height="1200px">
+                  <img src="/frontend/web/images/slide-2.jpg" class="d-block w-100 c-image">
                 </div>
                 <div class="carousel-item home-carousel-item">
-                  <img src="/frontend/web/images/slide-3.jpg" class="d-block w-100" height="1200px">
+                  <img src="/frontend/web/images/slide-3.jpg" class="d-block w-100 c-image">
                 </div>
               </div>
              <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -95,14 +121,14 @@ $this->title = 'Inicio';
                 <span class="sr-only">Next</span>
               </a> -->
             </div>
-            <div class="bg-darkblue" style="height: 1200px;position: absolute;top: 0px;width: 100%;opacity: 0.8">
+            <div class="bg-darkblue d-cont" style=";position: absolute;top: 0px;width: 100%;opacity: 0.8">
             </div>
             <div class="">
                 <div class='row align-items-center div-content-home' style="margin: auto !important;top: 80px;width: 100%">
                     <div class="col-md-5">
                         <div class="row">
                             <div class="col-md-10 text-inicio text-white text-right pr-4 m-0">
-                                <div class="fit-content float-right">
+                                <div class="fit-content float-right title-content">
                                     <p class="mb-0 text-right">
                                         <p class="mb-2 font-20 VelozIn" style="line-height:2px">SOLICITA TU DEBIDA</p>
                                         <p class="big mb-0 h2 VelozIn">DILIGENCIA</p>
@@ -198,7 +224,7 @@ $this->title = 'Inicio';
                 </div>
                 <p class="text-center w-100 title-titulos"> <span class="bg-blue-2 p-1 pr-4 pl-4 font-weight-lighter rounded-2 text-white">TIPOS DE TITULOS</span> </p>
 
-                <div class="pt-4 pb-4" style="background: #d5d8dd">
+                <div class="pt-lg-4 pb-lg-4 pt-md-4 pb-md-4" style="background: #d5d8dd">
                     <div class="container d-xs-none">
                         <div class="row mt-5">
                             <div class="col-md-12">

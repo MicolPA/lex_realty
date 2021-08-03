@@ -39,15 +39,15 @@ if (count($model) > 0) {
     }
 </style>
 
-<div class="col-md-12 bg-white" style="min-height:240px">
+<div class="col-md-12 bg-gray" style="min-height:240px;">
     <?php if (!$data['fecha_entrega']): ?>
        <!-- <p class="text-center mt-2 mt-5"> No se han realizado valoraciones. </p>  -->
     <?php else: ?>
         <div class="row align-items-center">
-            <div class="col-md-5 div-label">
-                <label class="font-weight-bold text-darkblue font-9">Fecha de entrega</label>
+            <div class="col-md-7 div-label">
+                <label class="font-12 font-weight-normal text-uppercase text-gray">Fecha de entrega</label>
             </div>
-            <div class="col-md-7 pl-md-0">
+            <div class="col-md-5 pl-md-0">
 
                 <?= StarRating::widget([
                     'name' => 'fecha_entrega1',
@@ -56,15 +56,15 @@ if (count($model) > 0) {
                         'displayOnly' => true,
                         'theme' => 'krajee-uni',
                         'filledStar' => '<i class="fas fa-star"></i>',
-                        'emptyStar' => '<i class="far fa-star"></i>',
+                        'emptyStar' => '<i class="fas fa-star"></i>',
                         ]
                     ]);
                  ?> 
             </div>
-            <div class="col-md-5 div-label">
-                <label class="font-weight-bold text-darkblue font-9">Calidad de materiales </label>
+            <div class="col-md-7 div-label">
+                <label class="font-12 font-weight-normal text-uppercase text-gray">Calidad de materiales </label>
             </div>
-            <div class="col-md-7 pl-md-0">
+            <div class="col-md-5 pl-md-0">
                 <?= StarRating::widget([
                     'name' => 'calidad_materiales1',
                     'value' => $data["calidad_materiales"],
@@ -72,7 +72,7 @@ if (count($model) > 0) {
                         'displayOnly' => true,
                         'theme' => 'krajee-uni',
                         'filledStar' => '<i class="fas fa-star"></i>',
-                        'emptyStar' => '<i class="far fa-star"></i>',
+                        'emptyStar' => '<i class="fas fa-star"></i>',
                         ]
                     ]);
                  ?> 
@@ -82,10 +82,10 @@ if (count($model) > 0) {
             
         </div>
         <div class="row align-items-center">
-            <div class="col-md-5 div-label">
-                <label class="font-weight-bold text-darkblue font-9">Entrega de areas sociales  </label>
+            <div class="col-md-7 div-label">
+                <label class="font-12 font-weight-normal text-uppercase text-gray">Entrega de areas sociales  </label>
             </div>
-            <div class="col-md-7 pl-md-0">
+            <div class="col-md-5 pl-md-0">
                 <?= StarRating::widget([
                     'name' => 'entrega_areas_sociales1',
                     'value' => $data["entrega_areas_sociales"],
@@ -93,15 +93,15 @@ if (count($model) > 0) {
                         'displayOnly' => true,
                         'theme' => 'krajee-uni',
                         'filledStar' => '<i class="fas fa-star"></i>',
-                        'emptyStar' => '<i class="far fa-star"></i>',
+                        'emptyStar' => '<i class="fas fa-star"></i>',
                         ]
                     ]);
                  ?> 
             </div>
-            <div class="col-md-5 div-label">
-                <label class="font-weight-bold text-darkblue font-9">Entrega según diseño original </label>
+            <div class="col-md-7 div-label">
+                <label class="font-12 font-weight-normal text-uppercase text-gray">Entrega según diseño original </label>
             </div>
-            <div class="col-md-7 pl-md-0">
+            <div class="col-md-5 pl-md-0">
                  <?= StarRating::widget([
                     'name' => 'entrega_design1',
                     'value' => $data["entrega_design"],
@@ -109,17 +109,17 @@ if (count($model) > 0) {
                         'displayOnly' => true,
                         'theme' => 'krajee-uni',
                         'filledStar' => '<i class="fas fa-star"></i>',
-                        'emptyStar' => '<i class="far fa-star"></i>',
+                        'emptyStar' => '<i class="fas fa-star"></i>',
                         ]
                     ]);
                  ?>  
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-5 div-label">
-                <label class="font-weight-bold text-darkblue font-9">Seguimiento durante la contrucción  </label>
+            <div class="col-md-7 div-label">
+                <label class="font-12 font-weight-normal text-uppercase text-gray">Interacción durante la construcción  </label>
             </div>
-            <div class="col-md-7 pl-md-0">
+            <div class="col-md-5 pl-md-0">
                 <?= StarRating::widget([
                     'name' => 'seguimiento_construccion',
                     'value' => $data["seguimiento_construccion"],
@@ -127,7 +127,7 @@ if (count($model) > 0) {
                         'displayOnly' => true,
                         'theme' => 'krajee-uni',
                         'filledStar' => '<i class="fas fa-star"></i>',
-                        'emptyStar' => '<i class="far fa-star"></i>',
+                        'emptyStar' => '<i class="fas fa-star"></i>',
                         ]
                     ]);
                  ?> 

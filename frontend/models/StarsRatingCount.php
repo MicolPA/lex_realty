@@ -35,7 +35,7 @@ class StarsRatingCount extends \yii\db\ActiveRecord
         return [
             [['desarrollador_id'], 'integer'],
             [['fecha_entrega', 'calidad_materiales', 'entrega_areas_sociales', 'entrega_design', 'stars_count'], 'number'],
-            [['date', 'seguimiento_construccion'], 'safe'],
+            [['date', 'seguimiento_construccion', 'comment'], 'safe'],
             [['email'], 'string', 'max' => 255],
         ];
     }
