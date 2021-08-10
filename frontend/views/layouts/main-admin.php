@@ -36,12 +36,12 @@ if (Yii::$app->user->isGuest) {
 
 <div class="wrap">
     <div class="bg-white">
-        <div class="container pt-3 pb-3 bg-white">
+        <div class="container pt-4 pb-3 bg-white">
             <div class="row">
                 <div class="col-md-3">
-                   <a href="/"><img src="/frontend/web/images/logo-principal.png" width="200px"></a>
+                   <a href="/"><img src="/frontend/web/images/logo-principal-1.png" width="120px"></a>
                 </div>
-                <div class="col-md-8 pt-4 text-right">
+                <div class="col-md-8 pb-3 text-right">
                     <span class="h4 title-light pl-3 pr-3">PANEL DE ADMINISTRACIÓN</span>
                 </div>
             </div>

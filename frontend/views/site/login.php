@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row mt-5 pt-5">
         <div class="col-lg-8 m-auto card mt-5 p-5">
-            <img class="m-auto" src="/frontend/web/images/logo-principal.png" width="220px">
+            <img class="m-auto" src="/frontend/web/images/logo-principal-1.png" width="220px">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
                 <div class="pl-5 pr-5 pt-5">
