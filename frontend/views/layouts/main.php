@@ -43,8 +43,8 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
     <div class="container-fluid bg-light-blue container-header">
         <div class="p-0">
             <div class="row">
-                <div class="col-md-4 lg-text-right pr-5 pl-5 pt-3 pb-3 container bg-white m-0">
-                   <a href="/"><img src="/frontend/web/images/logo-principal.png" width="200px"> </a>
+                <div class="col-md-4 lg-text-right pr-5 pl-5 pt-4 pb-4 container bg-white m-0">
+                   <a href="/"><img src="/frontend/web/images/logo-principal-1.png" width="120px"> </a>
                 </div>
                 <div class="col-md-8 container pt-4 bg-light-blue">
                     <!-- <form class="form-inline" action="/frontend/web/propiedades" method="get">

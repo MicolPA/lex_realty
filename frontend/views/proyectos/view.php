@@ -9,7 +9,6 @@ $this->title = $model->nombre;
 $fotos = array();
 for ($i = 2; $i < 9; $i++) {
     
-   
     if ($model["foto_$i"]) {
         $fotos[] = $model["foto_$i"];
     }
@@ -23,7 +22,7 @@ for ($i = 2; $i < 9; $i++) {
 <style>
     @media (min-width: 990px){
         .first-part img {
-            height: 550px;
+            height: 400px;
         }
     }
 
@@ -33,6 +32,10 @@ for ($i = 2; $i < 9; $i++) {
     }
     .container-header, .navbar, footer{
         display: none;
+    }
+
+    #carousel-thumbs img{
+        border: none !important;
     }
 
 </style>
@@ -52,31 +55,97 @@ for ($i = 2; $i < 9; $i++) {
 
                         <div class="row align-items-center h-100 p-2">
                             <div class="col-md-1">
-                                <a class="carousel-control-prev bg-darkblue" href="#carouselExampleControls<?= $model->id ?>" role="button" data-slide="prev" style="height: 35px;width: 35px !important;">
+                                <a class="carousel-control-prev bg-darkblue" href="#carouselExampleControls" role="button" data-slide="prev" style="height: 35px;width: 35px !important;">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a> 
                             </div>
 
                             <div class="col-md-10">
-                                <div id="carouselExampleControls<?= $model->id ?>" class="carousel slide" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                      <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100" alt="...">
+                                <div class="carousel-container position-relative row">
+                  
+                                    <!-- <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal"> -->
+                                    <div id="carouselExampleControls" class="carousel slide first-part w-100" data-ride="carousel">
+
+                                      <div class="carousel-inner">
+                                         
+                                        <div class="carousel-item active" data-slide-number="0">
+                                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $model->foto_1 ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                                        </div>
+                                        <?php $count = 0; ?>
+                                        <?php foreach ($fotos as $foto): ?>
+                                            <?php $count++ ?>
+                                            <div class="carousel-item" data-slide-number="<?= $count ?>">
+                                              <img src="/frontend/web/<?= $foto ?>" class="d-block w-100 rounded-top" data-remote="/frontend/web/<?= $foto ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+                                            </div>
+                                        <?php endforeach ?>
+                                        <!-- Button trigger modal -->
+                                        
+                                      </div>
+                                      
                                     </div>
-                                    <?php foreach ($fotos as $foto): ?>
-                                       <div class="carousel-item">
-                                          <img src="/frontend/web/<?= $foto ?>" class="d-block w-100" alt="...">
-                                        </div> 
-                                    <?php endforeach ?>
-                                  </div>
-                                  
-                                  
-                                </div>
+                                    <!-- </a> -->
+                                    <!-- <div class="text-right" style="position: inherit;width: 100%">
+                                        <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
+                                          <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
+                                        </button>
+                                    </div> -->
+
+                                    <!-- Carousel Navigation -->
+                                    <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom p-0" data-ride="carousel">
+                                      <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                          <div class="row mx-0">
+                                            <div id="carousel-selector-0" class="thumb col-4 col-sm-3 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                                              <img src="/frontend/web/<?= $model->foto_1 ?>" class="img-fluid">
+                                            </div>
+                                            <?php $count = 0; ?>
+                                            <?php foreach ($fotos as $foto): ?>
+                                                <?php $count++ ?>
+                                                <?php if ($count <= 5): ?>
+                                                    <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-3 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
+                                                      <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
+                                                    </div>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+                                            
+                                          </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                          <div class="row mx-0">
+                                            <?php $count = 0; ?>
+                                            <?php foreach ($fotos as $foto): ?>
+                                                <?php $count++ ?>
+                                                <?php if ($count > 5): ?>
+                                                    <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-3 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
+                                                      <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
+                                                    </div>
+                                                <?php endif ?>
+                                            <?php endforeach ?>
+                                            <div class="col-2 px-1 py-2"></div>
+                                            <div class="col-2 px-1 py-2"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <?php if (count($fotos) > 5): ?>
+                                          <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+
+                                            <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
+                                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                                            <span class="sr-only">Previous</span>
+                                          </a>
+                                          <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
+                                            <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
+                                            <span class="sr-only">Next</span>
+                                          </a>
+                                      <?php endif ?>
+                                    </div>
+
+                                </div> <!-- /carousel-container -->
                             </div>
 
                             <div class="col-md-1">
-                                <a class="carousel-control-next bg-darkblue" href="#carouselExampleControls<?= $model->id ?>" role="button" data-slide="next" style="height: 35px;width: 35px !important;">
+                                <a class="carousel-control-next bg-darkblue" href="#carouselExampleControls" role="button" data-slide="next" style="height: 35px;width: 35px !important;">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>

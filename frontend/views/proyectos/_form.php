@@ -6,7 +6,7 @@ use yii\helpers\ArrayHelper;
 
 ?>
 
-<div class="mb-5">
+<div class="pb-5">
 
     <div class="row">
         <div class="col-md-8 m-auto bg-white rounded-2">

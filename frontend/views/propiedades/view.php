@@ -33,7 +33,7 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
             <div class="container">
                 <div class="carousel-container position-relative row">
                   
-                <!-- <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal"> -->
+                    <!-- <a type="button" class="no-link" data-toggle="modal" data-target="#slideModal"> -->
                     <div id="myCarousel" class="carousel slide first-part w-100" data-ride="carousel">
 
                       <div class="carousel-inner">
@@ -53,64 +53,64 @@ $prev_propiedad = \frontend\models\Propiedades::find()->where(['>', 'id', $model
                       </div>
                       
                     </div>
-                <!-- </a> -->
-                <!-- <div class="text-right" style="position: inherit;width: 100%">
-                    <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
-                      <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
-                    </button>
-                </div> -->
+                    <!-- </a> -->
+                    <!-- <div class="text-right" style="position: inherit;width: 100%">
+                        <button type="button" class="btn btn-outline-dark float-right border-0 mr-2 text-white" data-toggle="modal" data-target="#slideModal" style="margin-top: -3rem;background: #44546b">
+                          <i class="fas fa-search-plus mr-1"></i> AMPLIAR IMAGEN
+                        </button>
+                    </div> -->
 
-                <!-- Carousel Navigation -->
-                <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <div class="row mx-0">
-                        <div id="carousel-selector-0" class="thumb col-4 col-sm-2 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
-                          <img src="/frontend/web/<?= $model->foto_1 ?>" class="img-fluid">
+                    <!-- Carousel Navigation -->
+                    <div id="carousel-thumbs" class="carousel slide bg-white rounded-bottom" data-ride="carousel">
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="row mx-0">
+                            <div id="carousel-selector-0" class="thumb col-4 col-sm-3 px-1 py-2 selected" data-target="#myCarousel" data-slide-to="0">
+                              <img src="/frontend/web/<?= $model->foto_1 ?>" class="img-fluid">
+                            </div>
+                            <?php $count = 0; ?>
+                            <?php foreach ($fotos as $foto): ?>
+                                <?php $count++ ?>
+                                <?php if ($count <= 5): ?>
+                                    <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-3 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
+                                      <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
+                                    </div>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                            
+                          </div>
                         </div>
-                        <?php $count = 0; ?>
-                        <?php foreach ($fotos as $foto): ?>
-                            <?php $count++ ?>
-                            <?php if ($count <= 5): ?>
-                                <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
-                                  <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
-                                </div>
-                            <?php endif ?>
-                        <?php endforeach ?>
-                        
+                        <div class="carousel-item">
+                          <div class="row mx-0">
+                            <?php $count = 0; ?>
+                            <?php foreach ($fotos as $foto): ?>
+                                <?php $count++ ?>
+                                <?php if ($count > 5): ?>
+                                    <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-3 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
+                                      <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
+                                    </div>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                            <div class="col-2 px-1 py-2"></div>
+                            <div class="col-2 px-1 py-2"></div>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="carousel-item">
-                      <div class="row mx-0">
-                        <?php $count = 0; ?>
-                        <?php foreach ($fotos as $foto): ?>
-                            <?php $count++ ?>
-                            <?php if ($count > 5): ?>
-                                <div id="carousel-selector-<?= $count ?>" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" data-slide-to="<?= $count ?>">
-                                  <img src="/frontend/web/<?= $foto ?>" class="img-fluid">
-                                </div>
-                            <?php endif ?>
-                        <?php endforeach ?>
-                        <div class="col-2 px-1 py-2"></div>
-                        <div class="col-2 px-1 py-2"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <?php if (count($fotos) > 5): ?>
-                      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
+                      <?php if (count($fotos) > 5): ?>
+                          <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "prev" : "" ?>">
 
-                        <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
-                        <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
-                        <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
-                        <span class="sr-only">Next</span>
-                      </a>
-                  <?php endif ?>
-                </div>
+                            <i class="fas fa-chevron-left text-blue fa-2x font-weight-bold float-left"></i>
+                            <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                            <span class="sr-only">Previous</span>
+                          </a>
+                          <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="<?= count($fotos) > 5 ? "next" : "" ?>">
+                            <i class="fas fa-chevron-right text-blue fa-2x font-weight-bold"></i>
+                            <span class="sr-only">Next</span>
+                          </a>
+                      <?php endif ?>
+                    </div>
 
-                </div> <!-- /row -->
+                </div> <!-- /carousel-container -->
             </div> <!-- /container -->
         </div>
         <div class="col-md-3 rounded bg-white pb-5">
