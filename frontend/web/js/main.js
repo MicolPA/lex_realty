@@ -126,6 +126,19 @@ function showSearch(type){
   }
 }
 
+function formVerify(id){
+  if ($("#formularios-nombre").val() != '' && $("#formularios-identificacion").val() != '' && $("#formularios-direccion").val() != '' && $("#formularios-ocupacion").val() != '' && $("#formularios-correo").val() != '') {
+    $("#inputfile").prop('required', 'required');
+    $("#inputfile2").prop('required', 'required');
+    $(".div-titles-2").attr('class', 'form-group mb-0 div-titles-2');
+    $(".div-form").css({'height': '1px', 'visibility': 'hidden'});
+    $(".div-files").show();
+    $(".btn-continue").hide();
+  }else{
+    swal('Alerta', 'Favor llenar todos los campos', 'warning');
+  }
+}
+
 function formSubmit(id) {
 
   if ($("#"+id)[0].checkValidity()){
@@ -140,6 +153,7 @@ function formSubmit(id) {
 
     $('#'+id).submit();
   }else{
+      swal('Alerta', 'Favor llenar todos los campos', 'warning');
       $("#"+id)[0].reportValidity();
   }
 }

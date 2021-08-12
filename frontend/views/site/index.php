@@ -89,7 +89,7 @@ $this->title = 'Inicio';
         font-size: 14px !important;
     }
 
-    .swal-modal{
+    .swal-loading{
         background: transparent;
     }
     .swal-loading img{
@@ -159,67 +159,78 @@ $this->title = 'Inicio';
                     <div class="col-md-5 pl-lg-4 pr-lg-4 pl-md-4 pr-md-4">
                         <?php $form = ActiveForm::begin(['action' => 'site/checkout', 'method' => 'POST', 'id' => 'form', 'options' => ['autocomplete' => 'on'],], ['enctype' => 'multipart/form-data']); ?>
                             <div class=" m-auto bg-white rounded-2 p-lg-5 p-sm-2 text-center">
-                                <div class="form-group mb-5">
+                                <div class="form-group mb-5 div-titles-2">
                                     <h2 class="display-4" style="font-size:18px"><span class="bg-blue-2 p-1 pr-3 pl-3 rounded-2 text-white">COMPLETA ESTE FORMULARIO</span></h2>
                                     <p class="font-weight-lighter text-dark" style="font-size:20px">PARA SOLICITAR TU DEBIDA DILIGENCIA</p>
                                 </div>
-                                <div class="col-md-12">
-                                    <?= $form->field($model, 'nombre')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Nombre'])->label(false) ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?= $form->field($model, 'identificacion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'No. Pasaporte o Cédula'])->label(false) ?>
-                                </div>
-                                <div class="col-md-12">
-                                    <?= $form->field($model, 'direccion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Dirección'])->label(false) ?>
+                                <div class="div-form">
+                                    <div class="col-md-12">
+                                        <?= $form->field($model, 'nombre')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Nombre'])->label(false) ?>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <?= $form->field($model, 'identificacion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'No. Pasaporte o Cédula'])->label(false) ?>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <?= $form->field($model, 'direccion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Dirección'])->label(false) ?>
 
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row ">
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'ocupacion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Ocupación'])->label(false) ?>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row ">
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'ocupacion')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Ocupación'])->label(false) ?>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <?= $form->field($model, 'correo')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Correo', 'type' => 'email'])->label(false) ?>
+                                            </div>
                                         </div>
-                                        <div class="col-md-6">
-                                            <?= $form->field($model, 'correo')->textInput(['required' => 'required', 'class' => 'input-r pl-4 pr-4 pt-2 pb-2', 'placeholder' =>'Correo', 'type' => 'email'])->label(false) ?>
+                                    </div>
+                                </div>
+                                <?= $form->field($model, 'amount')->hiddenInput(['value' => $constante ? $constante['contenido'] : 120])->label(false) ?>
+                                <div class="div-files" style="display:none">
+                                    <div class="mt-5 pt-3 text-center font-weight-lighter">
+                                        <p>DOCUMENTOS REQUERIDOS</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="div-lab first col-md-6 icon-index mt-3 text-center">
+                                            <?= $form->field($model, 'identificacion_url')->fileInput(['required' => 'required','id' => 'inputfile', 'value' => $model->identificacion_url, 'accept' => 'image/*'])->label('<i class="fas fa-file-upload"></i>') ?>
+                                            <span class="font-weight-lighter">Pasaporte o Cédula</span>
+                                        </div>
+                                        <div class="div-lab second col-md-6 icon-index mt-3 text-center">
+                                            <?= $form->field($model, 'certificado_titulo_url')->fileInput(['required' => 'required','id' => 'inputfile2', 'value' => $model->identificacion_url, 'accept' => 'image/*'])->label('<i class="fas fa-file-upload"></i>') ?>
+                                            <span class="font-weight-lighter">Certificado de titulo</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="mt-5 pt-3 text-center font-weight-lighter">
-                                    <p>DOCUMENTOS REQUERIDOS</p>
-                                </div>
-                                <div class="row">
-                                    <div class="div-lab first col-md-6 icon-index mt-3 text-center">
-                                        <?= $form->field($model, 'identificacion_url')->fileInput(['required' => 'required', 'id' => 'inputfile', 'value' => $model->identificacion_url, 'accept' => 'image/*'])->label('<i class="fas fa-file-upload"></i>') ?>
-                                        <span class="font-weight-lighter">Pasaporte o Cédula</span>
+
+                                    <div class="check-box-container my-checkbox mt-5 mb-3">
+                                       
+                                        <label class="font-weight-normal small"><input type="checkbox" required>  Declaro que todas las informaciones ingresadas son correctas y autorizo su uso para los procesos que son relacionados a la solicitud de debida diligencia.</label>
+
+
+                                        <p class="text-center mt-3 mb-1 ">PAGOS SEGUROS REALIZADOS CON</p>
+
+                                        <div class="imagenes text-center mt-3 mb-5">
+                                            <img class='mr-2' src="/frontend/web/images/stock/visa-logo.png" width="60px">
+                                            <img class='mr-2' src="/frontend/web/images/stock/mastercard-logo.png" width="60px">
+                                            <img class='mr-2' src="/frontend/web/images/stock/paypal-logo.png" width="70px">
+                                        </div>
+
                                     </div>
-                                    <div class="div-lab second col-md-6 icon-index mt-3 text-center ">
-                                        <?= $form->field($model, 'certificado_titulo_url')->fileInput(['required' => 'required', 'id' => 'inputfile2', 'value' => $model->identificacion_url, 'accept' => 'image/*'])->label('<i class="fas fa-file-upload"></i>') ?>
-                                        <span class="font-weight-lighter">Certificado de titulo</span>
+                                    <div class="col-md-6 m-auto text-center">
+                                        <!-- <?//= Html::submitButton('PAGAR', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?> -->
+                                        <a href="javascript:formSubmit('form')" class="btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold">PAGAR</a>
                                     </div>
-                                </div>
-                                <?= $form->field($model, 'amount')->hiddenInput(['value' => '120'])->label(false) ?>
-
-                                <div class="check-box-container my-checkbox mt-5 mb-3">
-                                   
-                                    <label class="font-weight-normal small"><input type="checkbox" required>  Declaro que todas las informaciones ingresadas son correctas y autorizo su uso para los procesos que son relacionados a la solicitud de debida diligencia.</label>
-
-
-                                    <p class="text-center mt-3 mb-1 ">PAGOS SEGUROS REALIZADOS CON</p>
-
-                                    <div class="imagenes text-center mt-3 mb-5">
-                                        <img class='mr-2' src="/frontend/web/images/stock/visa-logo.png" width="60px">
-                                        <img class='mr-2' src="/frontend/web/images/stock/mastercard-logo.png" width="60px">
-                                        <img class='mr-2' src="/frontend/web/images/stock/paypal-logo.png" width="70px">
-                                    </div>
-
                                 </div>
                                 <input type="hidden" name="precio" value="<?= $constante ? $constante['contenido'] : 120 ?>">
-
-                                <div class="col-md-6 m-auto text-center" style="margin-bottom: -4rem !important">
-                                    <!-- <?//= Html::submitButton('PAGAR', ['class' => 'btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold', 'style' => 'border-radius:50px']) ?> -->
-                                    <a href="javascript:formSubmit('form')" class="btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold">PAGAR</a>
-                                </div>
+                                <a href="javascript:formVerify('form')" class="btn btn-success text-white rounded-3 pr-5 pl-5 font-weight-bold btn-continue">CONTINUAR</a>
+                                
                             </div>
+
                         <?php ActiveForm::end(); ?>
+                    </div>
+                    <div class="col-md-8 m-auto text-white pt-5 font-13">
+                        <div>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, tenetur officia repellat accusamus delectus corrupti deleniti dignissimos, ab iste illo quidem totam expedita sequi, temporibus animi. Itaque nihil rem eligendi facere, optio voluptatibus inventore laboriosam consequatur soluta et necessitatibus sit dolorem minus, vero magnam ad dicta. Quia blanditiis obcaecati mollitia laborum reiciendis tempore ea optio magnam est quasi. Vero unde iste repellat obcaecati adipisci tenetur nemo nihil, temporibus optio enim numquam itaque assumenda eaque totam porro molestias rerum consequuntur voluptatum aspernatur ratione odio quisquam! Libero possimus, quisquam doloremque quaerat vero excepturi delectus explicabo dolore perferendis molestiae voluptatibus natus, dignissimos quae asperiores unde fugit error aliquam. Minus eum itaque consequatur error delectus sapiente recusandae incidunt porro minima labore illo, doloremque eos voluptatibus eligendi dolore ab soluta, quisquam quis. In nihil voluptatum voluptate sint omnis nisi hic aspernatur sed consequuntur, modi, sapiente molestiae exercitationem, quisquam eius illum, iste? Mollitia iusto a nesciunt minus nobis, consequuntur illo numquam, aperiam debitis laborum molestias aut fugit. Aliquam veritatis expedita perferendis doloremque numquam, molestias? Aspernatur inventore, nulla officiis a natus et, debitis temporibus ullam quaerat eveniet voluptatum eius consequatur perspiciatis beatae fugit sapiente alias, expedita maiores doloribus molestiae perferendis. Doloremque, facere incidunt laboriosam sunt omnis perferendis.
+                        </div>
                     </div>
                 </div>
                 <p class="text-center w-100 title-titulos"> <span class="bg-blue-2 p-1 pr-4 pl-4 font-weight-lighter rounded-2 text-white">TIPOS DE TITULOS</span> </p>
