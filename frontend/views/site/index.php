@@ -23,7 +23,7 @@ $this->title = 'Inicio';
         
 
         .c-image, .d-cont{
-            height: 1200px;
+            height: 1000px;
         }
     }
 
@@ -187,7 +187,7 @@ $this->title = 'Inicio';
                                 </div>
                                 <?= $form->field($model, 'amount')->hiddenInput(['value' => $constante ? $constante['contenido'] : 120])->label(false) ?>
                                 <div class="div-files" style="display:none">
-                                    <div class="mt-5 pt-3 text-center font-weight-lighter">
+                                    <div class="text-center font-weight-lighter">
                                         <p>DOCUMENTOS REQUERIDOS</p>
                                     </div>
                                     <div class="row">
@@ -201,7 +201,7 @@ $this->title = 'Inicio';
                                         </div>
                                     </div>
 
-                                    <div class="check-box-container my-checkbox mt-5 mb-3">
+                                    <div class="check-box-container my-checkbox mt-3 mb-3">
                                        
                                         <label class="font-weight-normal small"><input type="checkbox" required>  Declaro que todas las informaciones ingresadas son correctas y autorizo su uso para los procesos que son relacionados a la solicitud de debida diligencia.</label>
 
@@ -229,7 +229,7 @@ $this->title = 'Inicio';
                     </div>
                     <div class="col-md-8 m-auto text-white pt-5 font-13">
                         <div>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, tenetur officia repellat accusamus delectus corrupti deleniti dignissimos, ab iste illo quidem totam expedita sequi, temporibus animi. Itaque nihil rem eligendi facere, optio voluptatibus inventore laboriosam consequatur soluta et necessitatibus sit dolorem minus, vero magnam ad dicta. Quia blanditiis obcaecati mollitia laborum reiciendis tempore ea optio magnam est quasi. Vero unde iste repellat obcaecati adipisci tenetur nemo nihil, temporibus optio enim numquam itaque assumenda eaque totam porro molestias rerum consequuntur voluptatum aspernatur ratione odio quisquam! Libero possimus, quisquam doloremque quaerat vero excepturi delectus explicabo dolore perferendis molestiae voluptatibus natus, dignissimos quae asperiores unde fugit error aliquam. Minus eum itaque consequatur error delectus sapiente recusandae incidunt porro minima labore illo, doloremque eos voluptatibus eligendi dolore ab soluta, quisquam quis. In nihil voluptatum voluptate sint omnis nisi hic aspernatur sed consequuntur, modi, sapiente molestiae exercitationem, quisquam eius illum, iste? Mollitia iusto a nesciunt minus nobis, consequuntur illo numquam, aperiam debitis laborum molestias aut fugit. Aliquam veritatis expedita perferendis doloremque numquam, molestias? Aspernatur inventore, nulla officiis a natus et, debitis temporibus ullam quaerat eveniet voluptatum eius consequatur perspiciatis beatae fugit sapiente alias, expedita maiores doloribus molestiae perferendis. Doloremque, facere incidunt laboriosam sunt omnis perferendis.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Sed, fuga amet. Odio molestiae non a natus quidem repudiandae corrupti quisquam animi libero porro? Eveniet blanditiis laboriosam voluptatem minus saepe unde qui, nisi, suscipit est facere, inventore dolor provident animi porro ad deserunt nulla cum totam nemo ratione? Et accusamus quos ad quam reprehenderit illo assumenda ipsa sit quis ipsum necessitatibus, odit hic aut non eligendi architecto. Tempora harum eius totam ad non incidunt, autem aut corporis, deserunt amet quo cupiditate rerum quibusdam libero dolore, necessitatibus molestias cumque quas alias accusamus magni quae iure. Et itaque ipsam cupiditate eos eius ducimus officiis odit quidem, qui dolores animi porro quos explicabo officia reprehenderit voluptatum id molestias natus quam necessitatibus labore voluptates veritatis. Veritatis animi repellendus architecto a fugiat porro voluptatibus. Rem assumenda dignissimos, in explicabo omnis perspiciatis ratione optio nobis, esse. Tempore, perferendis voluptatibus? Nulla beatae laborum quod unde itaque eius dolorem?
                         </div>
                     </div>
                 </div>

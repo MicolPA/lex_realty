@@ -43,10 +43,11 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
     <div class="container-fluid bg-light-blue container-header">
         <div class="p-0">
             <div class="row">
-                <div class="col-md-4 lg-text-right pr-5 pl-5 pt-4 pb-4 container bg-white m-0">
-                   <a href="/"><img src="/frontend/web/images/logo-principal-1.png" width="120px"> </a>
+                <div class="col-md-4 lg-text-right pl-5 pt-4 pb-4 container bg-white m-0">
+                   <a href="/"><img src="/frontend/web/images/logo-principal-1.png" width="130px" class="mt-1 mb-1"> </a>
                 </div>
-                <div class="col-md-8 container pt-4 bg-light-blue">
+                <div class="col-md-1 bg-white"></div>
+                <div class="col-md-7 container pt-4 bg-light-blue">
                     <!-- <form class="form-inline" action="/frontend/web/propiedades" method="get">
                         <input class="form-control mr-sm-2 bg-light-blue" name="PropiedadesSearch[titulo_publicacion]" type="search" placeholder="Type keyword(s) here..." aria-label="Search" style="min-width: 300px">
                         <button class="btn my-2 my-sm-0" type="submit" style="background: #e9eaec"><i class="fas fa-search"></i></button>
@@ -98,8 +99,8 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
     </div>
 </div>
 
-<footer class="bg-darkblue pt-5" style="min-height: 200px">
-    <div class="container">
+<footer class="bg-darkblue pt-5 pb-5" style="min-height: 380px">
+    <div class="container mt-5 pt-5 pb-5">
         <div class="row">
             <div class="col-md-4">
                 <img class="mt-4 mb-3" src="/frontend/web/images/logo-footer.png" width="200px">
