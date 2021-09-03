@@ -99,30 +99,55 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
     </div>
 </div>
 
-<footer class="bg-darkblue pt-5 pb-5" style="min-height: 380px">
+<footer class="bg-darkblue pt-3 pb-3 font-weight-lighter" style="min-height: 380px">
     <div class="container mt-5 pt-5 pb-5">
         <div class="row">
             <div class="col-md-4">
-                <img class="mt-4 mb-3" src="/frontend/web/images/logo-footer.png" width="200px">
+                <img class="mt-4 mb-4" src="/frontend/web/images/logo-principal-2.png" width="150px">
+
+                <div class="text-white">
+                    <!-- <p class="mb-0"><i class="fas fa-map-marker-alt mr-2"></i>BÁVARO</p>
+                    <p>El Cortecito, Av. Alemania, Plaza Las Buganvillas, 2do. Piso Bávaro, República Dominicana.</p>
+                    <p><i class="fas fa-phone-alt mr-2"></i> 809-552-1945</p> -->
+
+                    <p class="mb-0"><i class="fas fa-map-marker-alt mr-2"></i> PUNTA CANA VILLAGE</p>
+                    <p>Edificio Mareblu, Suite. 302, Punta Cana Village, República Dominicana.</p>
+                    <p><i class="fas fa-phone-alt mr-2"></i>  809-362-8282</p>
+                </div>  
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 text-white">
+                <div class="mb-5 pt-5">
+                    <!-- <p class="font-weight-bold h4">Explorar</p> -->
+                </div>
                 <ul class="list-unstyled">
                     <li><a class="text-white" href="/frontend/web/propiedades">Propiedades</a></li>
                     <li><a class="text-white" href="/frontend/web/tasas-hipotecarias">Tasa hipotecaria</a></li>
                     <li><a class="text-white" href="/frontend/web/pre-construcciones">Pre construcciones</a></li>
+                    <!-- <li><a class="text-white" href="#">Publicaciones</a></li>
+                    <li><a class="text-white" href="#">Agentes inmobiliarios</a></li>
+                    <li><a class="text-white" href="#">Desarrolladores</a></li> -->
                 </ul>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 text-white">
+                <div class="mb-5 pt-5">
+                    <!-- <p class="font-weight-bold h4">Explorar</p> -->
+                </div>
                 <ul class="list-unstyled">
+                    <!-- <li><a class="text-white" href="/frontend/web/propiedades">Propiedades</a></li>
+                    <li><a class="text-white" href="/frontend/web/tasas-hipotecarias">Tasa hipotecaria</a></li>
+                    <li><a class="text-white" href="/frontend/web/pre-construcciones">Pre construcciones</a></li> -->
                     <li><a class="text-white" href="#">Publicaciones</a></li>
                     <li><a class="text-white" href="#">Agentes inmobiliarios</a></li>
                     <li><a class="text-white" href="#">Desarrolladores</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 p-md-0">
+            <div class="col-md-2 p-md-0 text-white">
+                <div class="mb-5 pt-5">
+                    <!-- <p class="font-weight-bold h4">Enlaces</p> -->
+                </div>  
                 <ul class="list-unstyled">
-                    <li><a class="text-white" href="#">Terminos y condiciones</a></li>
+                    <li><a class="text-white" href="#">Términos y condiciones</a></li>
                     <li><a class="text-white" href="#">Política de privacidad</a></li>
                     <li><a class="text-white" href="#">Contactos</a></li>
                 </ul>
