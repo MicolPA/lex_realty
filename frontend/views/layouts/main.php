@@ -117,7 +117,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
             </div>
 
             <div class="col-md-3 text-white">
-                <div class="mb-5 pt-5">
+                <div class="mb-md-5 pt-md-5">
                     <!-- <p class="font-weight-bold h4">Explorar</p> -->
                 </div>
                 <ul class="list-unstyled">
@@ -130,7 +130,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
                 </ul>
             </div>
             <div class="col-md-3 text-white">
-                <div class="mb-5 pt-5">
+                <div class="mb-md-5 pt-md-5">
                     <!-- <p class="font-weight-bold h4">Explorar</p> -->
                 </div>
                 <ul class="list-unstyled">
@@ -143,7 +143,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
                 </ul>
             </div>
             <div class="col-md-2 p-md-0 text-white">
-                <div class="mb-5 pt-5">
+                <div class="mb-md-5 pt-md-5">
                     <!-- <p class="font-weight-bold h4">Enlaces</p> -->
                 </div>  
                 <ul class="list-unstyled">
