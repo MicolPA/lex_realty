@@ -209,7 +209,7 @@ background: linear-gradient(0deg, rgba(14,22,41,1) 0%, rgba(14,42,79,1) 100%);">
                                                 $total = \frontend\models\Propiedades::find()->where(['ubicacion_id' => $m->id])->count();
                                              ?>
                                             <div class="carousel-item <?= $count==1 ? 'active' : '' ?>">
-                                                <a class="no-link text-dark" href="javascript:imgBigger('<?= $m->imagen_url ?>, <?= $m->nombre ?>, <?= $m->descripcion ?>')">
+                                                <a class="no-link text-dark" href="javascript:imgBigger('<?= $m->imagen_url ?>', '<?= $m->nombre ?>', '<?= $m->descripcion ?>')">
                                                     <div class="col-md-3 col-lg-3" style="display: inline-block;">
                                                         <div class="pr-5 pl-5">
                                                             <img src="/frontend/web/<?= $m->imagen_url ?>" class="w-100" style="height:280px">

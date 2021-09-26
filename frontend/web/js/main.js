@@ -29,11 +29,13 @@ function buscar(id){
 //   imgBigger($(this).attr('src'));
 // })
 
-function imgBigger(url){
-
+function imgBigger(url, title, descripcion){
+    console.log(url);
+    console.log(title);
+    console.log(descripcion);
       swal({
-          title: "",
-          text: '',
+          title: title,
+          text: descripcion,
           button: false,
           icon: url,
         });
