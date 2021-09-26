@@ -139,7 +139,7 @@ $this->title = 'Propiedades';
         <?php endforeach ?>
     </div>
 <?php endif ?>
-<div class="pt-4 pb-4" style=";background-image: url(/frontend/web/images/slide-oscuro.jpg);background-repeat: no-repeat;background-size: cover;margin-top: -3rem">
+<div class="pt-4 pb-4 background-image" style=";background-image: url(/frontend/web/images/slide-oscuro.jpg);margin-top: -3rem">
     <div class="container">
         <div class="row mt-5">
             <div class="col-md-12 text-center mb-3">
@@ -152,7 +152,7 @@ $this->title = 'Propiedades';
                     <div class="col-md-3 mt-4 mb-2">
                         <div class="bg-white">
                             <div class="contenedor w-100">
-                                <div style="width: 100%;height: 150px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');background-size:cover;background-position:center;"></div>
+                                <div class="background-image" style="width: 100%;height: 150px;background-image: url('/frontend/web/<?= $m->foto_1 ?>');"></div>
                                 <div class="bg-darkblue pt-1 pb-1">
                                     <p class="text-center text-white font-12 mb-0" style="font-family: 'Benton-book', Arial, sans-serif"><?= mb_strtoupper($m->ubicacion->nombre) ?></p>
                                 </div>

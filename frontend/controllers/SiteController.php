@@ -86,7 +86,7 @@ class SiteController extends Controller
         $constante = \frontend\models\Constantes::find()->where(['nombre' => 'precio_debida_diligencia'])->one();
         $titulos = \frontend\models\Titulos::find()->all();
         
-        return $this->render('index',[
+        return $this->render('index-old-2',[
             'model' => $model,
             'constante' => $constante,
             'titulos' => $titulos,

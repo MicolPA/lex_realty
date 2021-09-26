@@ -85,7 +85,7 @@ $imagen_url = isset($this->params['imagen_url'])?$this->params['imagen_url']:$de
             </li>
             <?php if (!Yii::$app->user->isGuest): ?>
                 <li class="nav-item2 active pl-4 pr-4">
-                    <a href="/frontend/web/admin" class="nav-link btn btn-sm" style="background: #f2f2f2;color:#638eb0">ADM</a>
+                    <a href="/frontend/web/admin" class="nav-link btn btn-sm" style="background: #f2f2f2;color:#638eb0">ADMIN</a>
                 </li>
             <?php endif ?>
           </ul>

@@ -21,6 +21,8 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'nombre')->textInput([]) ?>
 
+                <?= $form->field($model, 'descripcion')->textarea(['rows' => '4', 'placeholder' => 'Descripción'])->label(false) ?>
+
                 <div class="col-md-10 p-0 div-lab">
                     <?= $form->field($model, 'imagen_url')->fileInput([!$model->imagen_url ? 'required' : '' => !$model->imagen_url ? 'required' : '', 'accept' => 'image/*'])->label($model->imagen_url ? "CARGADA" : "SUBIR IMAGEN") ?>
                 </div>

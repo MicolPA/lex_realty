@@ -134,6 +134,9 @@ function formVerify(id){
     $(".div-form").css({'height': '1px', 'visibility': 'hidden'});
     $(".div-files").show();
     $(".btn-continue").hide();
+    $(".div-big-auto").css('height', '630px');
+    $(".d-count").css('height', '1075px');
+    $(".content-titulos").attr('style', 'margin-top:-8rem');
   }else{
     swal('Alerta', 'Favor llenar todos los campos', 'warning');
   }
