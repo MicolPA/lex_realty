@@ -36,6 +36,10 @@
             display: none;
         }
 
+        .xs-bg-darkblue{
+            background: #0c1528;
+        }
+
         .title-content{
             margin-top: 1rem;
             text-align: left;

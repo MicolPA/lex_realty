@@ -40,7 +40,7 @@ background: linear-gradient(0deg, rgba(14,22,41,1) 0%, rgba(14,42,79,1) 100%);">
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-3"></div>
-                            <div class="col-md-9 float-right text-inicio text-white text-right m-0 pr-lg-0 pr-md-0 div-big-auto" style="height:500px">
+                            <div class="col-md-9 float-right d-xs-none text-inicio text-white text-right m-0 pr-lg-0 pr-md-0 div-big-auto" style="height:500px">
                                 <div id="carouselExampleControls" class="carousel slide h-100" data-ride="carousel">
                                   <div class="carousel-inner h-100">
                                     <div class="carousel-item home-carousel-item active h-100">
@@ -59,7 +59,7 @@ background: linear-gradient(0deg, rgba(14,22,41,1) 0%, rgba(14,42,79,1) 100%);">
                         </div>
                     </div>
                     
-                    <div class="col-md-5 pl-lg-0 pr-lg-4 pl-md-0 pr-md-4">
+                    <div class="col-md-5 pl-lg-0 pr-lg-4 pl-md-0 pr-md-4 p-0">
                         <?php $form = ActiveForm::begin(['action' => 'site/checkout', 'method' => 'POST', 'id' => 'form', 'options' => ['autocomplete' => 'on'],], ['enctype' => 'multipart/form-data']); ?>
                             <div class=" m-auto bg-white rounded-right-2 p-lg-5 p-sm-2 text-center div-big-auto" style="height:500px">
                                 <div class="form-group mb-5 div-titles-2">
@@ -130,7 +130,7 @@ background: linear-gradient(0deg, rgba(14,22,41,1) 0%, rgba(14,42,79,1) 100%);">
 
                         <?php ActiveForm::end(); ?>
                     </div>
-                    <div class="col-md-8 m-auto text-white pt-5 font-12">
+                    <div class="col-md-8 m-auto text-white pt-5 font-12 xs-bg-darkblue">
                         <p>
                             Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Sed, fuga amet. Odio molestiae non a natus quidem repudiandae corrupti quisquam animi libero porro? Eveniet blanditiis laboriosam voluptatem minus saepe unde qui, nisi, suscipit est facere, inventore dolor provident animi porro ad deserunt nulla cum totam nemo ratione? Et accusamus quos ad quam reprehenderit illo assumenda ipsa sit quis ipsum necessitatibus, odit hic aut non eligendi architecto. 
                         </p>
@@ -209,13 +209,13 @@ background: linear-gradient(0deg, rgba(14,22,41,1) 0%, rgba(14,42,79,1) 100%);">
                                                 $total = \frontend\models\Propiedades::find()->where(['ubicacion_id' => $m->id])->count();
                                              ?>
                                             <div class="carousel-item <?= $count==1 ? 'active' : '' ?>">
-                                                <a class="no-link text-dark" href="javascript:imgBigger('<?= $m->imagen_url ?>')">
+                                                <a class="no-link text-dark" href="javascript:imgBigger('<?= $m->imagen_url ?>, <?= $m->nombre ?>, <?= $m->descripcion ?>')">
                                                     <div class="col-md-3 col-lg-3" style="display: inline-block;">
                                                         <div class="pr-5 pl-5">
-                                                            <img src="/frontend/web/<?= $m->imagen_url ?>" class="w-100" style="height:480px">
+                                                            <img src="/frontend/web/<?= $m->imagen_url ?>" class="w-100" style="height:280px">
                                                         </div>
                                                         
-                                                        <p class="text-center text-darkblue font-weight-normal font-14 mb-0 mt-4" style="font-family: 'Benton-book', Arial, sans-serif">
+                                                        <p class="text-center text-darkblue font-weight-normal font-14 mb-4 mt-1" style="font-family: 'Benton-book', Arial, sans-serif">
                                                             <?= mb_strtoupper($m->nombre) ?>
                                                          </p>
                                                     </div>
